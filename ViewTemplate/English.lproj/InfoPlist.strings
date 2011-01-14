@@ -1,0 +1,6 @@
+/* Localized versions of Info.plist keys */
+
+CFBundleName = "PluginTemplate";
+CFBundleShortVersionString = "1.0";
+CFBundleGetInfoString = "PluginTemplate version 1.0, Copyright (c) CURRENT_YEAR YOUR_NAME.";
+NSHumanReadableCopyright = "Copyright (c) CURRENT_YEAR YOUR_NAME.";
