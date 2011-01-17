@@ -28,6 +28,7 @@
     float   vertex[3],point1[3],point2[3];
     float   vector1[3],vector2[3],camPos[3],direction[3],viewUp[3];
     float   unitDirection[3],unitViewUp[3];
+    float   clipRange;
     Camera  *theCam;
     Point3D *camPosition,*camDirection,*camFocalPoint,*camViewUp;
     
@@ -70,6 +71,14 @@
     
     // modify the camera
     theCam = view.camera;
+    
+    // compute clipping range for proper positioning
+    clipRange = ( theCam.clippingRangeFar - theCam.clippingRangeNear ) / 2.0;
+    
+    // adjust camera position to account for clipping range
+    camPos[0] -= clipRange * unitDirection[0];
+    camPos[1] -= clipRange * unitDirection[1];
+    camPos[2] -= clipRange * unitDirection[2];
     
     camPosition     = [Point3D pointWithX:camPos[0]
                                         y:camPos[1]
