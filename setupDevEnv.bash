@@ -31,15 +31,9 @@ do
 	make ${PLUGIN_NAME}
 	
 	# Link build products to OsiriX plugins dir
-	ln -s ${ROOT_DIR}/${PLUGIN_NAME}/build/${BUILD_CONFIG}/${PLUGIN_NAME}.osirixplugin "${PLUGINS_DIR}"
+	ln -Fs ${ROOT_DIR}/${PLUGIN_NAME}/build/${BUILD_CONFIG}/${PLUGIN_NAME}.osirixplugin "${PLUGINS_DIR}"
 	
 	# Link debugging symbols
-	ln -s ${ROOT_DIR}/${PLUGIN_NAME}/build/${PLUGIN_NAME}.build "${OSIRIX_BUILD_DIR}"
+	ln -Fs ${ROOT_DIR}/${PLUGIN_NAME}/build/${PLUGIN_NAME}.build "${OSIRIX_BUILD_DIR}"
 done
 
-
-echo "Plugin dir -> ${PLUGINS_DIR}"
-ls -al "${PLUGINS_DIR}"
-
-echo "Build dir -> ${OSIRIX_BUILD_DIR}"
-ls -al ${OSIRIX_BUILD_DIR}
