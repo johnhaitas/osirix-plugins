@@ -33,6 +33,7 @@
 		589A042C12D7AC710020A7E6 /* WaitRendering.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A041712D7AC710020A7E6 /* WaitRendering.h */; };
 		589A042D12D7AC710020A7E6 /* Window3DController.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A041812D7AC710020A7E6 /* Window3DController.h */; };
 		589A043712D7AC820020A7E6 /* MPRHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A043612D7AC820020A7E6 /* MPRHeaders.h */; };
+		58CAE22812E6080200B3411E /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 58CAE22712E6080200B3411E /* COPYING */; };
 		59C2B9290FF0ED7100B50385 /* Notifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 59C2B9280FF0ED7100B50385 /* Notifications.h */; };
 		8D5B49AE048680CD000E48DA /* StereotaxPoint_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* StereotaxPoint_Prefix.pch */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
@@ -78,6 +79,7 @@
 		589A041712D7AC710020A7E6 /* WaitRendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitRendering.h; sourceTree = "<group>"; };
 		589A041812D7AC710020A7E6 /* Window3DController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window3DController.h; sourceTree = "<group>"; };
 		589A043612D7AC820020A7E6 /* MPRHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRHeaders.h; sourceTree = "<group>"; };
+		58CAE22712E6080200B3411E /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		59C2B9280FF0ED7100B50385 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB5D36050680E57E00F4007A /* StereotaxPoint.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StereotaxPoint.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				58CAE22712E6080200B3411E /* COPYING */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				5807CE6D12E0F7E0007B0D76 /* InfoPlist.strings */,
 				583778BB12D65DF800704695 /* StereotaxPointHUD.xib */,
@@ -332,6 +335,7 @@
 			files = (
 				583778BC12D65DF800704695 /* StereotaxPointHUD.xib in Resources */,
 				5807CE6F12E0F7E0007B0D76 /* InfoPlist.strings in Resources */,
+				58CAE22812E6080200B3411E /* COPYING in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

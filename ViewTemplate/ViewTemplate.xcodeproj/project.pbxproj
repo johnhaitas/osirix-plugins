@@ -97,8 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				5837761612D3D85000704695 /* COPYING */,
-				58B1568212834A55004EAF70 /* tenTwentyTemplateHUD.xib */,
 				58C3703B1247AE52009883A4 /* zeroedTemplate.csv */,
+				58B1568212834A55004EAF70 /* tenTwentyTemplateHUD.xib */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				5807CE9F12E0F8FD007B0D76 /* InfoPlist.strings */,
 			);
