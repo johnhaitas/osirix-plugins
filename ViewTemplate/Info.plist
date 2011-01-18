@@ -2,14 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleIdentifier</key>
-	<string>edu.vanderbilt.viewtemplate</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
 	<string>ViewTemplate</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
+	<key>CFBundleIdentifier</key>
+	<string>edu.vanderbilt.viewtemplate</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -17,13 +17,13 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
-	<key>NSPrincipalClass</key>
-	<string>ViewTemplateFilter</string>
+	<string>0.1.0.svnRev.buildNum</string>
 	<key>MenuTitles</key>
 	<array>
 		<string>ViewTemplate</string>
 	</array>
+	<key>NSPrincipalClass</key>
+	<string>ViewTemplateFilter</string>
 	<key>pluginType</key>
 	<string>roiTool</string>
 </dict>

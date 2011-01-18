@@ -207,11 +207,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE6A9A9008AC841300D0C1EE /* Build configuration list for PBXNativeTarget "ViewTemplate" */;
 			buildPhases = (
+				58CAE21112E606EA00B3411E /* Set Build Number */,
 				8D5B49AD048680CD000E48DA /* Headers */,
 				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
 				8D5B49B5048680CD000E48DA /* Rez */,
+				58CAE21312E606EF00B3411E /* Unset Build Number */,
 			);
 			buildRules = (
 			);
@@ -270,6 +272,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58CAE21112E606EA00B3411E /* Set Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "This script is for inserting the subversion revision number in the build number.";
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "PROJECTMAIN=$(pwd)\nPROJECT_NAME=$(basename \"${PROJECTMAIN}\")\nlastBuildTxtFile=\"${PROJECTMAIN}/build/${PROJECT_NAME}.build/${CONFIGURATION}/lastBuild.txt\"\necho -e \"starting build number script for ${PROJECTMAIN}\"\n\n# find the plist file\nif [ -f \"${PROJECTMAIN}/Info.plist\" ]  \nthen  \n\tbuildPlist=\"${PROJECTMAIN}/Info.plist\"  \nelse  \n\techo -e \"Can't find the plist: ${PROJECT_NAME}-Info.plist\"  \n\texit 1  \nfi\n\n# try and get the build version from the plist  \nbuildVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${buildPlist}\" 2>/dev/null)  \nif [ \"${buildVersion}\" = \"\" ]  \nthen  \n\techo -e \"\\\"${buildPlist}\\\" does not contain key: \\\"CFBundleVersion\\\"\"  \n\texit 1  \nfi\n   \n# get the subversion revision  \nsvnVersion=$(svnversion . | perl -p -e \"s/([\\d]*:)([\\d+[M|S]*).*/\\$2/\")\n\n# load and parse last build information\nif [ -f ${lastBuildTxtFile} ]\nthen\n\tlastBuild=$(/bin/cat ${lastBuildTxtFile})\n\tIFS='.' \n\tset ${lastBuild}\n\tpreviousSvnVersion=${1}\n\tpreviousBuildNumber=${2}\nelse\n\tpreviousSvnVersion=-1\nfi\n\n# construct a new build number  \nIFS='.'  \nset $buildVersion\n\nMAJOR_VERSION=\"${1}.${2}.${3}\"\n   \nif [ ${previousSvnVersion} != ${svnVersion} ]  \nthen\n\tbuildNumber=0  \nelse\n\tbuildNumber=$(($previousBuildNumber + 1))  \nfi  \n   \nbuildNewVersion=\"${MAJOR_VERSION}.${svnVersion}.${buildNumber}\"  \necho -e \"Version number: ${buildNewVersion}\"\n   \n# write it back to the plist  \n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${buildNewVersion}\" \"${buildPlist}\"\n\n# write the svn revision of this build to an unversioned file\necho \"${svnVersion}.${buildNumber}\" > \"${lastBuildTxtFile}\"";
+		};
+		58CAE21312E606EF00B3411E /* Unset Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			comments = "This script resets the version number to remove the build number and reinsert placeholders\nThis should make for fewer diffs in the Info.plist file";
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Unset Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "PROJECTMAIN=$(pwd)\nPROJECT_NAME=$(basename \"${PROJECTMAIN}\")\n   \n# find the plist file\nif [ -f \"${PROJECTMAIN}/Info.plist\" ]\nthen\n\tbuildPlist=\"${PROJECTMAIN}/Info.plist\"\nelse\n\techo -e \"Can't find the plist: ${PROJECT_NAME}-Info.plist\"\n\texit 1\nfi\n\n# try and get the build version from the plist\nbuildVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${buildPlist}\" 2>/dev/null)\nif [ \"${buildVersion}\" = \"\" ]\nthen\n\techo -e \"\\\"${buildPlist}\\\" does not contain key: \\\"CFBundleVersion\\\"\"\n\texit 1\nfi\n\n# construct a new build number\nIFS='.'\nset $buildVersion\n\nMAJOR_VERSION=\"${1}.${2}.${3}\"\n   \nbuildNewVersion=\"${MAJOR_VERSION}.svnRev.buildNum\"\n   \n# write it back to the plist\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${buildNewVersion}\" \"${buildPlist}\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D5B49B1048680CD000E48DA /* Sources */ = {
