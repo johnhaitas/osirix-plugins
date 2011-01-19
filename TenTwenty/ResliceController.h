@@ -10,6 +10,11 @@
 #import "PluginFilter.h"
 #import "MPRHeaders.h"
 
+#define VECTOR(vec,origin,endopint) \
+vec[0] = endopint[0] - origin[0]; \
+vec[1] = endopint[1] - origin[1]; \
+vec[2] = endopint[2] - origin[2];
+
 #define MAG(v1) sqrt(v1[0]*v1[0]+v1[1]*v1[1]+v1[2]*v1[2]);
 
 #define UNIT(dest,v1) \
