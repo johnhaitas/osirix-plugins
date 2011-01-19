@@ -8,7 +8,7 @@ Unzip-Binaries:
 
 OsiriX:
 	make Unzip-Binaries
-	xcodebuild -project osirix/osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "OsiriX" build
+	xcodebuild -project osirix/osirix/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" build
 
 ViewTemplate:
 	xcodebuild -project ViewTemplate/ViewTemplate.xcodeproj -configuration ${BUILDCONFIGURATION} -target "ViewTemplate" build
