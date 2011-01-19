@@ -10,23 +10,6 @@
 #import "PluginFilter.h"
 #import "MPRHeaders.h"
 
-#define VECTOR(vec,origin,endopint) \
-vec[0] = endopint[0] - origin[0]; \
-vec[1] = endopint[1] - origin[1]; \
-vec[2] = endopint[2] - origin[2];
-
-#define MAG(v1) sqrt(v1[0]*v1[0]+v1[1]*v1[1]+v1[2]*v1[2]);
-
-#define UNIT(dest,v1) \
-dest[0]=v1[0]/MAG(v1); \
-dest[1]=v1[1]/MAG(v1); \
-dest[2]=v1[2]/MAG(v1);
-
-#define CROSS(dest,v1,v2) \
-dest[0]=v1[1]*v2[2]-v1[2]*v2[1]; \
-dest[1]=v1[2]*v2[0]-v1[0]*v2[2]; \
-dest[2]=v1[0]*v2[1]-v1[1]*v2[0];
-
 @interface ResliceController : NSObject {
     MPRDCMView *view;
 }
