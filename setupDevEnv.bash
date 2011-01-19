@@ -28,12 +28,11 @@ make OsiriX
 for PLUGIN_NAME in ${PLUGINS}
 do
 	# Build Plugin
-	make ${PLUGIN_NAME}
+	make "${PLUGIN_NAME}"
 	
 	# Link build products to OsiriX plugins dir
-	ln -Fs ${ROOT_DIR}/${PLUGIN_NAME}/build/${BUILD_CONFIG}/${PLUGIN_NAME}.osirixplugin "${PLUGINS_DIR}"
+	ln -Fs "${ROOT_DIR}/${PLUGIN_NAME}/build/${BUILD_CONFIG}/${PLUGIN_NAME}.osirixplugin" "${PLUGINS_DIR}"
 	
 	# Link debugging symbols
-	ln -Fs ${ROOT_DIR}/${PLUGIN_NAME}/build/${PLUGIN_NAME}.build "${OSIRIX_BUILD_DIR}"
+	ln -Fs "${ROOT_DIR}/${PLUGIN_NAME}/build/${PLUGIN_NAME}.build" "${OSIRIX_BUILD_DIR}"
 done
-
