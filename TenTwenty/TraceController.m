@@ -8,6 +8,20 @@
 
 #import "TraceController.h"
 
+#define PI 3.14159265358979
+
+#define VECTOR(vec,origin,endopint) \
+    vec[0] = endopint[0] - origin[0]; \
+    vec[1] = endopint[1] - origin[1]; \
+    vec[2] = endopint[2] - origin[2];
+
+#define MAG(v1) sqrt(v1[0]*v1[0]+v1[1]*v1[1]+v1[2]*v1[2]);
+
+#define UNIT(dest,v1) \
+    dest[0]=v1[0]/MAG(v1); \
+    dest[1]=v1[1]/MAG(v1); \
+    dest[2]=v1[2]/MAG(v1);
+
 @implementation TraceController
 
 @synthesize minScalp,maxSkull,searchPaths,trace;
@@ -56,10 +70,8 @@
     midpoint[1] = (pointA[1] + pointB[1]) / 2.0;
     midpoint[2] = (pointA[2] + pointB[2]) / 2.0;
     
-    // displacement will be used to compute step size
-    displacement[0] = pointB[0] - pointA[0];
-    displacement[1] = pointB[1] - pointA[1];
-    displacement[2] = pointB[2] - pointA[2];
+    // displacement vector will be used to compute step size
+    VECTOR(displacement,pointA,pointB);
     
     // stepSize will be use to space intermediate points evenly
     stepSize[0] = displacement[0] / (float) numSections;
@@ -67,13 +79,8 @@
     stepSize[2] = displacement[2] / (float) numSections;
     
     // compute vectors for X and Y in the image
-    xVector[0] = pointA[0] - midpoint[0];
-    xVector[1] = pointA[1] - midpoint[1];
-    xVector[2] = pointA[2] - midpoint[2];
-    
-    yVector[0] = vertex[0] - midpoint[0];
-    yVector[1] = vertex[1] - midpoint[1];
-    yVector[2] = vertex[2] - midpoint[2];
+    VECTOR(xVector,midpoint,pointA);
+    VECTOR(yVector,midpoint,vertex);
     
     // make our directional vectors unit vectors
     UNIT(unitX,xVector);
