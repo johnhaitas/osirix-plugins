@@ -9,8 +9,6 @@
 #import <Cocoa/Cocoa.h>
 #import "PluginFilter.h"
 
-#define FBOX(x) [NSNumber numberWithFloat:x]
-
 @interface LineDividerController : NSObject {
     DCMPix          *thePix;
     

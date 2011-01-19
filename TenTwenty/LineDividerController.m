@@ -8,6 +8,7 @@
 
 #import "LineDividerController.h"
 
+#define FBOX(x) [NSNumber numberWithFloat:x]
 
 @implementation LineDividerController
 
