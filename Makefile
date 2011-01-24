@@ -1,26 +1,45 @@
+DEFAULT_BUILDCONFIGURATION=Development
 
-BUILDCONFIGURATION=Development
+BUILDCONFIGURATION?=$(DEFAULT_BUILDCONFIGURATION)
+
+OSIRIX_SVN = https://osirix.svn.sourceforge.net/svnroot/osirix
+
+ifdef REV
+REVISION = -r$(REV)
+endif
 
 .PHONY: all Unzip-Binaries OsiriX ViewTemplate TenTwenty StereotaxPoint clean
+
+all: Unzip-Binaries OsiriX ViewTemplate TenTwenty StereotaxPoint
+
+clean:
+	xcodebuild -project osirix/osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} clean
+	make -C ViewTemplate clean
+	make -C TenTwenty clean
+	make -C StereotaxPoint clean
+	rm -rf osirix/osirix/build
+
+checkout:
+	svn co $(OSIRIX_SVN) $(REVISION)
 
 Unzip-Binaries: 
 	xcodebuild -project osirix/osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build
 
 OsiriX:
-	make Unzip-Binaries
 	xcodebuild -project osirix/osirix/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" build
 
 ViewTemplate:
-	xcodebuild -project ViewTemplate/ViewTemplate.xcodeproj -configuration ${BUILDCONFIGURATION} -target "ViewTemplate" build
+	make -C ViewTemplate
 
 TenTwenty:
-	xcodebuild -project TenTwenty/TenTwenty.xcodeproj -configuration ${BUILDCONFIGURATION} -target "TenTwenty" build
+	make -C TenTwenty
 
 StereotaxPoint:
-	xcodebuild -project StereotaxPoint/StereotaxPoint.xcodeproj -configuration ${BUILDCONFIGURATION} -target "StereotaxPoint" build
+	make -C StereotaxPoint
 
-clean:
-	xcodebuild -project osirix/osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} clean
-	xcodebuild -project ViewTemplate/ViewTemplate.xcodeproj -configuration ${BUILDCONFIGURATION} clean
-	xcodebuild -project TenTwenty/TenTwenty.xcodeproj -configuration ${BUILDCONFIGURATION} clean
-	xcodebuild -project StereotaxPoint/StereotaxPoint.xcodeproj -configuration ${BUILDCONFIGURATION} clean
+latest:
+	svn up osirix
+	make OsiriX
+	make -C ViewTemplate latest
+	make -C TenTwenty latest
+	make -C StereotaxPoint latest

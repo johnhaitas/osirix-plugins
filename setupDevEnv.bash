@@ -19,6 +19,9 @@ if [ -d "osirix" ]; then
 else
 	# Checkout OsiriX source
 	svn co https://osirix.svn.sourceforge.net/svnroot/osirix osirix
+	
+	# Fresh checkout requires Unzip-Binary
+	make Unzip-Binaries
 fi
 
 # Build OsiriX
