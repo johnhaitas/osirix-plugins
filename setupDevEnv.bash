@@ -5,7 +5,7 @@ BUILD_CONFIG=Development
 # Set useful directories
 ROOT_DIR=${PWD}
 PLUGINS_DIR="${HOME}/Library/Application Support/OsiriX/Plugins"
-OSIRIX_BUILD_DIR=${ROOT_DIR}/osirix/osirix/build/OsiriX.build/${BUILD_CONFIG}
+OSIRIX_BUILD_DIR=${ROOT_DIR}/osirix/build/OsiriX.build/${BUILD_CONFIG}
 
 # List of plugins
 PLUGINS="ViewTemplate
@@ -18,7 +18,7 @@ if [ -d "osirix" ]; then
 	svn up osirix
 else
 	# Checkout OsiriX source
-	svn co https://osirix.svn.sourceforge.net/svnroot/osirix osirix
+	make checkout
 	
 	# Fresh checkout requires Unzip-Binary
 	make Unzip-Binaries

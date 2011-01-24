@@ -2,7 +2,7 @@ DEFAULT_BUILDCONFIGURATION=Development
 
 BUILDCONFIGURATION?=$(DEFAULT_BUILDCONFIGURATION)
 
-OSIRIX_SVN = https://osirix.svn.sourceforge.net/svnroot/osirix
+OSIRIX_SVN = https://osirix.svn.sourceforge.net/svnroot/osirix/osirix
 
 ifdef REV
 REVISION = -r$(REV)
@@ -13,7 +13,7 @@ endif
 all: Unzip-Binaries OsiriX ViewTemplate TenTwenty StereotaxPoint
 
 clean:
-	xcodebuild -project osirix/osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} clean
+	xcodebuild -project osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} clean
 	make -C ViewTemplate clean
 	make -C TenTwenty clean
 	make -C StereotaxPoint clean
@@ -23,10 +23,10 @@ checkout:
 	svn co $(OSIRIX_SVN) $(REVISION)
 
 Unzip-Binaries: 
-	xcodebuild -project osirix/osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build
+	xcodebuild -project osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build
 
 OsiriX:
-	xcodebuild -project osirix/osirix/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" build
+	xcodebuild -project osirix/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" build
 
 ViewTemplate:
 	make -C ViewTemplate
