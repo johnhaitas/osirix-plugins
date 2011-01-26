@@ -10,7 +10,7 @@ ViewTemplate:
 	xcodebuild -project ViewTemplate.xcodeproj -configuration ${BUILDCONFIGURATION} -target "ViewTemplate" build
 
 clean:
-	xcodebuild -project ViewTemplate.xcodeproj -configuration ${BUILDCONFIGURATION} --alltargets clean
+	xcodebuild -project ViewTemplate.xcodeproj -configuration ${BUILDCONFIGURATION} -alltargets clean
 	rm -rf build
 
 latest:

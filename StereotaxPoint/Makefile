@@ -10,7 +10,7 @@ StereotaxPoint:
 	xcodebuild -project StereotaxPoint.xcodeproj -configuration ${BUILDCONFIGURATION} -target "StereotaxPoint" build
 
 clean:
-	xcodebuild -project StereotaxPoint.xcodeproj -configuration ${BUILDCONFIGURATION} --alltargets clean
+	xcodebuild -project StereotaxPoint.xcodeproj -configuration ${BUILDCONFIGURATION} -alltargets clean
 	rm -rf build
 
 latest:

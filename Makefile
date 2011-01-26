@@ -13,7 +13,7 @@ endif
 all: Unzip-Binaries OsiriX ViewTemplate TenTwenty StereotaxPoint
 
 clean:
-	xcodebuild -project osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} --alltargets clean
+	xcodebuild -project osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -alltargets clean
 	make -C ViewTemplate clean
 	make -C TenTwenty clean
 	make -C StereotaxPoint clean
