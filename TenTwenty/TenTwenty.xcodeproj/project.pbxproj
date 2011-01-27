@@ -70,6 +70,8 @@
 		585B6AE3125F662300D42896 /* TenTwentyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenTwentyController.m; sourceTree = "<group>"; };
 		585B740D1264B64F00D42896 /* TenTwentyHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenTwentyHUD.xib; sourceTree = "<group>"; };
 		58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tenTwentyInstructions.plist; sourceTree = "<group>"; };
+		58BF1C8512F1D9B80092D4B4 /* set_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.bash; sourceTree = "<group>"; };
+		58BF1C8612F1D9B80092D4B4 /* unset_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = unset_build_number.bash; sourceTree = "<group>"; };
 		58C9B0AE126CF28E00B3959E /* MPRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRController.h; sourceTree = "<group>"; };
 		58C9B0AF126CF28E00B3959E /* MPRDCMView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRDCMView.h; sourceTree = "<group>"; };
 		58C9B0B2126CF2A100B3959E /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
+				58BF1C8412F1D9B80092D4B4 /* Scripts */,
 				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
 			);
@@ -193,6 +196,15 @@
 				32DBCF630370AF2F00C91783 /* TenTwenty_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		58BF1C8412F1D9B80092D4B4 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				58BF1C8512F1D9B80092D4B4 /* set_build_number.bash */,
+				58BF1C8612F1D9B80092D4B4 /* unset_build_number.bash */,
+			);
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 		58C9B0AB126CF22700B3959E /* MPR Headers */ = {
@@ -390,7 +402,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "PROJECTMAIN=$(pwd)\nPROJECT_NAME=$(basename \"${PROJECTMAIN}\")\nlastBuildTxtFile=\"${PROJECTMAIN}/build/${PROJECT_NAME}.build/${CONFIGURATION}/lastBuild.txt\"\necho -e \"starting build number script for ${PROJECTMAIN}\"\n\n# find the plist file\nif [ -f \"${PROJECTMAIN}/Info.plist\" ]  \nthen  \n\tbuildPlist=\"${PROJECTMAIN}/Info.plist\"  \nelse  \n\techo -e \"Can't find the plist: ${PROJECT_NAME}-Info.plist\"  \n\texit 1  \nfi\n\n# try and get the build version from the plist  \nbuildVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${buildPlist}\" 2>/dev/null)  \nif [ \"${buildVersion}\" = \"\" ]  \nthen  \n\techo -e \"\\\"${buildPlist}\\\" does not contain key: \\\"CFBundleVersion\\\"\"  \n\texit 1  \nfi\n   \n# get the subversion revision  \nsvnVersion=$(svnversion . | perl -p -e \"s/([\\d]*:)([\\d+[M|S]*).*/\\$2/\")\n\n# load and parse last build information\nif [ -f ${lastBuildTxtFile} ]\nthen\n\tlastBuild=$(/bin/cat ${lastBuildTxtFile})\n\tIFS='.' \n\tset ${lastBuild}\n\tpreviousSvnVersion=${1}\n\tpreviousBuildNumber=${2}\nelse\n\tpreviousSvnVersion=-1\nfi\n\n# construct a new build number  \nIFS='.'  \nset $buildVersion\n\nMAJOR_VERSION=\"${1}.${2}.${3}\"\n   \nif [ ${previousSvnVersion} != ${svnVersion} ]  \nthen\n\tbuildNumber=0  \nelse\n\tbuildNumber=$(($previousBuildNumber + 1))  \nfi  \n   \nbuildNewVersion=\"${MAJOR_VERSION}.${svnVersion}.${buildNumber}\"  \necho -e \"Version number: ${buildNewVersion}\"\n   \n# write it back to the plist  \n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${buildNewVersion}\" \"${buildPlist}\"\n\n# write the svn revision of this build to an unversioned file\necho \"${svnVersion}.${buildNumber}\" > \"${lastBuildTxtFile}\"";
+			shellScript = "script_file=\"set_build_number.bash\"\necho -e \"starting ${script_file} script for ${PROJECTMAIN}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
 		};
 		58CAE0B012E5F19E00B3411E /* Unset Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -405,7 +417,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "PROJECTMAIN=$(pwd)\nPROJECT_NAME=$(basename \"${PROJECTMAIN}\")\n   \n# find the plist file\nif [ -f \"${PROJECTMAIN}/Info.plist\" ]\nthen\n\tbuildPlist=\"${PROJECTMAIN}/Info.plist\"\nelse\n\techo -e \"Can't find the plist: ${PROJECT_NAME}-Info.plist\"\n\texit 1\nfi\n\n# try and get the build version from the plist\nbuildVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${buildPlist}\" 2>/dev/null)\nif [ \"${buildVersion}\" = \"\" ]\nthen\n\techo -e \"\\\"${buildPlist}\\\" does not contain key: \\\"CFBundleVersion\\\"\"\n\texit 1\nfi\n\n# construct a new build number\nIFS='.'\nset $buildVersion\n\nMAJOR_VERSION=\"${1}.${2}.${3}\"\n   \nbuildNewVersion=\"${MAJOR_VERSION}.svnRev.buildNum\"\n   \n# write it back to the plist\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion ${buildNewVersion}\" \"${buildPlist}\"";
+			shellScript = "script_file=\"unset_build_number.bash\"\necho -e \"starting ${script_file} script for ${PROJECTMAIN}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
