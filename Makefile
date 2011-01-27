@@ -37,12 +37,11 @@ TenTwenty:
 StereotaxPoint:
 	make -C StereotaxPoint
 
-Plugins:
-	make -C ViewTemplate latest
-	make -C TenTwenty latest
-	make -C StereotaxPoint latest
+Plugins: ViewTemplate TenTwenty StereotaxPoint
 
 latest:
 	svn up osirix
 	make OsiriX
-	make Plugins
+	make -C ViewTemplate latest
+	make -C TenTwenty latest
+	make -C StereotaxPoint latest

@@ -299,7 +299,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "script_file=\"set_build_number.bash\"\necho -e \"starting ${script_file} script for ${PROJECTMAIN}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
+			shellScript = "script_file=\"set_build_number.bash\"\necho -e \"starting ${script_file} script for ${PROJECT_NAME}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
 		};
 		58CAE21312E606EF00B3411E /* Unset Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -314,7 +314,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "script_file=\"unset_build_number.bash\"\necho -e \"starting ${script_file} script for ${PROJECTMAIN}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
+			shellScript = "script_file=\"unset_build_number.bash\"\necho -e \"starting ${script_file} script for ${PROJECT_NAME}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
