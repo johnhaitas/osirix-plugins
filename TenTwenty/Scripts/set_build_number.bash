@@ -29,10 +29,10 @@ then
 fi
    
 # get the subversion last change revision  
-svnLastChangeRev=$(svn info | grep 'Last Changed Rev: ' | awk -F': ' '{print $2}')
+svnLastChangeRev=$(svn info -R | grep 'Last Changed Rev: ' | perl -pe "s/([\w|\s]*:\s)(\d*)/\$2/" | sort -nr | head -1)
 
 # check if working copy has been modified
-svnIsModified=$(svnversion . | perl -p -e "s/([\d]*:)?([\d]*)(M)/\$3/")
+svnIsModified=$(svnversion . | perl -pe "s/(\d*:)?(\d*)(M)/\$3/")
 
 if [ ${svnIsModified} == 'M' ]
 then
