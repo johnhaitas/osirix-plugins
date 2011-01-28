@@ -28,8 +28,20 @@ then
 	exit 1  
 fi
    
-# get the subversion revision  
-svnVersion=$(svnversion . | perl -p -e "s/([\d]*:)([\d+[M|S]*).*/\$2/")
+# get the subversion last change revision  
+svnLastChangeRev=$(svn info -R | grep 'Last Changed Rev: ' | perl -pe "s/([\w|\s]*:\s)(\d*)/\$2/" | sort -nr | head -1)
+
+# check if working copy has been modified
+svnIsModified=$(svnversion . | perl -pe "s/(\d*:)?(\d*)(M)/\$3/")
+
+if [ ${svnIsModified} == 'M' ]
+then
+    echo -e "Working copy is modified!!!"
+    svnLastChangeRev=${svnLastChangeRev}M
+    echo -e "${svnLastChangeRev}"
+else
+    echo -e "Working copy reflects repository"
+fi
 
 # load and parse last build information
 if [ -f ${lastBuildTxtFile} ]
@@ -49,18 +61,18 @@ set $buildVersion
 
 MAJOR_VERSION="${1}.${2}.${3}"
    
-if [ ${previousSvnVersion} != ${svnVersion} ]  
+if [ ${previousSvnVersion} != ${svnLastChangeRev} ]  
 then
 	buildNumber=0  
 else
 	buildNumber=$(($previousBuildNumber + 1))  
 fi  
    
-buildNewVersion="${MAJOR_VERSION}.${svnVersion}.${buildNumber}"  
+buildNewVersion="${MAJOR_VERSION}.${svnLastChangeRev}.${buildNumber}"  
 echo -e "Version number: ${buildNewVersion}"
    
 # write it back to the plist  
 /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${buildNewVersion}" "${buildPlist}"
 
 # write the svn revision of this build to an unversioned file
-echo "${svnVersion}.${buildNumber}" > "${lastBuildTxtFile}"
+echo "${svnLastChangeRev}.${buildNumber}" > "${lastBuildTxtFile}"
