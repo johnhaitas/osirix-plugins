@@ -32,6 +32,10 @@
     owner = stereotaxPointFilter;
     
     viewerController    = [owner valueForKey:@"viewerController"];
+    
+    // get name of study and series for saving and archiving data
+    studyName = [[[[viewerController imageView] seriesObj] valueForKey:@"study"] valueForKey:@"name"];
+    seriesName = [[[viewerController imageView] seriesObj] valueForKey:@"name"];
 }
 
 - (IBAction) open3dMpr: (id) sender
@@ -43,6 +47,30 @@
     [[mprViewer window] setTitle: [NSString stringWithFormat:@"%@: %@", [[mprViewer window] title], [[viewerController window] title]]];
 }
 
+
+- (IBAction) saveOrientation: (id) sender
+{
+    NSURL *saveLocation;
+    NSDictionary *stereotaxOrientation;
+    
+    saveLocation = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/stereotaxOrientation.plist",[self pathForSeriesData]]];
+    
+    stereotaxOrientation = [self generateOrientationDictionary];
+    
+    [stereotaxOrientation writeToURL:saveLocation atomically:YES];
+}
+
+- (IBAction) loadOrientation: (id) sender
+{
+    NSURL *loadLocation;
+    NSDictionary    *stereotaxOrientation;
+    
+    loadLocation = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/stereotaxOrientation.plist",[self pathForSeriesData]]];
+    
+    stereotaxOrientation = [NSDictionary dictionaryWithContentsOfURL:loadLocation];
+    
+    [self setOrientationFromDictionary:stereotaxOrientation];
+}
 
 - (IBAction) flipAPSigns: (id) sender
 {
@@ -281,6 +309,125 @@
                                                     blue: [[vrViewer.view valueForKey:@"point3DDefaultColorBlue"] floatValue]
                                                    alpha: [[vrViewer.view valueForKey:@"point3DDefaultColorAlpha"] floatValue] ]];   
 }
-         
+
+- (NSString *) pathForStereotaxPointData
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    NSString *folder = @"~/Library/Application Support/OsiriX/StereotaxPoint";
+    folder = [folder stringByExpandingTildeInPath];
+    
+    // create the folder if it doesn't exist    
+    if ([fileManager fileExistsAtPath: folder] == NO) {
+        DLog(@"Creating StereotaxPoint data folder at: %@",folder);
+        [fileManager createDirectoryAtPath: folder attributes: nil];
+    }
+    
+    return folder;
+}
+
+- (NSString *) pathForStudyData
+{
+    NSFileManager *fileManager;
+    NSString *studyFolder;
+    
+    fileManager     = [NSFileManager defaultManager];
+    studyFolder     = [[self pathForStereotaxPointData] stringByAppendingFormat:@"/%@",studyName];
+    
+    // create the study folder if it doesn't exist    
+    if ([fileManager fileExistsAtPath: studyFolder] == NO) {
+        DLog(@"Creating study folder at: %@",studyFolder);
+        [fileManager createDirectoryAtPath: studyFolder attributes: nil];
+    }
+    
+    return studyFolder;
+}
+
+- (NSString *) pathForSeriesData
+{
+    NSFileManager *fileManager;
+    NSString *seriesFolder;
+    
+    fileManager     = [NSFileManager defaultManager];
+    seriesFolder    = [[self pathForStudyData] stringByAppendingFormat:@"/%@",seriesName];
+    
+    // create the series folder if it doesn't exist    
+    if ([fileManager fileExistsAtPath: seriesFolder] == NO) {
+        DLog(@"Creating series folder at: %@",seriesFolder);
+        [fileManager createDirectoryAtPath: seriesFolder attributes: nil];
+    }
+    
+    return seriesFolder;
+}
+
+- (NSDictionary *) generateOrientationDictionary
+{
+    NSMutableDictionary *stereotaxOrientation,*origin,*axes,*ap,*ml,*dv;
+    
+    stereotaxOrientation    = [[NSMutableDictionary alloc] init];
+    origin                  = [[NSMutableDictionary alloc] init];
+    axes                    = [[NSMutableDictionary alloc] init];
+    ap                      = [[NSMutableDictionary alloc] init];
+    ml                      = [[NSMutableDictionary alloc] init];
+    dv                      = [[NSMutableDictionary alloc] init];
+    
+    // origin components
+    [origin setObject:[NSNumber numberWithFloat:[originX floatValue]] forKey:@"x"];
+    [origin setObject:[NSNumber numberWithFloat:[originY floatValue]] forKey:@"y"];
+    [origin setObject:[NSNumber numberWithFloat:[originZ floatValue]] forKey:@"z"];
+    
+    // AP axis components
+    [ap setObject:[NSNumber numberWithFloat:[apX floatValue]] forKey:@"x"];
+    [ap setObject:[NSNumber numberWithFloat:[apY floatValue]] forKey:@"y"];
+    [ap setObject:[NSNumber numberWithFloat:[apZ floatValue]] forKey:@"z"];
+    
+    // ML axis components
+    [ml setObject:[NSNumber numberWithFloat:[mlX floatValue]] forKey:@"x"];
+    [ml setObject:[NSNumber numberWithFloat:[mlY floatValue]] forKey:@"y"];
+    [ml setObject:[NSNumber numberWithFloat:[mlZ floatValue]] forKey:@"z"];
+    
+    // DV axis components
+    [dv setObject:[NSNumber numberWithFloat:[dvX floatValue]] forKey:@"x"];
+    [dv setObject:[NSNumber numberWithFloat:[dvY floatValue]] forKey:@"y"];
+    [dv setObject:[NSNumber numberWithFloat:[dvZ floatValue]] forKey:@"z"];
+    
+    // Axes
+    [axes setObject:ap forKey:@"AP"];
+    [axes setObject:ml forKey:@"ML"];
+    [axes setObject:dv forKey:@"DV"];
+    
+    // Complete dictionary for saving
+    [stereotaxOrientation setObject:origin forKey:@"Origin"];
+    [stereotaxOrientation setObject:axes forKey:@"Axes"];
+    
+    return [NSDictionary dictionaryWithDictionary:stereotaxOrientation];
+}
+
+- (void) setOrientationFromDictionary: (NSDictionary *) stereotaxOrientation
+{
+    NSDictionary *origin,*axes,*ap,*ml,*dv;
+    
+    origin = [stereotaxOrientation objectForKey:@"Origin"];
+    axes = [stereotaxOrientation objectForKey:@"Axes"];
+    ap = [axes objectForKey:@"AP"];
+    ml = [axes objectForKey:@"ML"];
+    dv = [axes objectForKey:@"DV"];
+    
+    [originX setFloatValue:[[origin objectForKey:@"x"] floatValue]];
+    [originY setFloatValue:[[origin objectForKey:@"y"] floatValue]];
+    [originZ setFloatValue:[[origin objectForKey:@"z"] floatValue]];
+    
+    [apX setFloatValue:[[ap objectForKey:@"x"] floatValue]];
+    [apY setFloatValue:[[ap objectForKey:@"y"] floatValue]];
+    [apZ setFloatValue:[[ap objectForKey:@"z"] floatValue]];
+    
+    [mlX setFloatValue:[[ml objectForKey:@"x"] floatValue]];
+    [mlY setFloatValue:[[ml objectForKey:@"y"] floatValue]];
+    [mlZ setFloatValue:[[ml objectForKey:@"z"] floatValue]];
+    
+    [dvX setFloatValue:[[dv objectForKey:@"x"] floatValue]];
+    [dvY setFloatValue:[[dv objectForKey:@"y"] floatValue]];
+    [dvZ setFloatValue:[[dv objectForKey:@"z"] floatValue]];
+}
 
 @end

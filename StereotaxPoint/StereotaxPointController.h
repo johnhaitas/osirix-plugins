@@ -20,6 +20,9 @@ dest[2]=v1[2]/MAG(v1);
 @interface StereotaxPointController : NSObject {
     
     PluginFilter    *owner;
+
+    NSString            *studyName;
+    NSString            *seriesName;
     
     ViewerController    *viewerController;
     MPRController       *mprViewer;
@@ -47,6 +50,8 @@ dest[2]=v1[2]/MAG(v1);
 - (void) prepareStereotaxPoint: (PluginFilter *) stereotaxPointFilter;
 
 - (IBAction) open3dMpr: (id) sender;
+- (IBAction) saveOrientation: (id) sender;
+- (IBAction) loadOrientation: (id) sender;
 - (IBAction) setOriginAndDirections: (id) sender;
 - (IBAction) flipAPSigns: (id) sender;
 - (IBAction) flipMLSigns: (id) sender;
@@ -64,5 +69,12 @@ dest[2]=v1[2]/MAG(v1);
 
 - (void) setPoint:(NSDictionary *) dict;
 - (void) getVrViewer3dPointColor;
+
+- (NSString *) pathForStereotaxPointData;
+- (NSString *) pathForStudyData;
+- (NSString *) pathForSeriesData;
+
+- (NSDictionary *) generateOrientationDictionary;
+- (void) setOrientationFromDictionary: (NSDictionary *) stereotaxOrientation;
 
 @end
