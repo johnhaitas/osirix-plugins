@@ -10,8 +10,7 @@ OSIRIX_SOURCE=${PWD}/osirix
 for PLUGIN_NAME in ${PLUGINS}
 do
 	pushd "${PLUGIN_NAME}/OsiriX Headers"
-	HEADERS=$(ls)
-	for thisHeader in ${HEADERS}
+	for thisHeader in *.h
 	do
 		if [ ${thisHeader} != "MPRHeaders.h" ]; then
 			cp ${OSIRIX_SOURCE}/${thisHeader} ./
