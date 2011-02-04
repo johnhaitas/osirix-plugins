@@ -8,4 +8,4 @@ This will do the following:
 		a) build the plugin with the Development configuration
 		b) link the Development build of the plugin in User space OsiriX plugin directory
 		c) link the Debugging symbols to the Development build of OsiriX
-			- this will enable you to debug your code if you setup an OsiriX executable in your plugin project
+			- this will enable you to debug your code in Xcode
