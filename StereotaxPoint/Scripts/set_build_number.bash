@@ -12,11 +12,11 @@ PROJECT_NAME=$(basename "${PROJECTMAIN}")
 lastBuildTxtFile="${CONFIGURATION_TEMP_DIR}/lastBuild.txt"
 
 # find the plist file
-if [ -f "${PROJECTMAIN}/Info.plist" ]  
+if [ -f "${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Info.plist" ]  
 then  
-	buildPlist="${PROJECTMAIN}/Info.plist"  
+	buildPlist="${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Info.plist"  
 else  
-	echo -e "Can't find the plist: ${PROJECT_NAME}/Info.plist"  
+	echo -e "Can't find the plist: ${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Info.plist"  
 	exit 1  
 fi
 
