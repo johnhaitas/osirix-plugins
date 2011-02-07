@@ -71,7 +71,6 @@
 		585B740D1264B64F00D42896 /* TenTwentyHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenTwentyHUD.xib; sourceTree = "<group>"; };
 		58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tenTwentyInstructions.plist; sourceTree = "<group>"; };
 		58BF1C8512F1D9B80092D4B4 /* set_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.bash; sourceTree = "<group>"; };
-		58BF1C8612F1D9B80092D4B4 /* unset_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = unset_build_number.bash; sourceTree = "<group>"; };
 		58C9B0AE126CF28E00B3959E /* MPRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRController.h; sourceTree = "<group>"; };
 		58C9B0AF126CF28E00B3959E /* MPRDCMView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRDCMView.h; sourceTree = "<group>"; };
 		58C9B0B2126CF2A100B3959E /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
@@ -202,7 +201,6 @@
 			isa = PBXGroup;
 			children = (
 				58BF1C8512F1D9B80092D4B4 /* set_build_number.bash */,
-				58BF1C8612F1D9B80092D4B4 /* unset_build_number.bash */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -322,13 +320,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE6A9A9008AC841300D0C1EE /* Build configuration list for PBXNativeTarget "TenTwenty" */;
 			buildPhases = (
-				58CAE04E12E4FBD300B3411E /* Set Build Number */,
 				8D5B49AD048680CD000E48DA /* Headers */,
 				8D5B49AF048680CD000E48DA /* Resources */,
 				8D5B49B1048680CD000E48DA /* Sources */,
+				58CAE04E12E4FBD300B3411E /* Set Build Number */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
 				8D5B49B5048680CD000E48DA /* Rez */,
-				58CAE0B012E5F19E00B3411E /* Unset Build Number */,
 			);
 			buildRules = (
 			);
@@ -403,21 +400,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
 			shellScript = "script_file=\"set_build_number.bash\"\necho -e \"starting ${script_file} script for ${PROJECT_NAME}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
-		};
-		58CAE0B012E5F19E00B3411E /* Unset Build Number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			comments = "This script resets the version number to remove the build number and reinsert placeholders\nThis should make for fewer diffs in the Info.plist file";
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Unset Build Number";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "script_file=\"unset_build_number.bash\"\necho -e \"starting ${script_file} script for ${PROJECT_NAME}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
