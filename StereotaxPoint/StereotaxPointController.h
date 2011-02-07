@@ -24,6 +24,9 @@ dest[2]=v1[2]/MAG(v1);
     NSString            *studyName;
     NSString            *seriesName;
     
+    NSFileManager       *fileManager;
+    NSString            *saveFileName;
+    
     ViewerController    *viewerController;
     MPRController       *mprViewer;
     VRController        *vrViewer;
