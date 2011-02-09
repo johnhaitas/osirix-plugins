@@ -107,7 +107,7 @@
     [view restoreCamera];
     
     // update the view
-    [view display];
+    [view.windowController updateViewsAccordingToFrame:view];
 }
 
 - (void) point3d: (Point3D *) point toWorldCoords: (float [3]) worldCoords
