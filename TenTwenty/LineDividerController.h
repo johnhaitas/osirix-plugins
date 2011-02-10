@@ -11,7 +11,7 @@
 
 @interface LineDividerController : NSObject {
     DCMPix          *thePix;
-    
+
 	float			scaleValue;
     NSDictionary    *lineIntervalsDict;
 	

@@ -49,43 +49,43 @@
     float       xVector[3],yVector[3],unitX[3],unitY[3];
     float       pixelSpacingX,pixelSpacingY;
     NSMutableArray      *intermediatePoints,*theseSearchPaths;
-    
+
     theseSearchPaths    = [[NSMutableArray alloc] init];
     intermediatePoints  = [[NSMutableArray alloc] init];
-    
+
     numSections = 20;
     numPoints = numSections + 1;
-    
+
     // parameters necessary for initializting a new ROI
     pixelSpacingX   = [pix pixelSpacingX];
     pixelSpacingY   = [pix pixelSpacingY];
-    
+
     // get the DICOM coords of each point
     [self point3d: pointAPt toDicomCoords:pointA];
     [self point3d: pointBPt toDicomCoords:pointB];
     [self point3d: vertexPt toDicomCoords:vertex];
-    
+
     // the mid point will be used to determine X and Y vectors
     midpoint[0] = (pointA[0] + pointB[0]) / 2.0;
     midpoint[1] = (pointA[1] + pointB[1]) / 2.0;
     midpoint[2] = (pointA[2] + pointB[2]) / 2.0;
-    
+
     // displacement vector will be used to compute step size
     VECTOR(displacement,pointA,pointB);
-    
+
     // stepSize will be use to space intermediate points evenly
     stepSize[0] = displacement[0] / (float) numSections;
     stepSize[1] = displacement[1] / (float) numSections;
     stepSize[2] = displacement[2] / (float) numSections;
-    
+
     // compute vectors for X and Y in the image
     VECTOR(xVector,midpoint,pointA);
     VECTOR(yVector,midpoint,vertex);
-    
+
     // make our directional vectors unit vectors
     UNIT(unitX,xVector);
     UNIT(unitY,yVector);
-    
+
     for (i = 0; i < numPoints; i++)
     {
         float   startPosition[3],sliceCoords[3];
@@ -133,18 +133,18 @@
         // add this point to intermediate points array
         [intermediatePoints addObject:[MyPoint point:endPoint]];
     }
-    
+
     searchPaths = [NSArray arrayWithArray:theseSearchPaths];
-    
+
     // allocate and initialize a new 'Open Polygon' ROI
     trace = [[[ROI alloc] initWithType: tOPolygon
                                       : pixelSpacingX
                                       : pixelSpacingY
                                       : NSMakePoint(0.0, 0.0)] autorelease];
-    
-    
+
+
     trace.name = [NSString stringWithString:@"trace"];
-    
+
     // set points for spline
     [trace setPoints:intermediatePoints];
 }
@@ -158,22 +158,22 @@
     BOOL    foundScalp,foundSkull;
     ROI     *thisROI;
     NSPoint point;
-    
+
     foundScalp = NO;
     foundSkull = NO;
-    
+
     scalingFactor = 0.1;
-    
+
     pixelSpacingX   = pix.pixelSpacingX;
     pixelSpacingY   = pix.pixelSpacingY;
-    
-    
+
+
     // allocate and initialize a new ROI
     thisROI = [[ROI alloc] initWithType: t2DPoint
                                        : pixelSpacingX
                                        : pixelSpacingY
                                        : NSMakePoint(0.0, 0.0)];
-    
+
     // look for scalp
     while (!foundScalp) {
         // move point in direction
@@ -201,7 +201,7 @@
             break;
         }
     }
-    
+
     // reverse direction and locate the skull
     while (!foundSkull) {
         // move point in opposite direction
@@ -230,7 +230,7 @@
         }
     }
     [thisROI release];
-    
+
     [pix convertDICOMCoords:position toSliceCoords:sliceCoords];
     point = NSMakePoint(sliceCoords[0]/pixelSpacingX, sliceCoords[1]/pixelSpacingY);
 

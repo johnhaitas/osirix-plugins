@@ -47,14 +47,14 @@
     long pointIndex;
 	NSMutableArray	*percentLength;
     NSEnumerator    *enumerator;
-    
+
     enumerator = [lineIntervalsDict keyEnumerator];
     id key;
 		
     currentSpline		= [roiOPoly splinePoints: scaleValue];
     currentInterPoints	= [[NSMutableDictionary alloc] initWithCapacity:0];
     percentLength		= [self computePercentLength:roiOPoly];
-    
+
     DLog(@"oPoly length = %f cm",[self measureOPolyLength:roiOPoly]);
         
     while (key = [enumerator nextObject]) {
@@ -76,18 +76,18 @@
 	int				thisRoiType;
 	float			pixelSpacingX,pixelSpacingY;
 	NSPoint			thisOrigin;
-    
+
     id              key;
     NSEnumerator    *enumerator;
-    
+
     NSMutableArray *newROIs;
-    
+
     newROIs = [[[NSMutableArray alloc] init] autorelease];
 	
 	// temporary pointers for creating new ROI
 	MyPoint			*thisPoint;
 	ROI				*thisROI;
-    
+
 	// parameters necessary for initializting a new ROI
 	thisRoiType		= t2DPoint;
 	pixelSpacingX	= [thePix pixelSpacingX];
@@ -113,7 +113,7 @@
         
 		[thisROI release];
     }
-    
+
     return [NSArray arrayWithArray:newROIs];
 }
 
@@ -148,10 +148,10 @@
 		[distanceFromStart addObject:FBOX(thisLength)];
 		[percentLength addObject:FBOX(thisPercent)];
 	}
-    
+
     // release object no longer needed
 	[distanceFromStart release];
-    
+
 	return percentLength;
 }
 
@@ -175,7 +175,7 @@
 	{
 		length += [roi Length:[[splinePoints objectAtIndex:i] point] :[[splinePoints objectAtIndex:i+1] point]];
 	}
-    
+
 	return length;
 }
 

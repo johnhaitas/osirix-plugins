@@ -24,28 +24,28 @@
 
 @interface TenTwentyController : NSWindowController {
     PluginFilter    *owner;
-    
+
     ViewerController    *viewerController;
-    
+
     NSDate              *startTime;
-    
+
     NSString            *studyName;
     NSString            *seriesName;
-    
+
     MPRController       *mprViewer;
     MPRDCMView          *sliceView;
-    
+
     int                 stepNumber;
-    
+
     ROI                 *skullTrace;
     NSArray             *searchPaths;
-    
+
     NSMutableDictionary     *landmarks;
     NSMutableDictionary     *allPoints;
     NSMutableDictionary     *extraPoints;
-    
+
     NSArray *brainROIs;
-    
+
     // HUD Outlets
     IBOutlet NSPanel        *tenTwentyHUDPanel;
     IBOutlet NSTextField    *minScalp;
