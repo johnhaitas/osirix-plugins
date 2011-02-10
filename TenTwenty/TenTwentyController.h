@@ -59,7 +59,7 @@
 #pragma mark Interface Methods
 - (IBAction) performTenTwentyMeasurments: (id) sender;
 
-- (void) identifyLandmarks;
+- (BOOL) identifyLandmarks;
 
 - (void) removeBrain;
 - (void) displayOnlyBrain;
@@ -85,7 +85,7 @@
 - (void) pointNamed: (NSString *)   name
       toDicomCoords: (float [3])    dicomCoords;
 
-- (void) roiWithName: (NSString *)  name 
+- (BOOL) roiWithName: (NSString *)  name 
        toDicomCoords: (float [3])   dicomCoords;
 
 - (ROI *) findRoiWithName: (NSString *) thisName;
