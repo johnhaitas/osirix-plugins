@@ -17,21 +17,21 @@
 - (long) filterImage:(NSString*) menuName
 {
     DLog(@"Starting Plugin\n");
-    
-    
+
+
     if ([NSBundle loadNibNamed:@"tenTwentyTemplateHUD" owner:self]) {
         DLog(@"successfully loaded xib");
     } else {
         DLog(@"failed to load xib");
     }
-    
+
     // these values should be made user configurable in the future
     minScalpValue = 45.0;
     maxSkullValue = 45.0;
-    
+
     // there should be an ROI named 'nasion' and 'inion'
     [self findUserInput];
-    
+
     // check if 'nasion' and 'inion' were found
     if (foundNasion && foundInion) {
         // pass the nasion and inion to the tenTwentyTemplate
@@ -58,7 +58,7 @@
                         nil, nil, nil);
     }
 
-    
+
     DLog(@"executed method\n");
     return 0;
 }
@@ -68,11 +68,11 @@
     // set variables according to user input in text fields
     minScalpValue = [minScalpField floatValue];
     maxSkullValue = [maxSkullField floatValue];
-    
-    
+
+
     // move electrodes 20 mm above skull
     [myTenTwenty shiftElectrodesUp: 20.0];
-    
+
     // now we are ready to add the electrodes to the DICOM
     // this call might belong somewhere else ...
     // ... possibly in in tenTwentyTemplate
@@ -84,15 +84,15 @@
     int     i,ii;
     float   location[3];
     ROI     *selectedROI;    
-    
+
     NSArray *pixList;
     NSArray *roiList;
     NSArray *thisRoiList;
     DCMPix  *thisPix;
-    
+
     pixList = [viewerController pixList];
     roiList = [viewerController roiList];
-    
+
     // step through each ROI list
     for (i = 0; i < [roiList count]; i++) {
         thisRoiList = [roiList objectAtIndex:i];
@@ -123,7 +123,7 @@
 {                
     NSMutableArray *roiPoints = [ thisROI points ];
     NSPoint roiCenterPoint;
-    
+
     // calc center of the ROI
     if ( [ thisROI type ] == t2DPoint ) {
         // ROI has a bug which causes miss-calculating center of 2DPoint roi
@@ -131,7 +131,7 @@
     } else {
         roiCenterPoint = [ thisROI centroid ];
     }
-    
+
     // convert pixel values to mm values
     [thisPix convertPixX:roiCenterPoint.x
                     pixY:roiCenterPoint.y
@@ -143,45 +143,45 @@
 
 - (void) getUserM1andM2
 {
-    
+
     int             indexML,bestSlice;
     float           dicomCoords[3],sliceCoords[3];
     StereotaxCoord  *M1;
-    
+
     // In this plugin, we will simply duplicate the current 2D window!
-    
+
     // Create new viewer in ML plane for selecting M1 and M2
     viewerML = [self duplicateCurrent2DViewerWindow];
-    
+
     // get the appropriate index for an ML value
     indexML = [[myTenTwenty.orientation objectForKey:@"ML"] intValue];
-    
+
     // get M1 electrode to locate best slice
     M1 = [myTenTwenty getElectrodeWithName:@"M1"];
-    
+
     // get DICOM coordinates for M1 electrode
     [M1 returnDICOMCoords:dicomCoords withOrientation:myTenTwenty.orientation];
-    
+
     // reslice DICOM on ML plane
     [viewerML processReslice: indexML :FALSE];
-    
+
     // get best slice to see M1    
     bestSlice = [DCMPix nearestSliceInPixelList:[[viewerML imageView] dcmPixList]
                                 withDICOMCoords:dicomCoords
                                     sliceCoords:sliceCoords                                    ];
-    
+
     // View slice for placing M1 and M2
     [[viewerML imageView] setIndex: bestSlice];
-    
+
     // update screen
     [viewerML updateImage:self];
-    
+
     // make the new viewer key window and bring it to the front
     [[viewerML window] makeKeyAndOrderFront:self];
-    
+
     // give the user 2D point tool
     [[viewerML imageView] setCurrentTool:t2DPoint];
-    
+
     // start a timer to wait for user to place 2 ROIs
     [NSTimer scheduledTimerWithTimeInterval:2
                                      target:self
@@ -195,9 +195,9 @@
     float  location[3];
     DCMPix  *thisPix;
     ROI     *selectedROI;
-    
+
     thisPix = [[viewerML imageView] curDCM];
-    
+
     if ([[[viewerML imageView] curRoiList] count] >= 2) {
         // we have located 2 ROIs
         [theTimer invalidate];
@@ -233,13 +233,13 @@
     int     thisRoiType,bestSlice;
     double  pixelSpacingX,pixelSpacingY;
     float   dicomCoords[3],sliceCoords[3];
-    
+
     // temporary pointers for creating new ROI
     ROI     *thisROI;
-    
+
     // pointer to current DCMPix in OsiriX
     DCMPix  *thisDCMPix    = [[viewerController imageView] curDCM];
-    
+
     // parameters necessary for initializting a new ROI
     thisRoiType     = t2DPoint;
     pixelSpacingX   = [thisDCMPix pixelSpacingX];
@@ -286,7 +286,7 @@
     [[[viewerController imageView] curRoiList] removeObjectIdenticalTo:thisROI];
     thisROI = [self findRoiWithName:@"inion"];
     [[[viewerController imageView] curRoiList] removeObjectIdenticalTo:thisROI];
-    
+
     // update screen
     [viewerController updateImage:self];
 }
@@ -300,7 +300,7 @@
     BOOL    foundScalp,foundSkull;
     NSPoint roiPosition;
     NSPoint offsetShift;
-    
+
     // initialize values
     indexDV         = [[myTenTwenty.orientation objectForKey:@"DV"] intValue];
     directionDV     = [[myTenTwenty.direction objectForKey:@"DV"] intValue];
@@ -311,10 +311,10 @@
     thisMax         = -1.0;
     pixelSpacingX   = [thisSlice pixelSpacingX];
     pixelSpacingY   = [thisSlice pixelSpacingY];
-    
+
     // select this ROI (prerequisite for [ROI roiMove: :] method)
     [thisROI setROIMode: ROI_selected];
-    
+
     if (indexDV == 2) {
         DLog(@"DV index indicates DV goes across slices... no implementation for this yet\n");
         return;
@@ -354,7 +354,7 @@
             break;
         }
     }
-    
+
     // drop till we locate the skull
     while (!foundSkull) {
         roiPosition = thisROI.rect.origin;
@@ -389,7 +389,7 @@
             break;
         }
     }
-    
+
     // put this ROI back to sleep
     [thisROI setROIMode: ROI_sleep];
 
@@ -402,7 +402,7 @@
 {
     NSArray *thisRoiList;
     ROI     *thisROI;
-    
+
     for (thisRoiList in [[vc imageView] dcmRoiList]) {
         for (thisROI in thisRoiList) {
             if ([thisROI.name isEqualToString:thisName]) {
@@ -410,7 +410,7 @@
             }
         }
     }
-    
+
     // if we don't find the ROI return nil
     return nil;
 }

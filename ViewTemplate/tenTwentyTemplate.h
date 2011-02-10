@@ -15,7 +15,7 @@
     StereotaxCoord          *userNasion,*userInion;
     double                  templateM1M2_AP;
     NSMutableDictionary     *orientation,*direction;
-    
+
     // electrodes is an array of StereotaxCoord objects
     NSMutableArray    *electrodes;
 }

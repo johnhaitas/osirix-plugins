@@ -18,7 +18,7 @@
     StereotaxCoord      *userM1,*userM2;
     tenTwentyTemplate   *myTenTwenty;
     ViewerController    *viewerML;
-    
+
     IBOutlet NSWindow       *scalpSkullSheet;
     IBOutlet NSTextField    *minScalpField;
     IBOutlet NSTextField    *maxSkullField;
