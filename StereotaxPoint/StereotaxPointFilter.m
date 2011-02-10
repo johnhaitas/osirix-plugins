@@ -16,9 +16,9 @@
 - (long) filterImage:(NSString*) menuName
 {
     stereotaxPointController = [[StereotaxPointController alloc] init];
-    
+
     [stereotaxPointController prepareStereotaxPoint:self];
-    
+
     return 0;
 }
 

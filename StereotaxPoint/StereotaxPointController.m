@@ -29,11 +29,11 @@
 
 - (void) prepareStereotaxPoint: (PluginFilter *) stereotaxPointFilter
 {
-    
+
     owner = stereotaxPointFilter;
-    
+
     viewerController    = [owner valueForKey:@"viewerController"];
-    
+
     // get name of study and series for saving and archiving data
     studyName = [[[[viewerController imageView] seriesObj] valueForKey:@"study"] valueForKey:@"name"];
     seriesName = [[[viewerController imageView] seriesObj] valueForKey:@"name"];
@@ -43,7 +43,7 @@
 
     // for some reason saveFileName goes out of scope outside of this method
     [saveFileName retain];
-    
+
     if ([fileManager fileExistsAtPath:saveFileName]) {
         NSDictionary    *stereotaxOrientation;
         
@@ -67,9 +67,9 @@
 - (IBAction) saveOrientation: (id) sender
 {
     NSDictionary *stereotaxOrientation;
-    
+
     stereotaxOrientation = [self generateOrientationDictionary];
-    
+
     [stereotaxOrientation writeToURL:[NSURL fileURLWithPath:saveFileName] atomically:YES];
 }
 
@@ -78,7 +78,7 @@
     NSDictionary    *stereotaxOrientation;
      
     stereotaxOrientation = [NSDictionary dictionaryWithContentsOfURL:[NSURL fileURLWithPath:saveFileName]];
-    
+
     [self setOrientationFromDictionary:stereotaxOrientation];
 }
 
@@ -110,14 +110,14 @@
     Point3D *thisDirection,*thisPosition;
     Camera  *cam;
     MPRDCMView *apView,*mlView,*dvView;
-    
+
     cam = mprViewer.mprView1.camera;
-    
+
     factor = [mprViewer.mprView1.vrView factor];
     clipRange = ( cam.clippingRangeFar - cam.clippingRangeNear ) / 2.0;
-    
+
     thisPosition = [[Point3D alloc] initWithPoint3D:cam.position];
-    
+
     // compute direction of camera for computing clipping plane
     thisDirection = [[Point3D alloc] initWithPoint3D:cam.focalPoint];
     [thisDirection subtract:thisPosition];
@@ -127,44 +127,44 @@
     UNIT(unitDir,dir);
     [thisDirection release];
     thisDirection = nil;
-    
+
     displacement[0] = clipRange * unitDir[0];
     displacement[1] = clipRange * unitDir[1];
     displacement[2] = clipRange * unitDir[2];
-    
+
     // compute the origin by adding diplacement to position and convert back to DICOM coords
     origin[0] = (thisPosition.x + displacement[0]) / factor;
     origin[1] = (thisPosition.y + displacement[1]) / factor;
     origin[2] = (thisPosition.z + displacement[2]) / factor;
-    
+
     // set origin   
     [originX setFloatValue: origin[0]];
     [originY setFloatValue: origin[1]];
     [originZ setFloatValue: origin[2]];
-    
+
     // get view selections from interface
     apView = [mprViewer valueForKey:[apViewSelect stringValue]];
     mlView = [mprViewer valueForKey:[mlViewSelect stringValue]];
     dvView = [mprViewer valueForKey:[dvViewSelect stringValue]];
-    
+
     // AP vector
     [self setAxisComponents: apView
                      xField: apX
                      yField: apY
                      zField: apZ        ];
-    
+
     // ML vector
     [self setAxisComponents: mlView
                      xField: mlX
                      yField: mlY
                      zField: mlZ        ];
-    
+
     // DV vector
     [self setAxisComponents: dvView
                      xField: dvX
                      yField: dvY
                      zField: dvZ        ];
-    
+
     // release allocated object
     [thisPosition release];
 }
@@ -327,50 +327,50 @@
 {    
     NSString *folder = @"~/Library/Application Support/OsiriX/StereotaxPoint";
     folder = [folder stringByExpandingTildeInPath];
-    
+
     // create the folder if it doesn't exist    
     if ([fileManager fileExistsAtPath: folder] == NO) {
         DLog(@"Creating StereotaxPoint data folder at: %@",folder);
         [fileManager createDirectoryAtPath: folder attributes: nil];
     }
-    
+
     return folder;
 }
 
 - (NSString *) pathForStudyData
 {
     NSString *studyFolder;
-    
+
     studyFolder     = [[self pathForStereotaxPointData] stringByAppendingFormat:@"/%@",studyName];
-    
+
     // create the study folder if it doesn't exist    
     if ([fileManager fileExistsAtPath: studyFolder] == NO) {
         DLog(@"Creating study folder at: %@",studyFolder);
         [fileManager createDirectoryAtPath: studyFolder attributes: nil];
     }
-    
+
     return studyFolder;
 }
 
 - (NSString *) pathForSeriesData
 {
     NSString *seriesFolder;
-    
+
     seriesFolder    = [[self pathForStudyData] stringByAppendingFormat:@"/%@",seriesName];
-    
+
     // create the series folder if it doesn't exist    
     if ([fileManager fileExistsAtPath: seriesFolder] == NO) {
         DLog(@"Creating series folder at: %@",seriesFolder);
         [fileManager createDirectoryAtPath: seriesFolder attributes: nil];
     }
-    
+
     return seriesFolder;
 }
 
 - (NSDictionary *) generateOrientationDictionary
 {
     NSDictionary *stereotaxOrientation,*origin,*axes,*ap,*ml,*dv;
-    
+
     // origin components
     origin = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:[originX floatValue]],@"x",
                                                         [NSNumber numberWithFloat:[originY floatValue]],@"y",
@@ -397,7 +397,7 @@
 
     // Axes
     axes = [NSDictionary dictionaryWithObjectsAndKeys:ap,@"AP",ml,@"ML",dv,@"DV",nil];
-    
+
     // Complete dictionary for saving
     stereotaxOrientation = [NSDictionary dictionaryWithObjectsAndKeys:origin,@"Origin",axes,@"Axes",nil];
 
@@ -407,25 +407,25 @@
 - (void) setOrientationFromDictionary: (NSDictionary *) stereotaxOrientation
 {
     NSDictionary *origin,*axes,*ap,*ml,*dv;
-    
+
     origin = [stereotaxOrientation objectForKey:@"Origin"];
     axes = [stereotaxOrientation objectForKey:@"Axes"];
     ap = [axes objectForKey:@"AP"];
     ml = [axes objectForKey:@"ML"];
     dv = [axes objectForKey:@"DV"];
-    
+
     [originX setFloatValue:[[origin objectForKey:@"x"] floatValue]];
     [originY setFloatValue:[[origin objectForKey:@"y"] floatValue]];
     [originZ setFloatValue:[[origin objectForKey:@"z"] floatValue]];
-    
+
     [apX setFloatValue:[[ap objectForKey:@"x"] floatValue]];
     [apY setFloatValue:[[ap objectForKey:@"y"] floatValue]];
     [apZ setFloatValue:[[ap objectForKey:@"z"] floatValue]];
-    
+
     [mlX setFloatValue:[[ml objectForKey:@"x"] floatValue]];
     [mlY setFloatValue:[[ml objectForKey:@"y"] floatValue]];
     [mlZ setFloatValue:[[ml objectForKey:@"z"] floatValue]];
-    
+
     [dvX setFloatValue:[[dv objectForKey:@"x"] floatValue]];
     [dvY setFloatValue:[[dv objectForKey:@"y"] floatValue]];
     [dvZ setFloatValue:[[dv objectForKey:@"z"] floatValue]];

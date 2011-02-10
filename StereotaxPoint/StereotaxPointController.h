@@ -18,19 +18,19 @@ dest[1]=v1[1]/MAG(v1); \
 dest[2]=v1[2]/MAG(v1);
 
 @interface StereotaxPointController : NSObject {
-    
+
     PluginFilter    *owner;
 
     NSString            *studyName;
     NSString            *seriesName;
-    
+
     NSFileManager       *fileManager;
     NSString            *saveFileName;
-    
+
     ViewerController    *viewerController;
     MPRController       *mprViewer;
     VRController        *vrViewer;
-    
+
     NSComboBox  *apViewSelect,*mlViewSelect,*dvViewSelect;
     NSTextField *originX,*originY,*originZ;
     NSTextField *apX,*apY,*apZ;
