@@ -82,12 +82,6 @@
     camPos[1] -= clipRange * unitDirection[1];
     camPos[2] -= clipRange * unitDirection[2];
 
-    // release existing position, focalPoint and viewUp ...
-    // ... we are about to allocate new objects in their place
-    [view.camera.position release];
-    [view.camera.focalPoint release];
-    [view.camera.viewUp release];
-
     // set the position
     view.camera.position    = [Point3D pointWithX:camPos[0]
                                                 y:camPos[1]
