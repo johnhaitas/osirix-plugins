@@ -29,6 +29,9 @@
     owner = thePlugin;
 
     viewerController    = [owner valueForKey:@"viewerController"];
+	
+	// initialize file manager
+    fileManager     = [NSFileManager defaultManager];
 
     // get name of study and series for saving and archiving data
     studyName = [[[[viewerController imageView] seriesObj] valueForKey:@"study"] valueForKey:@"name"];
@@ -73,11 +76,14 @@
         [self runInstructions:theseInstructions];
         
     }
+	
+	// save resulting points to file
+	[self allPointsToPList];
 
     // close MPR viewer and Ten Twenty HUD
     [mprViewer close];
     [tenTwentyHUDPanel close];
-
+	
     // make only brain visible
     [self displayOnlyBrain];
 
@@ -581,8 +587,6 @@
 
 - (NSString *) pathForTenTwentyData
 {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-
     NSString *folder = @"~/Library/Application Support/OsiriX/TenTwenty";
     folder = [folder stringByExpandingTildeInPath];
 
@@ -597,10 +601,8 @@
 
 - (NSString *) pathForStudyData
 {
-    NSFileManager *fileManager;
     NSString *studyFolder;
-
-    fileManager     = [NSFileManager defaultManager];
+	
     studyFolder     = [[self pathForTenTwentyData] stringByAppendingFormat:@"/%@",studyName];
 
     // create the study folder if it doesn't exist    
@@ -614,10 +616,8 @@
 
 - (NSString *) pathForSeriesData
 {
-    NSFileManager *fileManager;
     NSString *seriesFolder;
 
-    fileManager     = [NSFileManager defaultManager];
     seriesFolder    = [[self pathForStudyData] stringByAppendingFormat:@"/%@",seriesName];
 
     // create the series folder if it doesn't exist    
@@ -631,10 +631,8 @@
 
 - (NSString *) pathForAnalysisData
 {
-    NSFileManager *fileManager;
     NSString *analysisFolder,*dateString;
-
-    fileManager     = [NSFileManager defaultManager];
+	
     dateString      = [startTime descriptionWithCalendarFormat:@"%Y%m%dt%H%M"
                                                       timeZone:[NSTimeZone localTimeZone]
                                                         locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
@@ -647,6 +645,39 @@
     }
 
     return analysisFolder;
+}
+
+- (void) allPointsToPList
+{
+    NSString *saveFileName;
+	NSEnumerator *enumerator;
+	NSMutableDictionary *allPointsWriteDict;
+	id key;
+	
+	// we will need to enumerator through all points dictionary
+	enumerator = [allPoints keyEnumerator];
+	
+	// temporary dictionary in format for saving
+	allPointsWriteDict = [[NSMutableDictionary alloc] init];
+	
+	
+	// save allPoints dictionary to file
+    saveFileName    = [NSString stringWithFormat:@"%@/allPoints.plist",[self pathForAnalysisData]];
+	
+	// specially prepare dictionary that will be writable to a file
+	while (key = [enumerator nextObject]) {
+		DLog(@"%@ - %@",(NSString *)key,[allPoints objectForKey:key]);
+		NSDictionary *thisPoint = [[allPoints objectForKey:key] exportToXML];
+		[allPointsWriteDict setObject:thisPoint forKey:key];
+		DLog(@"%@",allPointsWriteDict);
+	}
+	
+	// write the dictionary to file
+    [[NSDictionary dictionaryWithDictionary:allPointsWriteDict] writeToURL:[NSURL fileURLWithPath:saveFileName] atomically:YES];
+	
+	// release allocated object owned by this method
+	[allPointsWriteDict release];
+	allPointsWriteDict = nil;
 }
 
 // save image in sliceView to a png file

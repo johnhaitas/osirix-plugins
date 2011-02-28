@@ -27,6 +27,9 @@
 
     ViewerController    *viewerController;
 
+	
+    NSFileManager		*fileManager;
+	
     NSDate              *startTime;
 
     NSString            *studyName;
@@ -108,6 +111,8 @@
 - (NSString *) pathForStudyData;
 - (NSString *) pathForSeriesData;
 - (NSString *) pathForAnalysisData;
+
+- (void) allPointsToPList;
 
 - (void) sliceToFileNamed: (NSString *)  fileName;
 
