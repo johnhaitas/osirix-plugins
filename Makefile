@@ -5,7 +5,7 @@ BUILDCONFIGURATION?=$(DEFAULT_BUILDCONFIGURATION)
 OSIRIX_SVN = https://osirix.svn.sourceforge.net/svnroot/osirix/osirix
 
 ifdef REV
-REVISION = -r$(REV)
+REVISION = $(shell cat osirix-rev.txt)
 endif
 
 .PHONY: all Unzip-Binaries OsiriX ViewTemplate TenTwenty StereotaxPoint clean
@@ -20,7 +20,7 @@ clean:
 	rm -rf osirix/osirix/build
 
 checkout:
-	svn co $(OSIRIX_SVN) $(REVISION)
+	svn co $(OSIRIX_SVN) -r$(REVISION)
 
 Unzip-Binaries: 
 	xcodebuild -project osirix/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build

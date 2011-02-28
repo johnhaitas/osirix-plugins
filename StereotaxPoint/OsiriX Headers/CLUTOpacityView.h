@@ -25,7 +25,6 @@
 	float histogramOpacity;
 	float *volumePointer;
 	int voxelCount;
-	int protectionAgainstReentry;
 	vImagePixelCount *histogram;
 	int histogramSize;
 	float HUmin, HUmax; // houndsfield units bounds
@@ -69,7 +68,6 @@
 - (void)setVolumePointer:(float*)ptr width:(int)width height:(int)height numberOfSlices:(int)n;
 - (void)setHUmin:(float)min HUmax:(float)max;
 - (void)computeHistogram;
-- (void)callComputeHistogram;
 - (void)drawHistogramInRect:(NSRect)rect;
 
 #pragma mark -

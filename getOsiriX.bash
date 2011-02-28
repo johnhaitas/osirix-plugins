@@ -1,5 +1,9 @@
 #!/bin/bash
 
+osirixRev=`cat osirix-revision.txt`
+
+echo "${osirixRev}"
+
 if [ -d "osirix" ]; then
 	# Update OsiriX source
 	svn up osirix
