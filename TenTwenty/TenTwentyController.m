@@ -77,9 +77,12 @@
         
     }
 	
-	// save resulting points to file
+	// save resulting points to plist file
 	[self allPointsToPList];
 
+	// save electrodes to CSV file
+	[self electrodesToCSV];
+	
     // close MPR viewer and Ten Twenty HUD
     [mprViewer close];
     [tenTwentyHUDPanel close];
@@ -666,10 +669,8 @@
 	
 	// specially prepare dictionary that will be writable to a file
 	while (key = [enumerator nextObject]) {
-		DLog(@"%@ - %@",(NSString *)key,[allPoints objectForKey:key]);
 		NSDictionary *thisPoint = [[allPoints objectForKey:key] exportToXML];
 		[allPointsWriteDict setObject:thisPoint forKey:key];
-		DLog(@"%@",allPointsWriteDict);
 	}
 	
 	// write the dictionary to file
@@ -678,6 +679,41 @@
 	// release allocated object owned by this method
 	[allPointsWriteDict release];
 	allPointsWriteDict = nil;
+}
+
+- (BOOL) electrodesToCSV
+{
+    NSString	*saveFileName;
+	NSString	*csvContents;
+	NSArray		*electrodesList;
+	BOOL		success;
+	
+	// save electrodes to CSV file
+    saveFileName    = [NSString stringWithFormat:@"%@/electrodes.csv",[self pathForAnalysisData]];
+	
+	// start with an empty string for CSV contents
+	csvContents = [[NSString alloc] init];
+	
+	// get the list of electrodes from instructions
+	electrodesList = [[self loadInstructions] objectForKey:@"electrodesToPlace"];
+	
+	// generate CSV contents line by line
+	for (NSString *thisElectrodeName in electrodesList) {
+		Point3D *thisPoint;
+		NSString *thisLine;
+		thisPoint = [allPoints objectForKey:thisElectrodeName];
+		thisLine = [NSString stringWithFormat:@"%@,%f,%f,%f\n",thisElectrodeName,thisPoint.x,thisPoint.y,thisPoint.z];
+		csvContents = [csvContents stringByAppendingString:thisLine];
+	}
+	
+	// write CSV contents to file
+	success = [csvContents writeToURL:[NSURL fileURLWithPath:saveFileName]
+						   atomically:YES
+							 encoding:NSUTF8StringEncoding
+								error:NULL];
+	
+	// return whether the file was successfully written
+	return success;
 }
 
 // save image in sliceView to a png file

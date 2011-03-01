@@ -113,6 +113,7 @@
 - (NSString *) pathForAnalysisData;
 
 - (void) allPointsToPList;
+- (BOOL) electrodesToCSV;
 
 - (void) sliceToFileNamed: (NSString *)  fileName;
 
