@@ -29,11 +29,13 @@
 - (id) initWithPix: (DCMPix *)  thePix
           minScalp: (float)     theMinScalp
           maxSkull: (float)     theMaxSkull
+         numPoints: (int)       theNumPoints
 {
     if (self = [super init]) {
         pix         = thePix;
         minScalp    = theMinScalp;
         maxSkull    = theMaxSkull;
+        numPoints   = theNumPoints;
         
         searchPaths = nil;
     }
@@ -44,7 +46,7 @@
              toPointB: (Point3D *) pointBPt
            withVertex: (Point3D *) vertexPt
 {
-    int         i,numSections,numPoints;
+    int         i,numSections;
     float       pointA[3],pointB[3],vertex[3],midpoint[3],displacement[3],stepSize[3],searchDir[3];
     float       xVector[3],yVector[3],unitX[3],unitY[3];
     float       pixelSpacingX,pixelSpacingY;
@@ -53,8 +55,7 @@
     theseSearchPaths    = [[NSMutableArray alloc] init];
     intermediatePoints  = [[NSMutableArray alloc] init];
 
-    numSections = 20;
-    numPoints = numSections + 1;
+    numSections = numPoints - 1;
 
     // parameters necessary for initializting a new ROI
     pixelSpacingX   = [pix pixelSpacingX];

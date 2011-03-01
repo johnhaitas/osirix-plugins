@@ -13,6 +13,7 @@
 @interface TraceController : NSObject {
     DCMPix          *pix;
     float           minScalp,maxSkull;
+    int             numPoints;
     ROI             *trace;
     NSArray         *searchPaths;
 }
@@ -23,7 +24,8 @@
 
 - (id) initWithPix: (DCMPix *)  thePix
           minScalp: (float)     theMinScalp
-          maxSkull: (float)     theMaxSkull;
+          maxSkull: (float)     theMaxSkull
+         numPoints: (int)       theNumPoints;
 
 - (void) traceFromPtA: (Point3D *) pointAPt
              toPointB: (Point3D *) pointBPt

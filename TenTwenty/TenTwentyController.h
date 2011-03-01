@@ -27,9 +27,9 @@
 
     ViewerController    *viewerController;
 
-	
-    NSFileManager		*fileManager;
-	
+    
+    NSFileManager       *fileManager;
+    
     NSDate              *startTime;
 
     NSString            *studyName;
@@ -53,6 +53,7 @@
     IBOutlet NSPanel        *tenTwentyHUDPanel;
     IBOutlet NSTextField    *minScalp;
     IBOutlet NSTextField    *maxSkull;
+    IBOutlet NSTextField    *searchPoints;
     IBOutlet NSButton       *performTenTwentyMeasurments;
 }
 

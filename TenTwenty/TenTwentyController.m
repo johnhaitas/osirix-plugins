@@ -14,8 +14,11 @@
 {
     if (self = [super init]) {        
         [NSBundle loadNibNamed:@"TenTwentyHUD.nib" owner:self];
-        [minScalp setFloatValue:45.0];
-        [maxSkull setFloatValue:45.0];
+        
+        // set default field values
+        [minScalp        setFloatValue:45.0];
+        [maxSkull        setFloatValue:45.0];
+        [searchPoints    setIntValue:15];
         
         // set ROIs to display name only
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ROITEXTNAMEONLY"];
@@ -29,8 +32,8 @@
     owner = thePlugin;
 
     viewerController    = [owner valueForKey:@"viewerController"];
-	
-	// initialize file manager
+    
+    // initialize file manager
     fileManager     = [NSFileManager defaultManager];
 
     // get name of study and series for saving and archiving data
@@ -76,17 +79,17 @@
         [self runInstructions:theseInstructions];
         
     }
-	
-	// save resulting points to plist file
-	[self allPointsToPList];
+    
+    // save resulting points to plist file
+    [self allPointsToPList];
 
-	// save electrodes to CSV file
-	[self electrodesToCSV];
-	
+    // save electrodes to CSV file
+    [self electrodesToCSV];
+    
     // close MPR viewer and Ten Twenty HUD
     [mprViewer close];
     [tenTwentyHUDPanel close];
-	
+    
     // make only brain visible
     [self displayOnlyBrain];
 
@@ -286,7 +289,8 @@
 
     tracer  = [[TraceController alloc] initWithPix: sliceView.pix
                                           minScalp: [minScalp floatValue]
-                                          maxSkull: [maxSkull floatValue] ];
+                                          maxSkull: [maxSkull floatValue] 
+                                         numPoints: [searchPoints intValue]];
 
     pointA = [allPoints objectForKey:[traceInstructions objectForKey:@"point1"]];
     pointB = [allPoints objectForKey:[traceInstructions objectForKey:@"point2"]];
@@ -358,7 +362,7 @@
     [viewer setWLWW:iwl :iww];
     [viewerController place3DViewerWindow: viewer];
     [viewer load3DState];
-    [viewer showWindow:viewerController];			
+    [viewer showWindow:viewerController];            
     [[viewer window] makeKeyAndOrderFront:viewerController];
     [[viewer window] display];
     [[viewer window] setTitle: [NSString stringWithFormat:@"%@: %@", [[viewer window] title], [[self window] title]]];
@@ -605,7 +609,7 @@
 - (NSString *) pathForStudyData
 {
     NSString *studyFolder;
-	
+    
     studyFolder     = [[self pathForTenTwentyData] stringByAppendingFormat:@"/%@",studyName];
 
     // create the study folder if it doesn't exist    
@@ -635,7 +639,7 @@
 - (NSString *) pathForAnalysisData
 {
     NSString *analysisFolder,*dateString;
-	
+    
     dateString      = [startTime descriptionWithCalendarFormat:@"%Y%m%dt%H%M"
                                                       timeZone:[NSTimeZone localTimeZone]
                                                         locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
@@ -653,67 +657,67 @@
 - (void) allPointsToPList
 {
     NSString *saveFileName;
-	NSEnumerator *enumerator;
-	NSMutableDictionary *allPointsWriteDict;
-	id key;
-	
-	// we will need to enumerator through all points dictionary
-	enumerator = [allPoints keyEnumerator];
-	
-	// temporary dictionary in format for saving
-	allPointsWriteDict = [[NSMutableDictionary alloc] init];
-	
-	
-	// save allPoints dictionary to file
+    NSEnumerator *enumerator;
+    NSMutableDictionary *allPointsWriteDict;
+    id key;
+    
+    // we will need to enumerator through all points dictionary
+    enumerator = [allPoints keyEnumerator];
+    
+    // temporary dictionary in format for saving
+    allPointsWriteDict = [[NSMutableDictionary alloc] init];
+    
+    
+    // save allPoints dictionary to file
     saveFileName    = [NSString stringWithFormat:@"%@/allPoints.plist",[self pathForAnalysisData]];
-	
-	// specially prepare dictionary that will be writable to a file
-	while (key = [enumerator nextObject]) {
-		NSDictionary *thisPoint = [[allPoints objectForKey:key] exportToXML];
-		[allPointsWriteDict setObject:thisPoint forKey:key];
-	}
-	
-	// write the dictionary to file
+    
+    // specially prepare dictionary that will be writable to a file
+    while (key = [enumerator nextObject]) {
+        NSDictionary *thisPoint = [[allPoints objectForKey:key] exportToXML];
+        [allPointsWriteDict setObject:thisPoint forKey:key];
+    }
+    
+    // write the dictionary to file
     [[NSDictionary dictionaryWithDictionary:allPointsWriteDict] writeToURL:[NSURL fileURLWithPath:saveFileName] atomically:YES];
-	
-	// release allocated object owned by this method
-	[allPointsWriteDict release];
-	allPointsWriteDict = nil;
+    
+    // release allocated object owned by this method
+    [allPointsWriteDict release];
+    allPointsWriteDict = nil;
 }
 
 - (BOOL) electrodesToCSV
 {
-    NSString	*saveFileName;
-	NSString	*csvContents;
-	NSArray		*electrodesList;
-	BOOL		success;
-	
-	// save electrodes to CSV file
+    NSString    *saveFileName;
+    NSString    *csvContents;
+    NSArray        *electrodesList;
+    BOOL        success;
+    
+    // save electrodes to CSV file
     saveFileName    = [NSString stringWithFormat:@"%@/electrodes.csv",[self pathForAnalysisData]];
-	
-	// start with an empty string for CSV contents
-	csvContents = [[NSString alloc] init];
-	
-	// get the list of electrodes from instructions
-	electrodesList = [[self loadInstructions] objectForKey:@"electrodesToPlace"];
-	
-	// generate CSV contents line by line
-	for (NSString *thisElectrodeName in electrodesList) {
-		Point3D *thisPoint;
-		NSString *thisLine;
-		thisPoint = [allPoints objectForKey:thisElectrodeName];
-		thisLine = [NSString stringWithFormat:@"%@,%f,%f,%f\n",thisElectrodeName,thisPoint.x,thisPoint.y,thisPoint.z];
-		csvContents = [csvContents stringByAppendingString:thisLine];
-	}
-	
-	// write CSV contents to file
-	success = [csvContents writeToURL:[NSURL fileURLWithPath:saveFileName]
-						   atomically:YES
-							 encoding:NSUTF8StringEncoding
-								error:NULL];
-	
-	// return whether the file was successfully written
-	return success;
+    
+    // start with an empty string for CSV contents
+    csvContents = [[NSString alloc] init];
+    
+    // get the list of electrodes from instructions
+    electrodesList = [[self loadInstructions] objectForKey:@"electrodesToPlace"];
+    
+    // generate CSV contents line by line
+    for (NSString *thisElectrodeName in electrodesList) {
+        Point3D *thisPoint;
+        NSString *thisLine;
+        thisPoint = [allPoints objectForKey:thisElectrodeName];
+        thisLine = [NSString stringWithFormat:@"%@,%f,%f,%f\n",thisElectrodeName,thisPoint.x,thisPoint.y,thisPoint.z];
+        csvContents = [csvContents stringByAppendingString:thisLine];
+    }
+    
+    // write CSV contents to file
+    success = [csvContents writeToURL:[NSURL fileURLWithPath:saveFileName]
+                           atomically:YES
+                             encoding:NSUTF8StringEncoding
+                                error:NULL];
+    
+    // return whether the file was successfully written
+    return success;
 }
 
 // save image in sliceView to a png file
