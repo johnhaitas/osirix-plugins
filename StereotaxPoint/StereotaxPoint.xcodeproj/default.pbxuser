@@ -3,11 +3,12 @@
 	089C1669FE841209C02AAC07 /* Project object */ = {
 		activeArchitecturePreference = i386;
 		activeBuildConfigurationName = Development;
-		activeExecutable = 588966B512F0A180002435F6 /* OsiriX */;
+		activeExecutable = 58F9D5D113297B5400E7939F /* OsiriX Stable */;
 		activeTarget = 8D5B49AC048680CD000E48DA /* StereotaxPoint */;
-		codeSenseManager = 588966BD12F0A186002435F6 /* Code sense */;
+		codeSenseManager = 58F9D5DB13297B6900E7939F /* Code sense */;
 		executables = (
-			588966B512F0A180002435F6 /* OsiriX */,
+			58F9D5D113297B5400E7939F /* OsiriX Stable */,
+			58F9D5D313297B5D00E7939F /* OsiriX Unstable */,
 		);
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
@@ -46,14 +47,14 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 317759853;
-			PBXWorkspaceStateSaveDate = 317759853;
+			PBXPerProjectTemplateStateSaveDate = 321485623;
+			PBXWorkspaceStateSaveDate = 321485623;
 		};
-		sourceControlManager = 588966BC12F0A186002435F6 /* Source Control */;
+		sourceControlManager = 58F9D5DA13297B6900E7939F /* Source Control */;
 		userBuildSettings = {
 		};
 	};
-	588966B512F0A180002435F6 /* OsiriX */ = {
+	58F9D5D113297B5400E7939F /* OsiriX Stable */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
 		);
@@ -90,20 +91,72 @@
 		);
 		executableSystemSymbolLevel = 0;
 		executableUserSymbolLevel = 0;
-		launchableReference = 588966B612F0A180002435F6 /* OsiriX.app */;
+		launchableReference = 58F9D5D213297B5400E7939F /* OsiriX.app */;
 		libgmallocEnabled = 0;
-		name = OsiriX;
+		name = "OsiriX Stable";
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
+		startupPath = "<<ProjectDirectory>>";
 	};
-	588966B612F0A180002435F6 /* OsiriX.app */ = {
+	58F9D5D213297B5400E7939F /* OsiriX.app */ = {
 		isa = PBXFileReference;
 		name = OsiriX.app;
-		path = ../osirix/build/Development/OsiriX.app;
+		path = "../osirix-stable/build/Development/OsiriX.app";
 		sourceTree = SOURCE_ROOT;
 	};
-	588966BC12F0A186002435F6 /* Source Control */ = {
+	58F9D5D313297B5D00E7939F /* OsiriX Unstable */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 58F9D5D413297B5D00E7939F /* OsiriX.app */;
+		libgmallocEnabled = 0;
+		name = "OsiriX Unstable";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		startupPath = "<<ProjectDirectory>>";
+	};
+	58F9D5D413297B5D00E7939F /* OsiriX.app */ = {
+		isa = PBXFileReference;
+		name = OsiriX.app;
+		path = "../osirix-unstable/build/Development/OsiriX.app";
+		sourceTree = SOURCE_ROOT;
+	};
+	58F9D5DA13297B6900E7939F /* Source Control */ = {
 		isa = PBXSourceControlManager;
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 0;
@@ -113,7 +166,7 @@
 			};
 		};
 	};
-	588966BD12F0A186002435F6 /* Code sense */ = {
+	58F9D5DB13297B6900E7939F /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};

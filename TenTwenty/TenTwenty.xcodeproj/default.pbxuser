@@ -1,13 +1,13 @@
 // !$*UTF8*$!
 {
 	089C1669FE841209C02AAC07 /* Project object */ = {
-		activeArchitecturePreference = i386;
 		activeBuildConfigurationName = Development;
-		activeExecutable = 58DB13A212F098C60058C2AE /* OsiriX */;
+		activeExecutable = 58067B8D13297C53003C65B7 /* OsiriX Stable */;
 		activeTarget = 8D5B49AC048680CD000E48DA /* TenTwenty */;
-		codeSenseManager = 58DB13A112F098B70058C2AE /* Code sense */;
+		codeSenseManager = 58067B9713297C66003C65B7 /* Code sense */;
 		executables = (
-			58DB13A212F098C60058C2AE /* OsiriX */,
+			58067B8D13297C53003C65B7 /* OsiriX Stable */,
+			58067B8F13297C59003C65B7 /* OsiriX Unstable */,
 		);
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
@@ -46,28 +46,14 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 317757580;
-			PBXWorkspaceStateSaveDate = 317757580;
+			PBXPerProjectTemplateStateSaveDate = 321485891;
+			PBXWorkspaceStateSaveDate = 321485891;
 		};
-		sourceControlManager = 58DB13A012F098B70058C2AE /* Source Control */;
+		sourceControlManager = 58067B9613297C66003C65B7 /* Source Control */;
 		userBuildSettings = {
 		};
 	};
-	58DB13A012F098B70058C2AE /* Source Control */ = {
-		isa = PBXSourceControlManager;
-		fallbackIsa = XCSourceControlManager;
-		isSCMEnabled = 0;
-		scmConfiguration = {
-			repositoryNamesForRoots = {
-				"" = "";
-			};
-		};
-	};
-	58DB13A112F098B70058C2AE /* Code sense */ = {
-		isa = PBXCodeSenseManager;
-		indexTemplatePath = "";
-	};
-	58DB13A212F098C60058C2AE /* OsiriX */ = {
+	58067B8D13297C53003C65B7 /* OsiriX Stable */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
 		);
@@ -104,18 +90,82 @@
 		);
 		executableSystemSymbolLevel = 0;
 		executableUserSymbolLevel = 0;
-		launchableReference = 58DB13A312F098C60058C2AE /* OsiriX.app */;
+		launchableReference = 58067B8E13297C53003C65B7 /* OsiriX.app */;
 		libgmallocEnabled = 0;
-		name = OsiriX;
+		name = "OsiriX Stable";
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
 	};
-	58DB13A312F098C60058C2AE /* OsiriX.app */ = {
+	58067B8E13297C53003C65B7 /* OsiriX.app */ = {
 		isa = PBXFileReference;
 		name = OsiriX.app;
-		path = ../osirix/build/Development/OsiriX.app;
+		path = "../osirix-stable/build/Development/OsiriX.app";
 		sourceTree = SOURCE_ROOT;
+	};
+	58067B8F13297C59003C65B7 /* OsiriX Unstable */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 58067B9013297C59003C65B7 /* OsiriX.app */;
+		libgmallocEnabled = 0;
+		name = "OsiriX Unstable";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	58067B9013297C59003C65B7 /* OsiriX.app */ = {
+		isa = PBXFileReference;
+		name = OsiriX.app;
+		path = "../osirix-unstable/build/Development/OsiriX.app";
+		sourceTree = SOURCE_ROOT;
+	};
+	58067B9613297C66003C65B7 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	58067B9713297C66003C65B7 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
 	};
 	8D5B49AC048680CD000E48DA /* TenTwenty */ = {
 		activeExec = 0;

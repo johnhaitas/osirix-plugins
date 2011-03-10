@@ -3,11 +3,12 @@
 	089C1669FE841209C02AAC07 /* Project object */ = {
 		activeArchitecturePreference = i386;
 		activeBuildConfigurationName = Development;
-		activeExecutable = 5889668412F0A10D002435F6 /* OsiriX */;
+		activeExecutable = 58067B6813297BDA003C65B7 /* OsiriX Stable */;
 		activeTarget = 8D5B49AC048680CD000E48DA /* ViewTemplate */;
-		codeSenseManager = 5889668C12F0A116002435F6 /* Code sense */;
+		codeSenseManager = 58067B7013297BF5003C65B7 /* Code sense */;
 		executables = (
-			5889668412F0A10D002435F6 /* OsiriX */,
+			58067B6813297BDA003C65B7 /* OsiriX Stable */,
+			58067B6A13297BDD003C65B7 /* OsiriX Unstable */,
 		);
 		perUserDictionary = {
 			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
@@ -16,7 +17,7 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					22,
 					300,
-					229,
+					228.58349609375,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXExecutablesDataSource_ActiveFlagID,
@@ -46,14 +47,14 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 317759737;
-			PBXWorkspaceStateSaveDate = 317759737;
+			PBXPerProjectTemplateStateSaveDate = 321485815;
+			PBXWorkspaceStateSaveDate = 321485815;
 		};
-		sourceControlManager = 5889668B12F0A116002435F6 /* Source Control */;
+		sourceControlManager = 58067B6F13297BF5003C65B7 /* Source Control */;
 		userBuildSettings = {
 		};
 	};
-	5889668412F0A10D002435F6 /* OsiriX */ = {
+	58067B6813297BDA003C65B7 /* OsiriX Stable */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
 		);
@@ -90,20 +91,74 @@
 		);
 		executableSystemSymbolLevel = 0;
 		executableUserSymbolLevel = 0;
-		launchableReference = 5889668512F0A10D002435F6 /* OsiriX.app */;
+		launchableReference = 58067B6913297BDA003C65B7 /* OsiriX.app */;
 		libgmallocEnabled = 0;
-		name = OsiriX;
+		name = "OsiriX Stable";
 		showTypeColumn = 0;
 		sourceDirectories = (
 		);
+		startupPath = "<<ProjectDirectory>>";
 	};
-	5889668512F0A10D002435F6 /* OsiriX.app */ = {
+	58067B6913297BDA003C65B7 /* OsiriX.app */ = {
 		isa = PBXFileReference;
+		lastKnownFileType = wrapper.application;
 		name = OsiriX.app;
-		path = ../osirix/build/Development/OsiriX.app;
+		path = "../osirix-stable/build/Development/OsiriX.app";
 		sourceTree = SOURCE_ROOT;
 	};
-	5889668B12F0A116002435F6 /* Source Control */ = {
+	58067B6A13297BDD003C65B7 /* OsiriX Unstable */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+			"PBXLSLaunchAction-0" = {
+				PBXLSLaunchAction = 0;
+				PBXLSLaunchStartAction = 1;
+				PBXLSLaunchStdioStyle = 2;
+				PBXLSLaunchStyle = 0;
+				class = PBXLSRunLaunchConfig;
+				commandLineArgs = (
+				);
+				displayName = "Executable Runner";
+				environment = {
+				};
+				identifier = com.apple.Xcode.launch.runConfig;
+				remoteHostInfo = "";
+				startActionInfo = "";
+			};
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		launchableReference = 58067B6B13297BDD003C65B7 /* OsiriX.app */;
+		libgmallocEnabled = 0;
+		name = "OsiriX Unstable";
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		startupPath = "<<ProjectDirectory>>";
+	};
+	58067B6B13297BDD003C65B7 /* OsiriX.app */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = wrapper.application;
+		name = OsiriX.app;
+		path = "../osirix-unstable/build/Development/OsiriX.app";
+		sourceTree = SOURCE_ROOT;
+	};
+	58067B6F13297BF5003C65B7 /* Source Control */ = {
 		isa = PBXSourceControlManager;
 		fallbackIsa = XCSourceControlManager;
 		isSCMEnabled = 0;
@@ -113,7 +168,7 @@
 			};
 		};
 	};
-	5889668C12F0A116002435F6 /* Code sense */ = {
+	58067B7013297BF5003C65B7 /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
 	};

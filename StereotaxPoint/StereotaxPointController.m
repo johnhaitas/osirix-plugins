@@ -310,6 +310,8 @@
                              : [[pointColor color] redComponent] 
                              : [[pointColor color] greenComponent] 
                              : [[pointColor color] blueComponent]                               ];
+    
+    DLog(@"x,y,z = %f,%f,%f",x,y,z);
 
     // update the display
     [vrViewer.view display];
