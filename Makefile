@@ -33,7 +33,7 @@ OsiriX-Unstable:
 OsiriX:
 	make Unzip-Binaries
 	make OsiriX-Stable
-	make Osirix-Unstable
+	make OsiriX-Unstable
 
 ViewTemplate:
 	make -C ViewTemplate
