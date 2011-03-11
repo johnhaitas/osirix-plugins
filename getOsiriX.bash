@@ -14,7 +14,7 @@ else
 	svn co -r${OSIRIX_STABLE_REV} ${OSIRIX_SVN} ${OSIRIX_STABLE_DIR}
 fi
 
-if [-d "osirix-unstable" ]; then
+if [ -d "osirix-unstable" ]; then
 	# update OsiriX unstable source
 	svn up ${OSIRIX_UNSTABLE_DIR}
 else
