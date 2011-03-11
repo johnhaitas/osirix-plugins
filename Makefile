@@ -8,7 +8,7 @@ OSIRIX_REV = $(shell cat osirix-revision.txt 2> /dev/null || echo not)
 OSIRIX_STABLE_DIR = osirix-stable
 OSIRIX_UNSTABLE_DIR = osirix-unstable
 
-.PHONY: all Unzip-Binaries OsiriX ViewTemplate TenTwenty StereotaxPoint clean
+.PHONY: all Unzip-Binaries OsiriX-Stable OsiriX-Unstable OsiriX ViewTemplate TenTwenty StereotaxPoint clean
 
 all: Unzip-Binaries OsiriX ViewTemplate TenTwenty StereotaxPoint
 
@@ -24,9 +24,16 @@ Unzip-Binaries:
 	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build
 	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build
 
-OsiriX:
+OsiriX-Stable:
 	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" build
+
+OsiriX-Unstable:
 	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" build
+
+OsiriX:
+	make Unzip-Binaries
+	make OsiriX-Stable
+	make Osirix-Unstable
 
 ViewTemplate:
 	make -C ViewTemplate
@@ -39,3 +46,6 @@ StereotaxPoint:
 
 Plugins: ViewTemplate TenTwenty StereotaxPoint
 
+latest:
+	svn up ${OSIRIX_UNSTABLE_DIR}
+	make OsiriX-Unstable
