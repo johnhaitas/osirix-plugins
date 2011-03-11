@@ -1,6 +1,7 @@
 // !$*UTF8*$!
 {
 	089C1669FE841209C02AAC07 /* Project object */ = {
+		activeArchitecturePreference = i386;
 		activeBuildConfigurationName = Development;
 		activeExecutable = 58067B8D13297C53003C65B7 /* OsiriX Stable */;
 		activeTarget = 8D5B49AC048680CD000E48DA /* TenTwenty */;
