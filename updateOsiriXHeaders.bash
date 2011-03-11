@@ -3,8 +3,8 @@
 # List of plugins
 PLUGINS=$(cat plugin-list.txt)
 
-# Location of OsiriX headers
-OSIRIX_SOURCE=${PWD}/osirix
+# Location of *STABLE* OsiriX headers
+OSIRIX_STABLE_SOURCE=${PWD}/osirix-stable
 
 # update OsiriX Headers for each plugin
 for PLUGIN_NAME in ${PLUGINS}
@@ -13,7 +13,7 @@ do
 	for thisHeader in *.h
 	do
 		if [ ${thisHeader} != "MPRHeaders.h" ]; then
-			cp ${OSIRIX_SOURCE}/${thisHeader} ./
+			cp ${OSIRIX_STABLE_SOURCE}/${thisHeader} ./
 		fi
 	done
 	popd
