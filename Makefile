@@ -18,7 +18,6 @@ clean:
 	make -C ViewTemplate clean
 	make -C TenTwenty clean
 	make -C StereotaxPoint clean
-	rm -rf osirix/osirix/build
 
 Unzip-Binaries: 
 	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build
