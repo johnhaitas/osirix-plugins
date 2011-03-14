@@ -5,54 +5,10 @@
 		activeBuildConfigurationName = Development;
 		activeExecutable = 58067B8D13297C53003C65B7 /* OsiriX Stable */;
 		activeTarget = 8D5B49AC048680CD000E48DA /* TenTwenty */;
-		codeSenseManager = 58067B9713297C66003C65B7 /* Code sense */;
 		executables = (
 			58067B8D13297C53003C65B7 /* OsiriX Stable */,
 			58067B8F13297C59003C65B7 /* OsiriX Unstable */,
 		);
-		perUserDictionary = {
-			PBXConfiguration.PBXFileTableDataSource3.PBXExecutablesDataSource = {
-				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
-				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
-				PBXFileTableDataSourceColumnWidthsKey = (
-					22,
-					300,
-					229,
-				);
-				PBXFileTableDataSourceColumnsKey = (
-					PBXExecutablesDataSource_ActiveFlagID,
-					PBXExecutablesDataSource_NameID,
-					PBXExecutablesDataSource_CommentsID,
-				);
-			};
-			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
-				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
-				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
-				PBXFileTableDataSourceColumnWidthsKey = (
-					20,
-					341,
-					20,
-					48.16259765625,
-					43,
-					43,
-					20,
-				);
-				PBXFileTableDataSourceColumnsKey = (
-					PBXFileDataSource_FiletypeID,
-					PBXFileDataSource_Filename_ColumnID,
-					PBXFileDataSource_Built_ColumnID,
-					PBXFileDataSource_ObjectSize_ColumnID,
-					PBXFileDataSource_Errors_ColumnID,
-					PBXFileDataSource_Warnings_ColumnID,
-					PBXFileDataSource_Target_ColumnID,
-				);
-			};
-			PBXPerProjectTemplateStateSaveDate = 321485891;
-			PBXWorkspaceStateSaveDate = 321485891;
-		};
-		sourceControlManager = 58067B9613297C66003C65B7 /* Source Control */;
-		userBuildSettings = {
-		};
 	};
 	58067B8D13297C53003C65B7 /* OsiriX Stable */ = {
 		isa = PBXExecutable;
@@ -153,20 +109,6 @@
 		name = OsiriX.app;
 		path = "../osirix-unstable/build/Development/OsiriX.app";
 		sourceTree = SOURCE_ROOT;
-	};
-	58067B9613297C66003C65B7 /* Source Control */ = {
-		isa = PBXSourceControlManager;
-		fallbackIsa = XCSourceControlManager;
-		isSCMEnabled = 0;
-		scmConfiguration = {
-			repositoryNamesForRoots = {
-				"" = "";
-			};
-		};
-	};
-	58067B9713297C66003C65B7 /* Code sense */ = {
-		isa = PBXCodeSenseManager;
-		indexTemplatePath = "";
 	};
 	8D5B49AC048680CD000E48DA /* TenTwenty */ = {
 		activeExec = 0;
