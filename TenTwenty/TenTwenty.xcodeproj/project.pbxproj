@@ -17,6 +17,8 @@
 		585B6AE5125F662300D42896 /* TenTwentyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585B6AE3125F662300D42896 /* TenTwentyController.m */; };
 		585B740E1264B64F00D42896 /* TenTwentyHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585B740D1264B64F00D42896 /* TenTwentyHUD.xib */; };
 		588486EC132E73F900A97543 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 588486EB132E73F900A97543 /* Development.xcconfig */; };
+		58848852132E7E9700A97543 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848851132E7E9700A97543 /* Shared.xcconfig */; };
+		58848866132E811700A97543 /* Deployment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848865132E811700A97543 /* Deployment.xcconfig */; };
 		58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */; };
 		58C9B0B0126CF28E00B3959E /* MPRController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AE126CF28E00B3959E /* MPRController.h */; };
 		58C9B0B1126CF28E00B3959E /* MPRDCMView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AF126CF28E00B3959E /* MPRDCMView.h */; };
@@ -71,6 +73,8 @@
 		585B6AE3125F662300D42896 /* TenTwentyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenTwentyController.m; sourceTree = "<group>"; };
 		585B740D1264B64F00D42896 /* TenTwentyHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenTwentyHUD.xib; sourceTree = "<group>"; };
 		588486EB132E73F900A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = "Build Configuration/Development.xcconfig"; sourceTree = "<group>"; };
+		58848851132E7E9700A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = "Build Configuration/Shared.xcconfig"; sourceTree = "<group>"; };
+		58848865132E811700A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = "Build Configuration/Deployment.xcconfig"; sourceTree = "<group>"; };
 		58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tenTwentyInstructions.plist; sourceTree = "<group>"; };
 		58BF1C8512F1D9B80092D4B4 /* set_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.bash; sourceTree = "<group>"; };
 		58C9B0AE126CF28E00B3959E /* MPRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRController.h; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 		58848829132E777000A97543 /* Build Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				58848851132E7E9700A97543 /* Shared.xcconfig */,
+				58848865132E811700A97543 /* Deployment.xcconfig */,
 				588486EB132E73F900A97543 /* Development.xcconfig */,
 			);
 			name = "Build Configuration";
@@ -382,6 +388,8 @@
 				5837760D12D3D7D600704695 /* COPYING in Resources */,
 				5807CE2812E0F555007B0D76 /* InfoPlist.strings in Resources */,
 				588486EC132E73F900A97543 /* Development.xcconfig in Resources */,
+				58848852132E7E9700A97543 /* Shared.xcconfig in Resources */,
+				58848866132E811700A97543 /* Deployment.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,40 +556,22 @@
 		};
 		CE6A9A9508AC841300D0C1EE /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 588486EB132E73F900A97543 /* Development.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-					ppc64,
-					x86_64,
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Development;
 		};
 		CE6A9A9608AC841300D0C1EE /* Deployment */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58848865132E811700A97543 /* Deployment.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Deployment;
 		};
 		CE6A9A9708AC841300D0C1EE /* Default */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58848851132E7E9700A97543 /* Shared.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Default;
 		};

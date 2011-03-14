@@ -12,6 +12,8 @@
 		5837788312D65B3800704695 /* StereotaxPointController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5837788112D65B3800704695 /* StereotaxPointController.m */; };
 		583778BC12D65DF800704695 /* StereotaxPointHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583778BB12D65DF800704695 /* StereotaxPointHUD.xib */; };
 		58848838132E779B00A97543 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848837132E779B00A97543 /* Development.xcconfig */; };
+		58848870132E821D00A97543 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5884886F132E821D00A97543 /* Shared.xcconfig */; };
+		58848872132E822900A97543 /* Deployment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848871132E822900A97543 /* Deployment.xcconfig */; };
 		589A041912D7AC710020A7E6 /* CLUTOpacityView.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A040412D7AC710020A7E6 /* CLUTOpacityView.h */; };
 		589A041A12D7AC710020A7E6 /* ColorTransferView.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A040512D7AC710020A7E6 /* ColorTransferView.h */; };
 		589A041B12D7AC710020A7E6 /* ColorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A040612D7AC710020A7E6 /* ColorView.h */; };
@@ -59,6 +61,8 @@
 		5837788112D65B3800704695 /* StereotaxPointController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StereotaxPointController.m; sourceTree = "<group>"; };
 		583778BB12D65DF800704695 /* StereotaxPointHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StereotaxPointHUD.xib; sourceTree = "<group>"; };
 		58848837132E779B00A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = "Build Configuration/Development.xcconfig"; sourceTree = "<group>"; };
+		5884886F132E821D00A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = "Build Configuration/Shared.xcconfig"; sourceTree = "<group>"; };
+		58848871132E822900A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = "Build Configuration/Deployment.xcconfig"; sourceTree = "<group>"; };
 		589A040412D7AC710020A7E6 /* CLUTOpacityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUTOpacityView.h; sourceTree = "<group>"; };
 		589A040512D7AC710020A7E6 /* ColorTransferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTransferView.h; sourceTree = "<group>"; };
 		589A040612D7AC710020A7E6 /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
@@ -188,6 +192,8 @@
 		58848836132E778900A97543 /* Build Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				5884886F132E821D00A97543 /* Shared.xcconfig */,
+				58848871132E822900A97543 /* Deployment.xcconfig */,
 				58848837132E779B00A97543 /* Development.xcconfig */,
 			);
 			name = "Build Configuration";
@@ -357,6 +363,8 @@
 				5807CE6F12E0F7E0007B0D76 /* InfoPlist.strings in Resources */,
 				58CAE22812E6080200B3411E /* COPYING in Resources */,
 				58848838132E779B00A97543 /* Development.xcconfig in Resources */,
+				58848870132E821D00A97543 /* Shared.xcconfig in Resources */,
+				58848872132E822900A97543 /* Deployment.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -519,42 +527,22 @@
 		};
 		CE6A9A9508AC841300D0C1EE /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58848837132E779B00A97543 /* Development.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-					ppc64,
-					x86_64,
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Development;
 		};
 		CE6A9A9608AC841300D0C1EE /* Deployment */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58848871132E822900A97543 /* Deployment.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-					ppc64,
-					x86_64,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Deployment;
 		};
 		CE6A9A9708AC841300D0C1EE /* Default */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5884886F132E821D00A97543 /* Shared.xcconfig */;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.5.sdk;
 			};
 			name = Default;
 		};

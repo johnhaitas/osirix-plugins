@@ -1,0 +1,3 @@
+#include "Shared.xcconfig"
+ARCHS = i386 ppc ppc64 x86_64
+

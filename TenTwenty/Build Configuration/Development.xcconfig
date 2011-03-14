@@ -1,1 +1,3 @@
+#include "Shared.xcconfig"
 ARCHS = i386
+GCC_PREPROCESSOR_DEFINITIONS = DEBUG
