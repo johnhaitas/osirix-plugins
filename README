@@ -2,10 +2,13 @@ To setup the development environment run the setupDevEnv.bash from Terminal
 $ ./setupDevEnv.bash
 
 This will do the following:
-	1) checkout a fresh copy of OsiriX
+	1) checkout a fresh copy of OsiriX (both stable and unstable)*
 	2) build OsiriX with the Development configuration
 	3) for each plugin perform the following steps:
 		a) build the plugin with the Development configuration
 		b) link the Development build of the plugin in User space OsiriX plugin directory
-		c) link the Debugging symbols to the Development build of OsiriX
+		c) link the Debugging symbols to the Development build of OsiriX (both stable and unstable)*
 			- this will enable you to debug your code in Xcode
+			
+* 'stable' refers to most current release code
+  'unstable' refers to head of osirix trunk
