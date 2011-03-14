@@ -3,3 +3,6 @@ INFOPLIST_FILE = Info.plist
 PRODUCT_NAME = StereotaxPoint
 WRAPPER_EXTENSION = osirixplugin
 LIBRARY_STYLE = Bundle
+
+GCC_PREFIX_HEADER = StereotaxPoint_Prefix.pch
+GCC_PRECOMPILE_PREFIX_HEADER = YES
