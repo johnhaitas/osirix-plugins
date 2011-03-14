@@ -20,6 +20,7 @@
 		58848852132E7E9700A97543 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848851132E7E9700A97543 /* Shared.xcconfig */; };
 		58848866132E811700A97543 /* Deployment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848865132E811700A97543 /* Deployment.xcconfig */; };
 		58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */; };
+		589D373B132E8F6800F91FA1 /* Build Configuration in Resources */ = {isa = PBXBuildFile; fileRef = 589D373A132E8F6800F91FA1 /* Build Configuration */; };
 		58C9B0B0126CF28E00B3959E /* MPRController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AE126CF28E00B3959E /* MPRController.h */; };
 		58C9B0B1126CF28E00B3959E /* MPRDCMView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AF126CF28E00B3959E /* MPRDCMView.h */; };
 		58C9B0B3126CF2A100B3959E /* Camera.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0B2126CF2A100B3959E /* Camera.h */; };
@@ -76,6 +77,7 @@
 		58848851132E7E9700A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = "Build Configuration/Shared.xcconfig"; sourceTree = "<group>"; };
 		58848865132E811700A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = "Build Configuration/Deployment.xcconfig"; sourceTree = "<group>"; };
 		58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tenTwentyInstructions.plist; sourceTree = "<group>"; };
+		589D373A132E8F6800F91FA1 /* Build Configuration */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = "Build Configuration"; sourceTree = "<group>"; };
 		58BF1C8512F1D9B80092D4B4 /* set_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.bash; sourceTree = "<group>"; };
 		58C9B0AE126CF28E00B3959E /* MPRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRController.h; sourceTree = "<group>"; };
 		58C9B0AF126CF28E00B3959E /* MPRDCMView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRDCMView.h; sourceTree = "<group>"; };
@@ -104,7 +106,7 @@
 		58CF976B12BAAA0200FCFBBF /* TraceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceController.m; sourceTree = "<group>"; };
 		59C2B9280FF0ED7100B50385 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB5D36050680E57E00F4007A /* TenTwenty.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenTwenty.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5D36050680E57E00F4007A /* .bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = .bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA48A640680BB600089EB4F /* TenTwentyFilter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TenTwentyFilter.h; sourceTree = "<group>"; };
 		ABA48A660680BB690089EB4F /* TenTwentyFilter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = TenTwentyFilter.m; sourceTree = "<group>"; };
 		ABB76339067FB2A8000912C1 /* DCMPix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DCMPix.h; sourceTree = "<group>"; };
@@ -191,7 +193,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB5D36050680E57E00F4007A /* TenTwenty.osirixplugin */,
+				AB5D36050680E57E00F4007A /* .bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,9 +209,10 @@
 		58848829132E777000A97543 /* Build Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				58848851132E7E9700A97543 /* Shared.xcconfig */,
 				58848865132E811700A97543 /* Deployment.xcconfig */,
 				588486EB132E73F900A97543 /* Development.xcconfig */,
+				589D373A132E8F6800F91FA1 /* Build Configuration */,
+				58848851132E7E9700A97543 /* Shared.xcconfig */,
 			);
 			name = "Build Configuration";
 			sourceTree = "<group>";
@@ -351,7 +354,7 @@
 			name = TenTwenty;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Invert;
-			productReference = AB5D36050680E57E00F4007A /* TenTwenty.osirixplugin */;
+			productReference = AB5D36050680E57E00F4007A /* .bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -390,6 +393,7 @@
 				588486EC132E73F900A97543 /* Development.xcconfig in Resources */,
 				58848852132E7E9700A97543 /* Shared.xcconfig in Resources */,
 				58848866132E811700A97543 /* Deployment.xcconfig in Resources */,
+				589D373B132E8F6800F91FA1 /* Build Configuration in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,18 +456,21 @@
 /* Begin XCBuildConfiguration section */
 		CE6A9A9108AC841300D0C1EE /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 589D373A132E8F6800F91FA1 /* Build Configuration */;
 			buildSettings = {
 			};
 			name = Development;
 		};
 		CE6A9A9208AC841300D0C1EE /* Deployment */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 589D373A132E8F6800F91FA1 /* Build Configuration */;
 			buildSettings = {
 			};
 			name = Deployment;
 		};
 		CE6A9A9308AC841300D0C1EE /* Default */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 589D373A132E8F6800F91FA1 /* Build Configuration */;
 			buildSettings = {
 			};
 			name = Default;

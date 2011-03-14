@@ -12,6 +12,7 @@
 		58848847132E77BD00A97543 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848846132E77BD00A97543 /* Development.xcconfig */; };
 		58848880132E82A900A97543 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5884887F132E82A900A97543 /* Shared.xcconfig */; };
 		58848882132E82BA00A97543 /* Deployment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848881132E82BA00A97543 /* Deployment.xcconfig */; };
+		589D3759132E90A300F91FA1 /* OsiriXPlugin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 589D3758132E90A300F91FA1 /* OsiriXPlugin.xcconfig */; };
 		58ADBBCB124A79F800DC7F62 /* StereotaxCoord.h in Headers */ = {isa = PBXBuildFile; fileRef = 58ADBBC9124A79F800DC7F62 /* StereotaxCoord.h */; };
 		58ADBBCC124A79F800DC7F62 /* StereotaxCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ADBBCA124A79F800DC7F62 /* StereotaxCoord.m */; };
 		58B1568312834A55004EAF70 /* tenTwentyTemplateHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B1568212834A55004EAF70 /* tenTwentyTemplateHUD.xib */; };
@@ -44,6 +45,7 @@
 		58848846132E77BD00A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = "Build Configuration/Development.xcconfig"; sourceTree = "<group>"; };
 		5884887F132E82A900A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = "Build Configuration/Shared.xcconfig"; sourceTree = "<group>"; };
 		58848881132E82BA00A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = "Build Configuration/Deployment.xcconfig"; sourceTree = "<group>"; };
+		589D3758132E90A300F91FA1 /* OsiriXPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = OsiriXPlugin.xcconfig; path = "Build Configuration/OsiriXPlugin.xcconfig"; sourceTree = "<group>"; };
 		58ADBBC9124A79F800DC7F62 /* StereotaxCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StereotaxCoord.h; sourceTree = "<group>"; };
 		58ADBBCA124A79F800DC7F62 /* StereotaxCoord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StereotaxCoord.m; sourceTree = "<group>"; };
 		58B1568212834A55004EAF70 /* tenTwentyTemplateHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tenTwentyTemplateHUD.xib; sourceTree = "<group>"; };
@@ -159,9 +161,10 @@
 		58848845132E77AC00A97543 /* Build Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				5884887F132E82A900A97543 /* Shared.xcconfig */,
 				58848881132E82BA00A97543 /* Deployment.xcconfig */,
 				58848846132E77BD00A97543 /* Development.xcconfig */,
+				589D3758132E90A300F91FA1 /* OsiriXPlugin.xcconfig */,
+				5884887F132E82A900A97543 /* Shared.xcconfig */,
 			);
 			name = "Build Configuration";
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				58848847132E77BD00A97543 /* Development.xcconfig in Resources */,
 				58848880132E82A900A97543 /* Shared.xcconfig in Resources */,
 				58848882132E82BA00A97543 /* Deployment.xcconfig in Resources */,
+				589D3759132E90A300F91FA1 /* OsiriXPlugin.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,104 +352,22 @@
 /* Begin XCBuildConfiguration section */
 		CE6A9A9108AC841300D0C1EE /* Development */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 589D3758132E90A300F91FA1 /* OsiriXPlugin.xcconfig */;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ViewTemplate_Prefix.pch;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "@executable_path/../Plug-ins";
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-undefined",
-					dynamic_lookup,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ViewTemplate;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = osirixplugin;
-				ZERO_LINK = NO;
 			};
 			name = Development;
 		};
 		CE6A9A9208AC841300D0C1EE /* Deployment */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 589D3758132E90A300F91FA1 /* OsiriXPlugin.xcconfig */;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ViewTemplate_Prefix.pch;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-undefined",
-					dynamic_lookup,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ViewTemplate;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				WRAPPER_EXTENSION = osirixplugin;
-				ZERO_LINK = NO;
 			};
 			name = Deployment;
 		};
 		CE6A9A9308AC841300D0C1EE /* Default */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 589D3758132E90A300F91FA1 /* OsiriXPlugin.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_TRIGRAPHS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ViewTemplate_Prefix.pch;
-				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
-				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = Info.plist;
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.3;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-undefined",
-					dynamic_lookup,
-				);
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ViewTemplate;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
 			};
 			name = Default;
 		};

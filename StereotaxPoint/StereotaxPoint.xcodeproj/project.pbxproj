@@ -36,6 +36,7 @@
 		589A042C12D7AC710020A7E6 /* WaitRendering.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A041712D7AC710020A7E6 /* WaitRendering.h */; };
 		589A042D12D7AC710020A7E6 /* Window3DController.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A041812D7AC710020A7E6 /* Window3DController.h */; };
 		589A043712D7AC820020A7E6 /* MPRHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A043612D7AC820020A7E6 /* MPRHeaders.h */; };
+		589D3774132E914B00F91FA1 /* OsiriXPlugin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 589D3773132E914B00F91FA1 /* OsiriXPlugin.xcconfig */; };
 		58CAE22812E6080200B3411E /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 58CAE22712E6080200B3411E /* COPYING */; };
 		59C2B9290FF0ED7100B50385 /* Notifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 59C2B9280FF0ED7100B50385 /* Notifications.h */; };
 		8D5B49AE048680CD000E48DA /* StereotaxPoint_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* StereotaxPoint_Prefix.pch */; };
@@ -85,11 +86,12 @@
 		589A041712D7AC710020A7E6 /* WaitRendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitRendering.h; sourceTree = "<group>"; };
 		589A041812D7AC710020A7E6 /* Window3DController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window3DController.h; sourceTree = "<group>"; };
 		589A043612D7AC820020A7E6 /* MPRHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRHeaders.h; sourceTree = "<group>"; };
+		589D3773132E914B00F91FA1 /* OsiriXPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = OsiriXPlugin.xcconfig; path = "Build Configuration/OsiriXPlugin.xcconfig"; sourceTree = "<group>"; };
 		58BF1CB112F1DED30092D4B4 /* set_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.bash; sourceTree = "<group>"; };
 		58CAE22712E6080200B3411E /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		59C2B9280FF0ED7100B50385 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB5D36050680E57E00F4007A /* TenTwenty.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenTwenty.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5D36050680E57E00F4007A /* .bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = .bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA48A640680BB600089EB4F /* StereotaxPointFilter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StereotaxPointFilter.h; sourceTree = "<group>"; };
 		ABA48A660680BB690089EB4F /* StereotaxPointFilter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = StereotaxPointFilter.m; sourceTree = "<group>"; };
 		ABB76339067FB2A8000912C1 /* DCMPix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DCMPix.h; sourceTree = "<group>"; };
@@ -176,7 +178,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB5D36050680E57E00F4007A /* TenTwenty.osirixplugin */,
+				AB5D36050680E57E00F4007A /* .bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,9 +194,10 @@
 		58848836132E778900A97543 /* Build Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				5884886F132E821D00A97543 /* Shared.xcconfig */,
 				58848871132E822900A97543 /* Deployment.xcconfig */,
 				58848837132E779B00A97543 /* Development.xcconfig */,
+				589D3773132E914B00F91FA1 /* OsiriXPlugin.xcconfig */,
+				5884886F132E821D00A97543 /* Shared.xcconfig */,
 			);
 			name = "Build Configuration";
 			sourceTree = "<group>";
@@ -327,7 +330,7 @@
 			name = StereotaxPoint;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Invert;
-			productReference = AB5D36050680E57E00F4007A /* TenTwenty.osirixplugin */;
+			productReference = AB5D36050680E57E00F4007A /* .bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -365,6 +368,7 @@
 				58848838132E779B00A97543 /* Development.xcconfig in Resources */,
 				58848870132E821D00A97543 /* Shared.xcconfig in Resources */,
 				58848872132E822900A97543 /* Deployment.xcconfig in Resources */,
+				589D3774132E914B00F91FA1 /* OsiriXPlugin.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

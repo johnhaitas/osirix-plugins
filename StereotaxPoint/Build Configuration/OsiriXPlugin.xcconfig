@@ -1,0 +1,6 @@
+INSTALL_PATH = @executable_path/../Plug-ins
+INFOPLIST_FILE = Info.plist
+PRODUCT_NAME = StereotaxPoint
+WRAPPER_EXTENSION = osirixplugin
+GCC_PREFIX_HEADER = StereotaxPoint_Prefix.pch
+LIBRARY_STYLE = Bundle
