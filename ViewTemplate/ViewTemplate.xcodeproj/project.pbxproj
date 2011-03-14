@@ -45,7 +45,7 @@
 		58ADBBC9124A79F800DC7F62 /* StereotaxCoord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StereotaxCoord.h; sourceTree = "<group>"; };
 		58ADBBCA124A79F800DC7F62 /* StereotaxCoord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StereotaxCoord.m; sourceTree = "<group>"; };
 		58B1568212834A55004EAF70 /* tenTwentyTemplateHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tenTwentyTemplateHUD.xib; sourceTree = "<group>"; };
-		58BF1CCB12F1DFA70092D4B4 /* set_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.bash; sourceTree = "<group>"; };
+		58BF1CCB12F1DFA70092D4B4 /* set_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
 		58C3680E124290A0009883A4 /* tenTwentyTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tenTwentyTemplate.h; sourceTree = "<group>"; };
 		58C3680F124290A0009883A4 /* tenTwentyTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tenTwentyTemplate.m; sourceTree = "<group>"; };
 		58C3702A1247AD7A009883A4 /* parseCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseCSV.h; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 		58BF1CCA12F1DFA70092D4B4 /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				58BF1CCB12F1DFA70092D4B4 /* set_build_number.bash */,
+				58BF1CCB12F1DFA70092D4B4 /* set_build_number.sh */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -312,7 +312,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "script_file=\"set_build_number.bash\"\necho -e \"starting ${script_file} script for ${PROJECT_NAME}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
+			shellScript = "script_file=\"set_build_number.sh\"\necho -e \"starting ${script_file} script for ${PROJECT_NAME}\"\n${PROJECT_DIR}/Scripts/${script_file}\nscriptExitStatus=$?\necho \"DONE with script: ${script_file} (exitStatus=${scriptExitStatus})\"\nexit \"${scriptExitStatus}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
