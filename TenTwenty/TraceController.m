@@ -136,7 +136,7 @@
     }
 
     searchPaths = [NSArray arrayWithArray:theseSearchPaths];
-
+    
     // allocate and initialize a new 'Open Polygon' ROI
     trace = [[[ROI alloc] initWithType: tOPolygon
                                       : pixelSpacingX
@@ -148,6 +148,10 @@
 
     // set points for spline
     [trace setPoints:intermediatePoints];
+    
+    // release locally allocated objects
+    [theseSearchPaths release];
+    [intermediatePoints release];
 }
 
 - (NSPoint) findFromPosition: (float [3])    position

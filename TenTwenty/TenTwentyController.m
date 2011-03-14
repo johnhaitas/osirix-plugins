@@ -696,7 +696,7 @@
     saveFileName    = [NSString stringWithFormat:@"%@/electrodes.csv",[self pathForAnalysisData]];
     
     // start with an empty string for CSV contents
-    csvContents = [[NSString alloc] init];
+    csvContents = [NSString stringWithString:@""];
     
     // get the list of electrodes from instructions
     electrodesList = [[self loadInstructions] objectForKey:@"electrodesToPlace"];
@@ -715,7 +715,7 @@
                            atomically:YES
                              encoding:NSUTF8StringEncoding
                                 error:NULL];
-    
+
     // return whether the file was successfully written
     return success;
 }
