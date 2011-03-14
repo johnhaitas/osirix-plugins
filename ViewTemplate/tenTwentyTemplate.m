@@ -69,7 +69,6 @@
     NSNumber        *diffAP,*diffML,*diffDV;
     NSMutableArray  *diff;
 
-
     diffAP  = [[NSNumber alloc] initWithDouble:(userNasion.AP - userInion.AP)];
     diffML  = [[NSNumber alloc] initWithDouble:(userNasion.ML - userInion.ML)];
     diffDV  = [[NSNumber alloc] initWithDouble:(userNasion.DV - userInion.DV)];
@@ -95,7 +94,7 @@
 
     // first we identify and eliminate ML ...
     // ... there should be only one plane with no difference
-    for (i = 0; i < [diff count]; i++) {
+    for (i = 0; i < 3; i++) {
         thisDouble = [[diff objectAtIndex:i] doubleValue];
         if (thisDouble == 0.0) {
             // found ML ... store its index
@@ -144,8 +143,6 @@
         indexAP = secondIndex;
         indexDV = firstIndex;
     }
-
-    DLog(@"dirAP ,dirML ,dirDV  = %d,%d,%d\n",dir[indexAP],dir[indexML],dir[indexDV]);
 
     // set orientation dictionary objects
     [orientation setObject:[NSNumber numberWithInt:indexAP] forKey:@"AP"];
