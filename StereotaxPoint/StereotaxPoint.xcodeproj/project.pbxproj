@@ -61,9 +61,9 @@
 		5837788012D65B3800704695 /* StereotaxPointController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StereotaxPointController.h; sourceTree = "<group>"; };
 		5837788112D65B3800704695 /* StereotaxPointController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StereotaxPointController.m; sourceTree = "<group>"; };
 		583778BB12D65DF800704695 /* StereotaxPointHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StereotaxPointHUD.xib; sourceTree = "<group>"; };
-		58848837132E779B00A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = "Build Configuration/Development.xcconfig"; sourceTree = "<group>"; };
-		5884886F132E821D00A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = "Build Configuration/Shared.xcconfig"; sourceTree = "<group>"; };
-		58848871132E822900A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = "Build Configuration/Deployment.xcconfig"; sourceTree = "<group>"; };
+		58848837132E779B00A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = xcconfigs/Development.xcconfig; sourceTree = "<group>"; };
+		5884886F132E821D00A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = xcconfigs/Shared.xcconfig; sourceTree = "<group>"; };
+		58848871132E822900A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = xcconfigs/Deployment.xcconfig; sourceTree = "<group>"; };
 		589A040412D7AC710020A7E6 /* CLUTOpacityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUTOpacityView.h; sourceTree = "<group>"; };
 		589A040512D7AC710020A7E6 /* ColorTransferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTransferView.h; sourceTree = "<group>"; };
 		589A040612D7AC710020A7E6 /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
@@ -86,12 +86,12 @@
 		589A041712D7AC710020A7E6 /* WaitRendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitRendering.h; sourceTree = "<group>"; };
 		589A041812D7AC710020A7E6 /* Window3DController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window3DController.h; sourceTree = "<group>"; };
 		589A043612D7AC820020A7E6 /* MPRHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRHeaders.h; sourceTree = "<group>"; };
-		589D3773132E914B00F91FA1 /* OsiriXPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = OsiriXPlugin.xcconfig; path = "Build Configuration/OsiriXPlugin.xcconfig"; sourceTree = "<group>"; };
+		589D3773132E914B00F91FA1 /* OsiriXPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = OsiriXPlugin.xcconfig; path = xcconfigs/OsiriXPlugin.xcconfig; sourceTree = "<group>"; };
 		58BF1CB112F1DED30092D4B4 /* set_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.bash; sourceTree = "<group>"; };
 		58CAE22712E6080200B3411E /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		59C2B9280FF0ED7100B50385 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB5D36050680E57E00F4007A /* StereotaxPoint.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StereotaxPoint.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5D36050680E57E00F4007A /* .bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = .bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA48A640680BB600089EB4F /* StereotaxPointFilter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StereotaxPointFilter.h; sourceTree = "<group>"; };
 		ABA48A660680BB690089EB4F /* StereotaxPointFilter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = StereotaxPointFilter.m; sourceTree = "<group>"; };
 		ABB76339067FB2A8000912C1 /* DCMPix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DCMPix.h; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB5D36050680E57E00F4007A /* StereotaxPoint.osirixplugin */,
+				AB5D36050680E57E00F4007A /* .bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 			name = StereotaxPoint;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Invert;
-			productReference = AB5D36050680E57E00F4007A /* StereotaxPoint.osirixplugin */;
+			productReference = AB5D36050680E57E00F4007A /* .bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */

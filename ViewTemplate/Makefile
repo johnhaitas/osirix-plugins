@@ -2,7 +2,7 @@ DEFAULT_BUILDCONFIGURATION=Development
 
 BUILDCONFIGURATION?=$(DEFAULT_BUILDCONFIGURATION)
 
-XCCONFIG = -xcconfig "Build Configuration/Development.xcconfig"
+XCCONFIG = -xcconfig xcconfigs/Development.xcconfig
 
 .PHONY: all ViewTemplate clean latest
 

@@ -73,11 +73,11 @@
 		585B6AE2125F662300D42896 /* TenTwentyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TenTwentyController.h; sourceTree = "<group>"; };
 		585B6AE3125F662300D42896 /* TenTwentyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenTwentyController.m; sourceTree = "<group>"; };
 		585B740D1264B64F00D42896 /* TenTwentyHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenTwentyHUD.xib; sourceTree = "<group>"; };
-		588486EB132E73F900A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = "Build Configuration/Development.xcconfig"; sourceTree = "<group>"; };
-		58848851132E7E9700A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = "Build Configuration/Shared.xcconfig"; sourceTree = "<group>"; };
-		58848865132E811700A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = "Build Configuration/Deployment.xcconfig"; sourceTree = "<group>"; };
+		588486EB132E73F900A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = xcconfigs/Development.xcconfig; sourceTree = "<group>"; };
+		58848851132E7E9700A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = xcconfigs/Shared.xcconfig; sourceTree = "<group>"; };
+		58848865132E811700A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = xcconfigs/Deployment.xcconfig; sourceTree = "<group>"; };
 		58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tenTwentyInstructions.plist; sourceTree = "<group>"; };
-		589D37C1132E93DC00F91FA1 /* OsiriXPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = OsiriXPlugin.xcconfig; path = "Build Configuration/OsiriXPlugin.xcconfig"; sourceTree = "<group>"; };
+		589D37C1132E93DC00F91FA1 /* OsiriXPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = OsiriXPlugin.xcconfig; path = xcconfigs/OsiriXPlugin.xcconfig; sourceTree = "<group>"; };
 		58BF1C8512F1D9B80092D4B4 /* set_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.bash; sourceTree = "<group>"; };
 		58C9B0AE126CF28E00B3959E /* MPRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRController.h; sourceTree = "<group>"; };
 		58C9B0AF126CF28E00B3959E /* MPRDCMView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRDCMView.h; sourceTree = "<group>"; };
