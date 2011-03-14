@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		5807CEA112E0F8FD007B0D76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5807CE9F12E0F8FD007B0D76 /* InfoPlist.strings */; };
 		5837761712D3D85000704695 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 5837761612D3D85000704695 /* COPYING */; };
-		58848847132E77BD00A97543 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848846132E77BD00A97543 /* Development.xcconfig */; };
-		58848880132E82A900A97543 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5884887F132E82A900A97543 /* Shared.xcconfig */; };
-		58848882132E82BA00A97543 /* Deployment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848881132E82BA00A97543 /* Deployment.xcconfig */; };
-		589D3759132E90A300F91FA1 /* OsiriXPlugin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 589D3758132E90A300F91FA1 /* OsiriXPlugin.xcconfig */; };
 		58ADBBCB124A79F800DC7F62 /* StereotaxCoord.h in Headers */ = {isa = PBXBuildFile; fileRef = 58ADBBC9124A79F800DC7F62 /* StereotaxCoord.h */; };
 		58ADBBCC124A79F800DC7F62 /* StereotaxCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ADBBCA124A79F800DC7F62 /* StereotaxCoord.m */; };
 		58B1568312834A55004EAF70 /* tenTwentyTemplateHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B1568212834A55004EAF70 /* tenTwentyTemplateHUD.xib */; };
@@ -57,7 +53,7 @@
 		58C3703B1247AE52009883A4 /* zeroedTemplate.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zeroedTemplate.csv; sourceTree = "<group>"; };
 		59C2B9280FF0ED7100B50385 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB5D36050680E57E00F4007A /* .bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = .bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5D36050680E57E00F4007A /* ViewTemplate.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewTemplate.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA48A640680BB600089EB4F /* ViewTemplateFilter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ViewTemplateFilter.h; sourceTree = "<group>"; };
 		ABA48A660680BB690089EB4F /* ViewTemplateFilter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ViewTemplateFilter.m; sourceTree = "<group>"; };
 		ABB76339067FB2A8000912C1 /* DCMPix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DCMPix.h; sourceTree = "<group>"; };
@@ -145,7 +141,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB5D36050680E57E00F4007A /* .bundle */,
+				AB5D36050680E57E00F4007A /* ViewTemplate.osirixplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -251,7 +247,7 @@
 			name = ViewTemplate;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Invert;
-			productReference = AB5D36050680E57E00F4007A /* .bundle */;
+			productReference = AB5D36050680E57E00F4007A /* ViewTemplate.osirixplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -287,10 +283,6 @@
 				58B1568312834A55004EAF70 /* tenTwentyTemplateHUD.xib in Resources */,
 				5837761712D3D85000704695 /* COPYING in Resources */,
 				5807CEA112E0F8FD007B0D76 /* InfoPlist.strings in Resources */,
-				58848847132E77BD00A97543 /* Development.xcconfig in Resources */,
-				58848880132E82A900A97543 /* Shared.xcconfig in Resources */,
-				58848882132E82BA00A97543 /* Deployment.xcconfig in Resources */,
-				589D3759132E90A300F91FA1 /* OsiriXPlugin.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

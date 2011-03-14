@@ -16,11 +16,7 @@
 		585B6AE4125F662300D42896 /* TenTwentyController.h in Headers */ = {isa = PBXBuildFile; fileRef = 585B6AE2125F662300D42896 /* TenTwentyController.h */; };
 		585B6AE5125F662300D42896 /* TenTwentyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585B6AE3125F662300D42896 /* TenTwentyController.m */; };
 		585B740E1264B64F00D42896 /* TenTwentyHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585B740D1264B64F00D42896 /* TenTwentyHUD.xib */; };
-		588486EC132E73F900A97543 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 588486EB132E73F900A97543 /* Development.xcconfig */; };
-		58848852132E7E9700A97543 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848851132E7E9700A97543 /* Shared.xcconfig */; };
-		58848866132E811700A97543 /* Deployment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848865132E811700A97543 /* Deployment.xcconfig */; };
 		58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */; };
-		589D37C2132E93DC00F91FA1 /* OsiriXPlugin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 589D37C1132E93DC00F91FA1 /* OsiriXPlugin.xcconfig */; };
 		58C9B0B0126CF28E00B3959E /* MPRController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AE126CF28E00B3959E /* MPRController.h */; };
 		58C9B0B1126CF28E00B3959E /* MPRDCMView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AF126CF28E00B3959E /* MPRDCMView.h */; };
 		58C9B0B3126CF2A100B3959E /* Camera.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0B2126CF2A100B3959E /* Camera.h */; };
@@ -390,10 +386,6 @@
 				58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */,
 				5837760D12D3D7D600704695 /* COPYING in Resources */,
 				5807CE2812E0F555007B0D76 /* InfoPlist.strings in Resources */,
-				588486EC132E73F900A97543 /* Development.xcconfig in Resources */,
-				58848852132E7E9700A97543 /* Shared.xcconfig in Resources */,
-				58848866132E811700A97543 /* Deployment.xcconfig in Resources */,
-				589D37C2132E93DC00F91FA1 /* OsiriXPlugin.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

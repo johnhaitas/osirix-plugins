@@ -11,9 +11,6 @@
 		5837788212D65B3800704695 /* StereotaxPointController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5837788012D65B3800704695 /* StereotaxPointController.h */; };
 		5837788312D65B3800704695 /* StereotaxPointController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5837788112D65B3800704695 /* StereotaxPointController.m */; };
 		583778BC12D65DF800704695 /* StereotaxPointHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583778BB12D65DF800704695 /* StereotaxPointHUD.xib */; };
-		58848838132E779B00A97543 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848837132E779B00A97543 /* Development.xcconfig */; };
-		58848870132E821D00A97543 /* Shared.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5884886F132E821D00A97543 /* Shared.xcconfig */; };
-		58848872132E822900A97543 /* Deployment.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848871132E822900A97543 /* Deployment.xcconfig */; };
 		589A041912D7AC710020A7E6 /* CLUTOpacityView.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A040412D7AC710020A7E6 /* CLUTOpacityView.h */; };
 		589A041A12D7AC710020A7E6 /* ColorTransferView.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A040512D7AC710020A7E6 /* ColorTransferView.h */; };
 		589A041B12D7AC710020A7E6 /* ColorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A040612D7AC710020A7E6 /* ColorView.h */; };
@@ -36,7 +33,6 @@
 		589A042C12D7AC710020A7E6 /* WaitRendering.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A041712D7AC710020A7E6 /* WaitRendering.h */; };
 		589A042D12D7AC710020A7E6 /* Window3DController.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A041812D7AC710020A7E6 /* Window3DController.h */; };
 		589A043712D7AC820020A7E6 /* MPRHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A043612D7AC820020A7E6 /* MPRHeaders.h */; };
-		589D3774132E914B00F91FA1 /* OsiriXPlugin.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 589D3773132E914B00F91FA1 /* OsiriXPlugin.xcconfig */; };
 		58CAE22812E6080200B3411E /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 58CAE22712E6080200B3411E /* COPYING */; };
 		59C2B9290FF0ED7100B50385 /* Notifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 59C2B9280FF0ED7100B50385 /* Notifications.h */; };
 		8D5B49AE048680CD000E48DA /* StereotaxPoint_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* StereotaxPoint_Prefix.pch */; };
@@ -91,7 +87,7 @@
 		58CAE22712E6080200B3411E /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		59C2B9280FF0ED7100B50385 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AB5D36050680E57E00F4007A /* .bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = .bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB5D36050680E57E00F4007A /* StereotaxPoint.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StereotaxPoint.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA48A640680BB600089EB4F /* StereotaxPointFilter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StereotaxPointFilter.h; sourceTree = "<group>"; };
 		ABA48A660680BB690089EB4F /* StereotaxPointFilter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = StereotaxPointFilter.m; sourceTree = "<group>"; };
 		ABB76339067FB2A8000912C1 /* DCMPix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DCMPix.h; sourceTree = "<group>"; };
@@ -178,7 +174,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB5D36050680E57E00F4007A /* .bundle */,
+				AB5D36050680E57E00F4007A /* StereotaxPoint.osirixplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,7 +326,7 @@
 			name = StereotaxPoint;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = Invert;
-			productReference = AB5D36050680E57E00F4007A /* .bundle */;
+			productReference = AB5D36050680E57E00F4007A /* StereotaxPoint.osirixplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -365,10 +361,6 @@
 				583778BC12D65DF800704695 /* StereotaxPointHUD.xib in Resources */,
 				5807CE6F12E0F7E0007B0D76 /* InfoPlist.strings in Resources */,
 				58CAE22812E6080200B3411E /* COPYING in Resources */,
-				58848838132E779B00A97543 /* Development.xcconfig in Resources */,
-				58848870132E821D00A97543 /* Shared.xcconfig in Resources */,
-				58848872132E822900A97543 /* Deployment.xcconfig in Resources */,
-				589D3774132E914B00F91FA1 /* OsiriXPlugin.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
