@@ -48,6 +48,15 @@ StereotaxPoint:
 
 Plugins: ViewTemplate TenTwenty StereotaxPoint
 
+release:
+	make -C ViewTemplate BUILDCONFIGURATION=Deployment
+	make -C TenTwenty BUILDCONFIGURATION=Deployment
+	make -C StereotaxPoint BUILDCONFIGURATION=Deployment
+	mkdir -p products
+	cp -r ViewTemplate/build/Deployment/ViewTemplate.osirixplugin products/
+	cp -r TenTwenty/build/Deployment/TenTwenty.osirixplugin products/
+	cp -r StereotaxPoint/build/Deployment/StereotaxPoint.osirixplugin products/
+
 latest:
 	svn up ${OSIRIX_UNSTABLE_DIR}
 	make OsiriX-Unstable
