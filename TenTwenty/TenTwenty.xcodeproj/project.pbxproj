@@ -16,6 +16,7 @@
 		585B6AE4125F662300D42896 /* TenTwentyController.h in Headers */ = {isa = PBXBuildFile; fileRef = 585B6AE2125F662300D42896 /* TenTwentyController.h */; };
 		585B6AE5125F662300D42896 /* TenTwentyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585B6AE3125F662300D42896 /* TenTwentyController.m */; };
 		585B740E1264B64F00D42896 /* TenTwentyHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585B740D1264B64F00D42896 /* TenTwentyHUD.xib */; };
+		588486EC132E73F900A97543 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 588486EB132E73F900A97543 /* Development.xcconfig */; };
 		58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */; };
 		58C9B0B0126CF28E00B3959E /* MPRController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AE126CF28E00B3959E /* MPRController.h */; };
 		58C9B0B1126CF28E00B3959E /* MPRDCMView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AF126CF28E00B3959E /* MPRDCMView.h */; };
@@ -69,6 +70,7 @@
 		585B6AE2125F662300D42896 /* TenTwentyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TenTwentyController.h; sourceTree = "<group>"; };
 		585B6AE3125F662300D42896 /* TenTwentyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenTwentyController.m; sourceTree = "<group>"; };
 		585B740D1264B64F00D42896 /* TenTwentyHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenTwentyHUD.xib; sourceTree = "<group>"; };
+		588486EB132E73F900A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tenTwentyInstructions.plist; sourceTree = "<group>"; };
 		58BF1C8512F1D9B80092D4B4 /* set_build_number.bash */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.bash; sourceTree = "<group>"; };
 		58C9B0AE126CF28E00B3959E /* MPRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRController.h; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		089C166AFE841209C02AAC07 /* TenTwenty */ = {
 			isa = PBXGroup;
 			children = (
+				58848829132E777000A97543 /* Build Configuration */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -195,6 +198,14 @@
 				32DBCF630370AF2F00C91783 /* TenTwenty_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		58848829132E777000A97543 /* Build Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				588486EB132E73F900A97543 /* Development.xcconfig */,
+			);
+			name = "Build Configuration";
 			sourceTree = "<group>";
 		};
 		58BF1C8412F1D9B80092D4B4 /* Scripts */ = {
@@ -370,6 +381,7 @@
 				58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */,
 				5837760D12D3D7D600704695 /* COPYING in Resources */,
 				5807CE2812E0F555007B0D76 /* InfoPlist.strings in Resources */,
+				588486EC132E73F900A97543 /* Development.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

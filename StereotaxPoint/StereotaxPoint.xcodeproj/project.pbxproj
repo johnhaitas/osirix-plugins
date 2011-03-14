@@ -11,6 +11,7 @@
 		5837788212D65B3800704695 /* StereotaxPointController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5837788012D65B3800704695 /* StereotaxPointController.h */; };
 		5837788312D65B3800704695 /* StereotaxPointController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5837788112D65B3800704695 /* StereotaxPointController.m */; };
 		583778BC12D65DF800704695 /* StereotaxPointHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 583778BB12D65DF800704695 /* StereotaxPointHUD.xib */; };
+		58848838132E779B00A97543 /* Development.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 58848837132E779B00A97543 /* Development.xcconfig */; };
 		589A041912D7AC710020A7E6 /* CLUTOpacityView.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A040412D7AC710020A7E6 /* CLUTOpacityView.h */; };
 		589A041A12D7AC710020A7E6 /* ColorTransferView.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A040512D7AC710020A7E6 /* ColorTransferView.h */; };
 		589A041B12D7AC710020A7E6 /* ColorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 589A040612D7AC710020A7E6 /* ColorView.h */; };
@@ -57,6 +58,7 @@
 		5837788012D65B3800704695 /* StereotaxPointController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StereotaxPointController.h; sourceTree = "<group>"; };
 		5837788112D65B3800704695 /* StereotaxPointController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StereotaxPointController.m; sourceTree = "<group>"; };
 		583778BB12D65DF800704695 /* StereotaxPointHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StereotaxPointHUD.xib; sourceTree = "<group>"; };
+		58848837132E779B00A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		589A040412D7AC710020A7E6 /* CLUTOpacityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUTOpacityView.h; sourceTree = "<group>"; };
 		589A040512D7AC710020A7E6 /* ColorTransferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTransferView.h; sourceTree = "<group>"; };
 		589A040612D7AC710020A7E6 /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		089C166AFE841209C02AAC07 /* StereotaxPoint */ = {
 			isa = PBXGroup;
 			children = (
+				58848836132E778900A97543 /* Build Configuration */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -180,6 +183,14 @@
 				32DBCF630370AF2F00C91783 /* StereotaxPoint_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		58848836132E778900A97543 /* Build Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				58848837132E779B00A97543 /* Development.xcconfig */,
+			);
+			name = "Build Configuration";
 			sourceTree = "<group>";
 		};
 		589A040312D7AC710020A7E6 /* MPR Headers */ = {
@@ -345,6 +356,7 @@
 				583778BC12D65DF800704695 /* StereotaxPointHUD.xib in Resources */,
 				5807CE6F12E0F7E0007B0D76 /* InfoPlist.strings in Resources */,
 				58CAE22812E6080200B3411E /* COPYING in Resources */,
+				58848838132E779B00A97543 /* Development.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

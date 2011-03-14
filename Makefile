@@ -8,8 +8,6 @@ OSIRIX_REV = $(shell cat osirix-revision.txt 2> /dev/null || echo not)
 OSIRIX_STABLE_DIR = osirix-stable
 OSIRIX_UNSTABLE_DIR = osirix-unstable
 
-ARCHS = i386
-
 .PHONY: all Unzip-Binaries OsiriX-Stable OsiriX-Unstable OsiriX ViewTemplate TenTwenty StereotaxPoint clean
 
 all: Unzip-Binaries OsiriX ViewTemplate TenTwenty StereotaxPoint
@@ -26,10 +24,10 @@ Unzip-Binaries:
 	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build
 
 OsiriX-Stable:
-	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" build ARCHS=${ARCHS}
+	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" -xcconfig Development.xcconfig build
 
 OsiriX-Unstable:
-	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" build ARCHS=${ARCHS}
+	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" -xcconfig Development.xcconfig build
 
 OsiriX:
 	make Unzip-Binaries

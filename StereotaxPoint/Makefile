@@ -2,14 +2,12 @@ DEFAULT_BUILDCONFIGURATION=Development
 
 BUILDCONFIGURATION?=$(DEFAULT_BUILDCONFIGURATION)
 
-ARCHS = i386
-
 .PHONY: all StereotaxPoint clean latest
 
 all: StereotaxPoint
 
 StereotaxPoint:
-	xcodebuild -project StereotaxPoint.xcodeproj -configuration ${BUILDCONFIGURATION} -target "StereotaxPoint" build ARCHS=${ARCHS}
+	xcodebuild -project StereotaxPoint.xcodeproj -configuration ${BUILDCONFIGURATION} -target "StereotaxPoint" -xcconfig Development.xcconfig build
 
 clean:
 	xcodebuild -project StereotaxPoint.xcodeproj -configuration ${BUILDCONFIGURATION} -alltargets clean
