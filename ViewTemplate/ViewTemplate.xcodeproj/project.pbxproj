@@ -80,7 +80,7 @@
 		089C166AFE841209C02AAC07 /* ViewTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				58848845132E77AC00A97543 /* Build Configuration */,
+				58848845132E77AC00A97543 /* Build Configurations */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
@@ -154,7 +154,7 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
-		58848845132E77AC00A97543 /* Build Configuration */ = {
+		58848845132E77AC00A97543 /* Build Configurations */ = {
 			isa = PBXGroup;
 			children = (
 				58848881132E82BA00A97543 /* Deployment.xcconfig */,
@@ -162,7 +162,7 @@
 				589D3758132E90A300F91FA1 /* OsiriXPlugin.xcconfig */,
 				5884887F132E82A900A97543 /* Shared.xcconfig */,
 			);
-			name = "Build Configuration";
+			name = "Build Configurations";
 			sourceTree = "<group>";
 		};
 		58BF1CCA12F1DFA70092D4B4 /* Scripts */ = {
