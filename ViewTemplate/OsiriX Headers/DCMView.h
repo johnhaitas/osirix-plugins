@@ -59,8 +59,9 @@ enum
 	tRepulsor,					//  23
 	tLayerROI,					//	24
 	tROISelector,				//	25
-	tAxis,						//	26 //JJCP
-	tDynAngle					//	27 //JJCP
+	tAxis,						//	26 
+	tDynAngle,					//	27
+	tCurvedROI					//	28
 };
 
 
@@ -280,6 +281,7 @@ typedef enum {DCMViewTextAlignLeft, DCMViewTextAlignCenter, DCMViewTextAlignRigh
 	float LENSRATIO;
 	BOOL cursorhidden;
 	int avoidRecursiveSync;
+	BOOL avoidMouseMovedRecursive;
 	BOOL avoidChangeWLWWRecursive;
 	BOOL TextureComputed32bitPipeline;
 	
@@ -347,10 +349,12 @@ typedef enum {DCMViewTextAlignLeft, DCMViewTextAlignCenter, DCMViewTextAlignRigh
 - (void) initFont;
 - (void) gClickCountSetReset;
 - (int) findPlaneAndPoint:(float*) pt :(float*) location;
+- (int) findPlaneForPoint:(float*) pt localPoint:(float*) location distanceWithPlane: (float*) distanceResult;
 - (unsigned char*) getRawPixels:(long*) width :(long*) height :(long*) spp :(long*) bpp :(BOOL) screenCapture :(BOOL) force8bits;
 
 - (unsigned char*) getRawPixelsWidth:(long*) width height:(long*) height spp:(long*) spp bpp:(long*) bpp screenCapture:(BOOL) screenCapture force8bits:(BOOL) force8bits removeGraphical:(BOOL) removeGraphical squarePixels:(BOOL) squarePixels allTiles:(BOOL) allTiles allowSmartCropping:(BOOL) allowSmartCropping origin:(float*) imOrigin spacing:(float*) imSpacing;
 - (unsigned char*) getRawPixelsWidth:(long*) width height:(long*) height spp:(long*) spp bpp:(long*) bpp screenCapture:(BOOL) screenCapture force8bits:(BOOL) force8bits removeGraphical:(BOOL) removeGraphical squarePixels:(BOOL) squarePixels allTiles:(BOOL) allTiles allowSmartCropping:(BOOL) allowSmartCropping origin:(float*) imOrigin spacing:(float*) imSpacing offset:(int*) offset isSigned:(BOOL*) isSigned;
+- (unsigned char*) getRawPixelsWidth:(long*) width height:(long*) height spp:(long*) spp bpp:(long*) bpp screenCapture:(BOOL) screenCapture force8bits:(BOOL) force8bits removeGraphical:(BOOL) removeGraphical squarePixels:(BOOL) squarePixels allTiles:(BOOL) allTiles allowSmartCropping:(BOOL) allowSmartCropping origin:(float*) imOrigin spacing:(float*) imSpacing offset:(int*) offset isSigned:(BOOL*) isSigned views: (NSArray*) views viewsRect: (NSArray*) rects;
 
 - (unsigned char*) getRawPixelsViewWidth:(long*) width height:(long*) height spp:(long*) spp bpp:(long*) bpp screenCapture:(BOOL) screenCapture force8bits:(BOOL) force8bits removeGraphical:(BOOL) removeGraphical squarePixels:(BOOL) squarePixels allowSmartCropping:(BOOL) allowSmartCropping origin:(float*) imOrigin spacing:(float*) imSpacing;
 - (unsigned char*) getRawPixelsViewWidth:(long*) width height:(long*) height spp:(long*) spp bpp:(long*) bpp screenCapture:(BOOL) screenCapture force8bits:(BOOL) force8bits removeGraphical:(BOOL) removeGraphical squarePixels:(BOOL) squarePixels allowSmartCropping:(BOOL) allowSmartCropping origin:(float*) imOrigin spacing:(float*) imSpacing offset:(int*) offset isSigned:(BOOL*) isSigned;
@@ -384,6 +388,8 @@ typedef enum {DCMViewTextAlignLeft, DCMViewTextAlignCenter, DCMViewTextAlignRigh
 - (NSImage*) nsimage:(BOOL) originalSize;
 - (NSImage*) nsimage:(BOOL) originalSize allViewers:(BOOL) allViewers;
 - (NSDictionary*) exportDCMCurrentImage: (DICOMExport*) exportDCM size:(int) size;
+- (NSDictionary*) exportDCMCurrentImage: (DICOMExport*) exportDCM size:(int) size  views: (NSArray*) views viewsRect: (NSArray*) viewsRect;
+- (NSDictionary*) exportDCMCurrentImage: (DICOMExport*) exportDCM size:(int) size  views: (NSArray*) views viewsRect: (NSArray*) viewsRect exportSpacingAndOrigin: (BOOL) exportSpacingAndOrigin;
 - (NSImage*) exportNSImageCurrentImageWithSize:(int) size;
 - (void) setIndex:(short) index;
 - (void) setIndexWithReset:(short) index :(BOOL)sizeToFit;
@@ -399,7 +405,6 @@ typedef enum {DCMViewTextAlignLeft, DCMViewTextAlignCenter, DCMViewTextAlignRigh
 - (NSPoint) rotatePoint:(NSPoint) a;
 - (void) setOrigin:(NSPoint) x;
 - (void) setOriginX:(float) x Y:(float) y;
-- (void) setOriginOffset:(NSPoint) x;
 - (void) scaleToFit;
 - (float) scaleToFitForDCMPix: (DCMPix*) d;
 - (void) setBlendingFactor:(float) f;
@@ -446,6 +451,8 @@ typedef enum {DCMViewTextAlignLeft, DCMViewTextAlignCenter, DCMViewTextAlignRigh
 - (OrthogonalMPRController*) controller;
 - (void) roiChange:(NSNotification*)note;
 - (void) roiSelected:(NSNotification*) note;
+- (void) magnifyWithEvent:(NSEvent *)anEvent;
+- (void) rotateWithEvent:(NSEvent *)anEvent;
 - (void) setStartWLWW;
 - (void) stopROIEditing;
 - (void) computeMagnifyLens:(NSPoint) p;
@@ -479,6 +486,7 @@ typedef enum {DCMViewTextAlignLeft, DCMViewTextAlignCenter, DCMViewTextAlignRigh
 - (void) roiLoadFromFilesArray: (NSArray*) filenames;
 - (id)windowController;
 - (BOOL)is2DViewer;
+- (void) drawOrientation:(NSRect) size;
 - (void) setCOPYSETTINGSINSERIESdirectly: (BOOL) b;
 -(BOOL)actionForHotKey:(NSString *)hotKey;
 +(NSDictionary*) hotKeyDictionary;

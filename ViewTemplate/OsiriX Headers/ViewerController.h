@@ -27,7 +27,7 @@
 @class StudyView;
 @class SeriesView;
 @class ImageView;
-@class CurvedMPR;
+//@class CurvedMPR;
 @class DICOMExport;
 @class KeyObjectPopupController;
 @class VRController;
@@ -36,6 +36,7 @@
 @class SRController;
 @class EndoscopyViewer;
 @class MPRController;
+@class CPRController;
 @class ViewerController;
 
 
@@ -60,11 +61,7 @@ enum
 
 /** \brief Window Controller for 2D Viewer*/
 
-#ifndef OSIRIX_LIGHT
 @interface ViewerController : OSIWindowController  <Schedulable>
-#else
-@interface ViewerController : OSIWindowController
-#endif
 {
 	NSLock	*ThreadLoadImageLock;
 	NSLock	*roiLock;
@@ -172,15 +169,15 @@ enum
 	IBOutlet NSMatrix		*InOutROI, *AllROIsRadio, *newValueMatrix;
 	IBOutlet NSButton		*checkMaxValue, *checkMinValue, *setROI4DSeries;
 
-	IBOutlet NSWindow       *curvedMPRWindow;
-	IBOutlet NSTextField	*curvedMPRtext;
-	IBOutlet NSSlider		*curvedMPRslid;
-	IBOutlet NSButton		*curvedMPRper;
-	IBOutlet NSSlider		*curvedMPRsize;
-	IBOutlet NSTextField	*curvedMPRsizeText;
-	IBOutlet NSSlider		*curvedMPRinterval;
-	IBOutlet NSTextField	*curvedMPRintervalText;
-	IBOutlet NSMatrix		*curvedMPRaxis;
+//	IBOutlet NSWindow       *curvedMPRWindow;
+//	IBOutlet NSTextField	*curvedMPRtext;
+//	IBOutlet NSSlider		*curvedMPRslid;
+//	IBOutlet NSButton		*curvedMPRper;
+//	IBOutlet NSSlider		*curvedMPRsize;
+//	IBOutlet NSTextField	*curvedMPRsizeText;
+//	IBOutlet NSSlider		*curvedMPRinterval;
+//	IBOutlet NSTextField	*curvedMPRintervalText;
+//	IBOutlet NSMatrix		*curvedMPRaxis;
 	
 	IBOutlet NSWindow       *blendingTypeWindow;
 	IBOutlet NSButton		*blendingTypeMultiply, *blendingTypeSubtract;
@@ -273,7 +270,7 @@ enum
 	
 	ThickSlabController		*thickSlab;
 	
-	CurvedMPR				*curvedController;
+//	CurvedMPR				*curvedController;
 	
 	DICOMExport				*exportDCM;
 	
@@ -360,7 +357,10 @@ enum
 
 /** Array of all 2D Viewers */
 + (NSMutableArray*) getDisplayed2DViewers;
++ (NSMutableArray*) get2DViewers;
 + (NSArray*) getDisplayedSeries;
++ (BOOL) isFrontMost2DViewer: (NSWindow*) ww;
++ (ViewerController*) frontMostDisplayed2DViewer;
 + (void) closeAllWindows;
 
 /**  Create a new 2D Viewer
@@ -690,6 +690,8 @@ enum
 - (IBAction) roiSetPixels:(id) sender;
 - (IBAction) roiPropagateSetup: (id) sender;
 - (IBAction) roiPropagate:(id) sender;
+- (void) loadSeriesUp;
+- (void) loadSeriesDown;
 - (void) showWindowTransition;
 - (float) computeInterval;
 + (float) computeIntervalForDCMPix: (DCMPix*) p1 And: (DCMPix*) p2;
@@ -701,9 +703,6 @@ enum
 
 /** Action to open the OrthogonalMPRViewer */
 - (IBAction) orthogonalMPRViewer:(id) sender;
-
-/** Action to open the CurvedMPRViewer */
-- (IBAction) CurvedMPR:(id) sender;
 
 - (void) showCurrentThumbnail:(id) sender;
 
@@ -746,15 +745,16 @@ enum
 - (IBAction) setStatus:(id) sender;
 - (IBAction) endSetComments:(id) sender;
 - (void) setMovieIndex: (short) i;
-- (void) setCurvedController: (CurvedMPR*) cmpr;
-- (CurvedMPR*) curvedController;
-- (IBAction) setCurvedMPRslider:(id) sender;
-- (IBAction) endCurvedMPR:(id) sender;
+//- (void) setCurvedController: (CurvedMPR*) cmpr;
+//- (CurvedMPR*) curvedController;
+//- (IBAction) setCurvedMPRslider:(id) sender;
+//- (IBAction) endCurvedMPR:(id) sender;
 - (IBAction) resetImage:(id) sender;
 + (NSArray*) defaultROINames;
 + (void) setDefaultROINames: (NSArray*) names;
 #ifndef OSIRIX_LIGHT
 - (IBAction) endExportDICOMFileSettings:(id) sender;
+- (IBAction) exportAllImages:(NSString*) seriesName;
 - (float) computeVolume:(ROI*) selectedRoi points:(NSMutableArray**) pts error:(NSString**) error;
 - (float) computeVolume:(ROI*) selectedRoi points:(NSMutableArray**) pts generateMissingROIs:(BOOL) generateMissingROIs error:(NSString**) error;
 - (float) computeVolume:(ROI*) selectedRoi points:(NSMutableArray**) pts generateMissingROIs:(BOOL) generateMissingROIs generatedROIs:(NSMutableArray*) generatedROIs computeData:(NSMutableDictionary*) data error:(NSString**) error;
@@ -1007,6 +1007,10 @@ enum
 
 - (MPRController *)openMPRViewer;
 - (IBAction)mprViewer:(id)sender;
+
+/** Action to open the CPRViewer */
+- (id)openCPRViewer;
+- (IBAction)cprViewer:(id)sender;
 #endif
 
 /** Current SeriesView */
