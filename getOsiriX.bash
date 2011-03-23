@@ -20,4 +20,9 @@ if [ -d "osirix-unstable" ]; then
 else
 	# Checkout OsiriX unstable source
 	svn co ${OSIRIX_SVN} ${OSIRIX_UNSTABLE_DIR}
-fi	
+fi
+
+# add 'lib' dir that builds keep warning about
+mkdir -p ${OSIRIX_STABLE_DIR}/lib
+mkdir -p ${OSIRIX_UNSTABLE_DIR}/lib
+	
