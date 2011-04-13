@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5807CEA112E0F8FD007B0D76 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5807CE9F12E0F8FD007B0D76 /* InfoPlist.strings */; };
 		5837761712D3D85000704695 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = 5837761612D3D85000704695 /* COPYING */; };
+		587EBDE713554C1C00E441CC /* OsiriXAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587EBDE413554BFC00E441CC /* OsiriXAPI.framework */; };
 		58ADBBCB124A79F800DC7F62 /* StereotaxCoord.h in Headers */ = {isa = PBXBuildFile; fileRef = 58ADBBC9124A79F800DC7F62 /* StereotaxCoord.h */; };
 		58ADBBCC124A79F800DC7F62 /* StereotaxCoord.m in Sources */ = {isa = PBXBuildFile; fileRef = 58ADBBCA124A79F800DC7F62 /* StereotaxCoord.m */; };
 		58B1568312834A55004EAF70 /* tenTwentyTemplateHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58B1568212834A55004EAF70 /* tenTwentyTemplateHUD.xib */; };
@@ -17,19 +18,84 @@
 		58C3702C1247AD7A009883A4 /* parseCSV.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C3702A1247AD7A009883A4 /* parseCSV.h */; };
 		58C3702D1247AD7A009883A4 /* parseCSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C3702B1247AD7A009883A4 /* parseCSV.m */; };
 		58C3703C1247AE52009883A4 /* zeroedTemplate.csv in Resources */ = {isa = PBXBuildFile; fileRef = 58C3703B1247AE52009883A4 /* zeroedTemplate.csv */; };
-		59C2B9290FF0ED7100B50385 /* Notifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 59C2B9280FF0ED7100B50385 /* Notifications.h */; };
 		8D5B49AE048680CD000E48DA /* ViewTemplate_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* ViewTemplate_Prefix.pch */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		ABA48A650680BB600089EB4F /* ViewTemplateFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA48A640680BB600089EB4F /* ViewTemplateFilter.h */; };
 		ABA48A670680BB690089EB4F /* ViewTemplateFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA48A660680BB690089EB4F /* ViewTemplateFilter.m */; };
-		ABB76340067FB2A8000912C1 /* DCMPix.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB76339067FB2A8000912C1 /* DCMPix.h */; };
-		ABB76341067FB2A8000912C1 /* DCMView.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633A067FB2A8000912C1 /* DCMView.h */; };
-		ABB76342067FB2A8000912C1 /* dicomFile.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633B067FB2A8000912C1 /* dicomFile.h */; };
-		ABB76343067FB2A8000912C1 /* MyPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633C067FB2A8000912C1 /* MyPoint.h */; };
-		ABB76344067FB2A8000912C1 /* PluginFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633D067FB2A8000912C1 /* PluginFilter.h */; };
-		ABB76345067FB2A8000912C1 /* ROI.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633E067FB2A8000912C1 /* ROI.h */; };
-		ABB76346067FB2A8000912C1 /* ViewerController.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633F067FB2A8000912C1 /* ViewerController.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		587EBDD313554BFC00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ABA71D3F06726B1800335A62 /* OsiriX.app */;
+			remoteInfo = OsiriX;
+		};
+		587EBDD513554BFC00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEC70A1E10A5C845008935EA /* OsiriX Lite.app */;
+			remoteInfo = "OsiriX Lite";
+		};
+		587EBDD713554BFC00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 59BDEC2D117C92B2007F1F2C /* OsiriX Launcher.app */;
+			remoteInfo = "OsiriX Launcher";
+		};
+		587EBDD913554BFC00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 844719AF0FD8EF50003BFDF8 /* OsiriX.framework */;
+			remoteInfo = "DCM Framework";
+		};
+		587EBDDB13554BFC00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE9CED810C75BD8C00752D4B /* libDCM StaticLibrary.a */;
+			remoteInfo = "DCM StaticLibrary";
+		};
+		587EBDDD13554BFC00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AB724FF60ADE6ECB00A212A0 /* Decompress */;
+			remoteInfo = Decompress;
+		};
+		587EBDDF13554BFC00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEDF6DD00B46FE99008B45B8 /* DICOMPrint */;
+			remoteInfo = DICOMPrint;
+		};
+		587EBDE113554BFC00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEDAAECA0C7B486A00809161 /* 32-bit shell.app */;
+			remoteInfo = "32-bit shell";
+		};
+		587EBDE313554BFC00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AB0F3A2C1046BD2B004129DD /* OsiriXAPI.framework */;
+			remoteInfo = "OsiriX API";
+		};
+		587EBDE513554C0F00E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AB0F3A2B1046BD2B004129DD /* OsiriX API */;
+			remoteInfo = "OsiriX API";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -38,6 +104,7 @@
 		32DBCF630370AF2F00C91783 /* ViewTemplate_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewTemplate_Prefix.pch; sourceTree = "<group>"; };
 		5807CEA012E0F8FD007B0D76 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5837761612D3D85000704695 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
+		587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OsiriX.xcodeproj; path = "../osirix-stable/OsiriX.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		58848846132E77BD00A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = xcconfigs/Development.xcconfig; sourceTree = "<group>"; };
 		5884887F132E82A900A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = xcconfigs/Shared.xcconfig; sourceTree = "<group>"; };
 		58848881132E82BA00A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = xcconfigs/Deployment.xcconfig; sourceTree = "<group>"; };
@@ -51,18 +118,10 @@
 		58C3702A1247AD7A009883A4 /* parseCSV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = parseCSV.h; sourceTree = "<group>"; };
 		58C3702B1247AD7A009883A4 /* parseCSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = parseCSV.m; sourceTree = "<group>"; };
 		58C3703B1247AE52009883A4 /* zeroedTemplate.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = zeroedTemplate.csv; sourceTree = "<group>"; };
-		59C2B9280FF0ED7100B50385 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB5D36050680E57E00F4007A /* ViewTemplate.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewTemplate.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA48A640680BB600089EB4F /* ViewTemplateFilter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ViewTemplateFilter.h; sourceTree = "<group>"; };
 		ABA48A660680BB690089EB4F /* ViewTemplateFilter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = ViewTemplateFilter.m; sourceTree = "<group>"; };
-		ABB76339067FB2A8000912C1 /* DCMPix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DCMPix.h; sourceTree = "<group>"; };
-		ABB7633A067FB2A8000912C1 /* DCMView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DCMView.h; sourceTree = "<group>"; };
-		ABB7633B067FB2A8000912C1 /* dicomFile.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = dicomFile.h; sourceTree = "<group>"; };
-		ABB7633C067FB2A8000912C1 /* MyPoint.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MyPoint.h; sourceTree = "<group>"; };
-		ABB7633D067FB2A8000912C1 /* PluginFilter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PluginFilter.h; sourceTree = "<group>"; };
-		ABB7633E067FB2A8000912C1 /* ROI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ROI.h; sourceTree = "<group>"; };
-		ABB7633F067FB2A8000912C1 /* ViewerController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ViewerController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587EBDE713554C1C00E441CC /* OsiriXAPI.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +142,7 @@
 			children = (
 				58848845132E77AC00A97543 /* Build Configurations */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
+				587EBDC313554BD100E441CC /* Dependencies */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				58BF1CCA12F1DFA70092D4B4 /* Scripts */,
@@ -115,7 +176,6 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				ABB76338067FB2A8000912C1 /* OsiriX Headers */,
 				AB2C26750677B0C400A08910 /* ViewTemplateFilter */,
 			);
 			name = Classes;
@@ -154,6 +214,30 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		587EBDC313554BD100E441CC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		587EBDC513554BFC00E441CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				587EBDD413554BFC00E441CC /* OsiriX.app */,
+				587EBDD613554BFC00E441CC /* OsiriX Lite.app */,
+				587EBDD813554BFC00E441CC /* OsiriX Launcher.app */,
+				587EBDDA13554BFC00E441CC /* OsiriX.framework */,
+				587EBDDC13554BFC00E441CC /* libDCM StaticLibrary.a */,
+				587EBDDE13554BFC00E441CC /* Decompress */,
+				587EBDE013554BFC00E441CC /* DICOMPrint */,
+				587EBDE213554BFC00E441CC /* 32-bit shell.app */,
+				587EBDE413554BFC00E441CC /* OsiriXAPI.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		58848845132E77AC00A97543 /* Build Configurations */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,21 +272,6 @@
 			name = ViewTemplateFilter;
 			sourceTree = "<group>";
 		};
-		ABB76338067FB2A8000912C1 /* OsiriX Headers */ = {
-			isa = PBXGroup;
-			children = (
-				ABB7633D067FB2A8000912C1 /* PluginFilter.h */,
-				59C2B9280FF0ED7100B50385 /* Notifications.h */,
-				ABB76339067FB2A8000912C1 /* DCMPix.h */,
-				ABB7633A067FB2A8000912C1 /* DCMView.h */,
-				ABB7633B067FB2A8000912C1 /* dicomFile.h */,
-				ABB7633C067FB2A8000912C1 /* MyPoint.h */,
-				ABB7633E067FB2A8000912C1 /* ROI.h */,
-				ABB7633F067FB2A8000912C1 /* ViewerController.h */,
-			);
-			path = "OsiriX Headers";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -211,15 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49AE048680CD000E48DA /* ViewTemplate_Prefix.pch in Headers */,
-				ABB76340067FB2A8000912C1 /* DCMPix.h in Headers */,
-				ABB76341067FB2A8000912C1 /* DCMView.h in Headers */,
-				ABB76342067FB2A8000912C1 /* dicomFile.h in Headers */,
-				ABB76343067FB2A8000912C1 /* MyPoint.h in Headers */,
-				ABB76344067FB2A8000912C1 /* PluginFilter.h in Headers */,
-				ABB76345067FB2A8000912C1 /* ROI.h in Headers */,
-				ABB76346067FB2A8000912C1 /* ViewerController.h in Headers */,
 				ABA48A650680BB600089EB4F /* ViewTemplateFilter.h in Headers */,
-				59C2B9290FF0ED7100B50385 /* Notifications.h in Headers */,
 				58C36810124290A0009883A4 /* tenTwentyTemplate.h in Headers */,
 				58C3702C1247AD7A009883A4 /* parseCSV.h in Headers */,
 				58ADBBCB124A79F800DC7F62 /* StereotaxCoord.h in Headers */,
@@ -243,6 +304,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				587EBDE613554C0F00E441CC /* PBXTargetDependency */,
 			);
 			name = ViewTemplate;
 			productInstallPath = "$(HOME)/Library/Bundles";
@@ -267,12 +329,84 @@
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* ViewTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 587EBDC513554BFC00E441CC /* Products */;
+					ProjectRef = 587EBDC413554BFC00E441CC /* OsiriX.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* ViewTemplate */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		587EBDD413554BFC00E441CC /* OsiriX.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OsiriX.app;
+			remoteRef = 587EBDD313554BFC00E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBDD613554BFC00E441CC /* OsiriX Lite.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "OsiriX Lite.app";
+			remoteRef = 587EBDD513554BFC00E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBDD813554BFC00E441CC /* OsiriX Launcher.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "OsiriX Launcher.app";
+			remoteRef = 587EBDD713554BFC00E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBDDA13554BFC00E441CC /* OsiriX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OsiriX.framework;
+			remoteRef = 587EBDD913554BFC00E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBDDC13554BFC00E441CC /* libDCM StaticLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDCM StaticLibrary.a";
+			remoteRef = 587EBDDB13554BFC00E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBDDE13554BFC00E441CC /* Decompress */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Decompress;
+			remoteRef = 587EBDDD13554BFC00E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBDE013554BFC00E441CC /* DICOMPrint */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = DICOMPrint;
+			remoteRef = 587EBDDF13554BFC00E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBDE213554BFC00E441CC /* 32-bit shell.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "32-bit shell.app";
+			remoteRef = 587EBDE113554BFC00E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBDE413554BFC00E441CC /* OsiriXAPI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OsiriXAPI.framework;
+			remoteRef = 587EBDE313554BFC00E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D5B49AF048680CD000E48DA /* Resources */ = {
@@ -329,6 +463,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		587EBDE613554C0F00E441CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "OsiriX API";
+			targetProxy = 587EBDE513554C0F00E441CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5807CE9F12E0F8FD007B0D76 /* InfoPlist.strings */ = {

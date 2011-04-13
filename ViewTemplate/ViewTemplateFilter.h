@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PluginFilter.h"
+#import <OsiriXAPI/PluginFilter.h>
 #import "StereotaxCoord.h"
 #import "tenTwentyTemplate.h"
 
