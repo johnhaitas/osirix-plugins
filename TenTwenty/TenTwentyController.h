@@ -7,13 +7,9 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PluginFilter.h"
-
-// @class directive is insufficient for our needs ...
-// ... MPRHeaders.h contains imports needed for MPR
-#import "MPRHeaders.h"
-
-#import "Notifications.h"
+#import <OsiriXAPI/PluginFilter.h>
+#import <OsiriXAPI/MPRDCMView.h>
+#import <OsiriXAPI/Notifications.h>
 
 #import "TenTwentyFilter.h"
 #import "ResliceController.h"

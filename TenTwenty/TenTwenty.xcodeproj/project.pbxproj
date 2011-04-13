@@ -16,44 +16,88 @@
 		585B6AE4125F662300D42896 /* TenTwentyController.h in Headers */ = {isa = PBXBuildFile; fileRef = 585B6AE2125F662300D42896 /* TenTwentyController.h */; };
 		585B6AE5125F662300D42896 /* TenTwentyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585B6AE3125F662300D42896 /* TenTwentyController.m */; };
 		585B740E1264B64F00D42896 /* TenTwentyHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585B740D1264B64F00D42896 /* TenTwentyHUD.xib */; };
+		587EBC1B135546EF00E441CC /* OsiriXAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587EBC0D1355468100E441CC /* OsiriXAPI.framework */; };
 		58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */; };
-		58C9B0B0126CF28E00B3959E /* MPRController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AE126CF28E00B3959E /* MPRController.h */; };
-		58C9B0B1126CF28E00B3959E /* MPRDCMView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0AF126CF28E00B3959E /* MPRDCMView.h */; };
-		58C9B0B3126CF2A100B3959E /* Camera.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0B2126CF2A100B3959E /* Camera.h */; };
-		58C9B0C9126CF4AE00B3959E /* VRController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0C8126CF4AE00B3959E /* VRController.h */; };
-		58C9B0CD126CF4F600B3959E /* ColorTransferView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0CC126CF4F600B3959E /* ColorTransferView.h */; };
-		58C9B0CF126CF50800B3959E /* Window3DController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0CE126CF50800B3959E /* Window3DController.h */; };
-		58C9B0D1126CF52400B3959E /* ShadingArrayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0D0126CF52400B3959E /* ShadingArrayController.h */; };
-		58C9B0D3126CF53900B3959E /* FlyThruController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0D2126CF53900B3959E /* FlyThruController.h */; };
-		58C9B0D5126CF54800B3959E /* FlyThru.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0D4126CF54800B3959E /* FlyThru.h */; };
-		58C9B0D9126CFAEB00B3959E /* NSFullScreenWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0D8126CFAEB00B3959E /* NSFullScreenWindow.h */; };
-		58C9B0DB126CFAF700B3959E /* OpacityTransferView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0DA126CFAF700B3959E /* OpacityTransferView.h */; };
-		58C9B0DD126CFB1000B3959E /* Point3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0DC126CFB1000B3959E /* Point3D.h */; };
-		58C9B0DF126CFB2000B3959E /* Interpolation3D.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0DE126CFB2000B3959E /* Interpolation3D.h */; };
-		58C9B0E1126CFB3200B3959E /* FlyThruAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0E0126CFB3200B3959E /* FlyThruAdapter.h */; };
-		58C9B0E3126CFB5200B3959E /* QuicktimeExport.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0E2126CFB5200B3959E /* QuicktimeExport.h */; };
-		58C9B0E5126CFB6D00B3959E /* FlyThruStepsArrayController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0E4126CFB6D00B3959E /* FlyThruStepsArrayController.h */; };
-		58C9B0E9126CFB9000B3959E /* VRFlyThruAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0E8126CFB9000B3959E /* VRFlyThruAdapter.h */; };
-		58C9B0EB126CFBA600B3959E /* ColorView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0EA126CFBA600B3959E /* ColorView.h */; };
-		58C9B0F6126CFC8600B3959E /* VRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B0F5126CFC8600B3959E /* VRView.h */; };
-		58C9B247126E1F5C00B3959E /* MPRHeaders.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B245126E1F5C00B3959E /* MPRHeaders.h */; };
-		58C9B24E126E200100B3959E /* CLUTOpacityView.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B24D126E200100B3959E /* CLUTOpacityView.h */; };
-		58C9B250126E201700B3959E /* WaitRendering.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B24F126E201700B3959E /* WaitRendering.h */; };
-		58C9B256126E20AB00B3959E /* ViewerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58C9B255126E20AB00B3959E /* ViewerController.h */; };
 		58CF976C12BAAA0200FCFBBF /* TraceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58CF976A12BAAA0200FCFBBF /* TraceController.h */; };
 		58CF976D12BAAA0200FCFBBF /* TraceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CF976B12BAAA0200FCFBBF /* TraceController.m */; };
-		59C2B9290FF0ED7100B50385 /* Notifications.h in Headers */ = {isa = PBXBuildFile; fileRef = 59C2B9280FF0ED7100B50385 /* Notifications.h */; };
 		8D5B49AE048680CD000E48DA /* TenTwenty_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* TenTwenty_Prefix.pch */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		ABA48A650680BB600089EB4F /* TenTwentyFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = ABA48A640680BB600089EB4F /* TenTwentyFilter.h */; };
 		ABA48A670680BB690089EB4F /* TenTwentyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA48A660680BB690089EB4F /* TenTwentyFilter.m */; };
-		ABB76340067FB2A8000912C1 /* DCMPix.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB76339067FB2A8000912C1 /* DCMPix.h */; };
-		ABB76341067FB2A8000912C1 /* DCMView.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633A067FB2A8000912C1 /* DCMView.h */; };
-		ABB76342067FB2A8000912C1 /* dicomFile.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633B067FB2A8000912C1 /* dicomFile.h */; };
-		ABB76343067FB2A8000912C1 /* MyPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633C067FB2A8000912C1 /* MyPoint.h */; };
-		ABB76344067FB2A8000912C1 /* PluginFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633D067FB2A8000912C1 /* PluginFilter.h */; };
-		ABB76345067FB2A8000912C1 /* ROI.h in Headers */ = {isa = PBXBuildFile; fileRef = ABB7633E067FB2A8000912C1 /* ROI.h */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		587EBBFC1355468100E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = ABA71D3F06726B1800335A62 /* OsiriX.app */;
+			remoteInfo = OsiriX;
+		};
+		587EBBFE1355468100E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEC70A1E10A5C845008935EA /* OsiriX Lite.app */;
+			remoteInfo = "OsiriX Lite";
+		};
+		587EBC001355468100E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 59BDEC2D117C92B2007F1F2C /* OsiriX Launcher.app */;
+			remoteInfo = "OsiriX Launcher";
+		};
+		587EBC021355468100E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 844719AF0FD8EF50003BFDF8 /* OsiriX.framework */;
+			remoteInfo = "DCM Framework";
+		};
+		587EBC041355468100E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CE9CED810C75BD8C00752D4B /* libDCM StaticLibrary.a */;
+			remoteInfo = "DCM StaticLibrary";
+		};
+		587EBC061355468100E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AB724FF60ADE6ECB00A212A0 /* Decompress */;
+			remoteInfo = Decompress;
+		};
+		587EBC081355468100E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEDF6DD00B46FE99008B45B8 /* DICOMPrint */;
+			remoteInfo = DICOMPrint;
+		};
+		587EBC0A1355468100E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = CEDAAECA0C7B486A00809161 /* 32-bit shell.app */;
+			remoteInfo = "32-bit shell";
+		};
+		587EBC0C1355468100E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AB0F3A2C1046BD2B004129DD /* OsiriXAPI.framework */;
+			remoteInfo = "OsiriX API";
+		};
+		587EBC0E135546A900E441CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AB0F3A2B1046BD2B004129DD /* OsiriX API */;
+			remoteInfo = "OsiriX API";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
@@ -69,48 +113,19 @@
 		585B6AE2125F662300D42896 /* TenTwentyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TenTwentyController.h; sourceTree = "<group>"; };
 		585B6AE3125F662300D42896 /* TenTwentyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenTwentyController.m; sourceTree = "<group>"; };
 		585B740D1264B64F00D42896 /* TenTwentyHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenTwentyHUD.xib; sourceTree = "<group>"; };
+		587EBBED1355468100E441CC /* OsiriX.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OsiriX.xcodeproj; path = "../osirix-stable/OsiriX.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		588486EB132E73F900A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = xcconfigs/Development.xcconfig; sourceTree = "<group>"; };
 		58848851132E7E9700A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = xcconfigs/Shared.xcconfig; sourceTree = "<group>"; };
 		58848865132E811700A97543 /* Deployment.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Deployment.xcconfig; path = xcconfigs/Deployment.xcconfig; sourceTree = "<group>"; };
 		58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tenTwentyInstructions.plist; sourceTree = "<group>"; };
 		589D37C1132E93DC00F91FA1 /* OsiriXPlugin.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = OsiriXPlugin.xcconfig; path = xcconfigs/OsiriXPlugin.xcconfig; sourceTree = "<group>"; };
 		58BF1C8512F1D9B80092D4B4 /* set_build_number.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
-		58C9B0AE126CF28E00B3959E /* MPRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRController.h; sourceTree = "<group>"; };
-		58C9B0AF126CF28E00B3959E /* MPRDCMView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRDCMView.h; sourceTree = "<group>"; };
-		58C9B0B2126CF2A100B3959E /* Camera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
-		58C9B0C8126CF4AE00B3959E /* VRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRController.h; sourceTree = "<group>"; };
-		58C9B0CC126CF4F600B3959E /* ColorTransferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorTransferView.h; sourceTree = "<group>"; };
-		58C9B0CE126CF50800B3959E /* Window3DController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window3DController.h; sourceTree = "<group>"; };
-		58C9B0D0126CF52400B3959E /* ShadingArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadingArrayController.h; sourceTree = "<group>"; };
-		58C9B0D2126CF53900B3959E /* FlyThruController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyThruController.h; sourceTree = "<group>"; };
-		58C9B0D4126CF54800B3959E /* FlyThru.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyThru.h; sourceTree = "<group>"; };
-		58C9B0D8126CFAEB00B3959E /* NSFullScreenWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFullScreenWindow.h; sourceTree = "<group>"; };
-		58C9B0DA126CFAF700B3959E /* OpacityTransferView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpacityTransferView.h; sourceTree = "<group>"; };
-		58C9B0DC126CFB1000B3959E /* Point3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point3D.h; sourceTree = "<group>"; };
-		58C9B0DE126CFB2000B3959E /* Interpolation3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interpolation3D.h; sourceTree = "<group>"; };
-		58C9B0E0126CFB3200B3959E /* FlyThruAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyThruAdapter.h; sourceTree = "<group>"; };
-		58C9B0E2126CFB5200B3959E /* QuicktimeExport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuicktimeExport.h; sourceTree = "<group>"; };
-		58C9B0E4126CFB6D00B3959E /* FlyThruStepsArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlyThruStepsArrayController.h; sourceTree = "<group>"; };
-		58C9B0E8126CFB9000B3959E /* VRFlyThruAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRFlyThruAdapter.h; sourceTree = "<group>"; };
-		58C9B0EA126CFBA600B3959E /* ColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
-		58C9B0F5126CFC8600B3959E /* VRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VRView.h; sourceTree = "<group>"; };
-		58C9B245126E1F5C00B3959E /* MPRHeaders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPRHeaders.h; sourceTree = "<group>"; };
-		58C9B24D126E200100B3959E /* CLUTOpacityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUTOpacityView.h; sourceTree = "<group>"; };
-		58C9B24F126E201700B3959E /* WaitRendering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaitRendering.h; sourceTree = "<group>"; };
-		58C9B255126E20AB00B3959E /* ViewerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewerController.h; sourceTree = "<group>"; };
 		58CF976A12BAAA0200FCFBBF /* TraceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraceController.h; sourceTree = "<group>"; };
 		58CF976B12BAAA0200FCFBBF /* TraceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraceController.m; sourceTree = "<group>"; };
-		59C2B9280FF0ED7100B50385 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB5D36050680E57E00F4007A /* TenTwenty.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenTwenty.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA48A640680BB600089EB4F /* TenTwentyFilter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = TenTwentyFilter.h; sourceTree = "<group>"; };
 		ABA48A660680BB690089EB4F /* TenTwentyFilter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = TenTwentyFilter.m; sourceTree = "<group>"; };
-		ABB76339067FB2A8000912C1 /* DCMPix.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DCMPix.h; sourceTree = "<group>"; };
-		ABB7633A067FB2A8000912C1 /* DCMView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DCMView.h; sourceTree = "<group>"; };
-		ABB7633B067FB2A8000912C1 /* dicomFile.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = dicomFile.h; sourceTree = "<group>"; };
-		ABB7633C067FB2A8000912C1 /* MyPoint.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = MyPoint.h; sourceTree = "<group>"; };
-		ABB7633D067FB2A8000912C1 /* PluginFilter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PluginFilter.h; sourceTree = "<group>"; };
-		ABB7633E067FB2A8000912C1 /* ROI.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = ROI.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				587EBC1B135546EF00E441CC /* OsiriXAPI.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +146,7 @@
 			children = (
 				58848829132E777000A97543 /* Build Configurations */,
 				08FB77AFFE84173DC02AAC07 /* Classes */,
+				587EBBEC1355467200E441CC /* Dependencies */,
 				32C88E010371C26100C91783 /* Other Sources */,
 				089C167CFE841241C02AAC07 /* Resources */,
 				58BF1C8412F1D9B80092D4B4 /* Scripts */,
@@ -163,7 +180,6 @@
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				ABB76338067FB2A8000912C1 /* OsiriX Headers */,
 				AB2C26750677B0C400A08910 /* TenTwentyFilter */,
 			);
 			name = Classes;
@@ -202,6 +218,30 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		587EBBEC1355467200E441CC /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				587EBBED1355468100E441CC /* OsiriX.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		587EBBEE1355468100E441CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				587EBBFD1355468100E441CC /* OsiriX.app */,
+				587EBBFF1355468100E441CC /* OsiriX Lite.app */,
+				587EBC011355468100E441CC /* OsiriX Launcher.app */,
+				587EBC031355468100E441CC /* OsiriX.framework */,
+				587EBC051355468100E441CC /* libDCM StaticLibrary.a */,
+				587EBC071355468100E441CC /* Decompress */,
+				587EBC091355468100E441CC /* DICOMPrint */,
+				587EBC0B1355468100E441CC /* 32-bit shell.app */,
+				587EBC0D1355468100E441CC /* OsiriXAPI.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		58848829132E777000A97543 /* Build Configurations */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,34 +261,6 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
-		58C9B0AB126CF22700B3959E /* MPR Headers */ = {
-			isa = PBXGroup;
-			children = (
-				58C9B24D126E200100B3959E /* CLUTOpacityView.h */,
-				58C9B0CC126CF4F600B3959E /* ColorTransferView.h */,
-				58C9B0EA126CFBA600B3959E /* ColorView.h */,
-				58C9B0B2126CF2A100B3959E /* Camera.h */,
-				58C9B0D4126CF54800B3959E /* FlyThru.h */,
-				58C9B0E0126CFB3200B3959E /* FlyThruAdapter.h */,
-				58C9B0D2126CF53900B3959E /* FlyThruController.h */,
-				58C9B0E4126CFB6D00B3959E /* FlyThruStepsArrayController.h */,
-				58C9B0DE126CFB2000B3959E /* Interpolation3D.h */,
-				58C9B0AF126CF28E00B3959E /* MPRDCMView.h */,
-				58C9B0AE126CF28E00B3959E /* MPRController.h */,
-				58C9B0D8126CFAEB00B3959E /* NSFullScreenWindow.h */,
-				58C9B0DA126CFAF700B3959E /* OpacityTransferView.h */,
-				58C9B0DC126CFB1000B3959E /* Point3D.h */,
-				58C9B0E2126CFB5200B3959E /* QuicktimeExport.h */,
-				58C9B0D0126CF52400B3959E /* ShadingArrayController.h */,
-				58C9B0C8126CF4AE00B3959E /* VRController.h */,
-				58C9B0E8126CFB9000B3959E /* VRFlyThruAdapter.h */,
-				58C9B0F5126CFC8600B3959E /* VRView.h */,
-				58C9B24F126E201700B3959E /* WaitRendering.h */,
-				58C9B0CE126CF50800B3959E /* Window3DController.h */,
-			);
-			name = "MPR Headers";
-			sourceTree = "<group>";
-		};
 		AB2C26750677B0C400A08910 /* TenTwentyFilter */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,23 +278,6 @@
 			name = TenTwentyFilter;
 			sourceTree = "<group>";
 		};
-		ABB76338067FB2A8000912C1 /* OsiriX Headers */ = {
-			isa = PBXGroup;
-			children = (
-				58C9B0AB126CF22700B3959E /* MPR Headers */,
-				58C9B245126E1F5C00B3959E /* MPRHeaders.h */,
-				ABB7633D067FB2A8000912C1 /* PluginFilter.h */,
-				59C2B9280FF0ED7100B50385 /* Notifications.h */,
-				ABB76339067FB2A8000912C1 /* DCMPix.h */,
-				ABB7633A067FB2A8000912C1 /* DCMView.h */,
-				ABB7633B067FB2A8000912C1 /* dicomFile.h */,
-				ABB7633C067FB2A8000912C1 /* MyPoint.h */,
-				ABB7633E067FB2A8000912C1 /* ROI.h */,
-				58C9B255126E20AB00B3959E /* ViewerController.h */,
-			);
-			path = "OsiriX Headers";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -291,39 +286,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5B49AE048680CD000E48DA /* TenTwenty_Prefix.pch in Headers */,
-				ABB76340067FB2A8000912C1 /* DCMPix.h in Headers */,
-				ABB76341067FB2A8000912C1 /* DCMView.h in Headers */,
-				ABB76342067FB2A8000912C1 /* dicomFile.h in Headers */,
-				ABB76343067FB2A8000912C1 /* MyPoint.h in Headers */,
-				ABB76344067FB2A8000912C1 /* PluginFilter.h in Headers */,
-				ABB76345067FB2A8000912C1 /* ROI.h in Headers */,
 				ABA48A650680BB600089EB4F /* TenTwentyFilter.h in Headers */,
-				59C2B9290FF0ED7100B50385 /* Notifications.h in Headers */,
 				585B6A38125E5BC400D42896 /* LineDividerController.h in Headers */,
 				585B6AE4125F662300D42896 /* TenTwentyController.h in Headers */,
-				58C9B0B0126CF28E00B3959E /* MPRController.h in Headers */,
-				58C9B0B1126CF28E00B3959E /* MPRDCMView.h in Headers */,
-				58C9B0B3126CF2A100B3959E /* Camera.h in Headers */,
-				58C9B0C9126CF4AE00B3959E /* VRController.h in Headers */,
-				58C9B0CD126CF4F600B3959E /* ColorTransferView.h in Headers */,
-				58C9B0CF126CF50800B3959E /* Window3DController.h in Headers */,
-				58C9B0D1126CF52400B3959E /* ShadingArrayController.h in Headers */,
-				58C9B0D3126CF53900B3959E /* FlyThruController.h in Headers */,
-				58C9B0D5126CF54800B3959E /* FlyThru.h in Headers */,
-				58C9B0D9126CFAEB00B3959E /* NSFullScreenWindow.h in Headers */,
-				58C9B0DB126CFAF700B3959E /* OpacityTransferView.h in Headers */,
-				58C9B0DD126CFB1000B3959E /* Point3D.h in Headers */,
-				58C9B0DF126CFB2000B3959E /* Interpolation3D.h in Headers */,
-				58C9B0E1126CFB3200B3959E /* FlyThruAdapter.h in Headers */,
-				58C9B0E3126CFB5200B3959E /* QuicktimeExport.h in Headers */,
-				58C9B0E5126CFB6D00B3959E /* FlyThruStepsArrayController.h in Headers */,
-				58C9B0E9126CFB9000B3959E /* VRFlyThruAdapter.h in Headers */,
-				58C9B0EB126CFBA600B3959E /* ColorView.h in Headers */,
-				58C9B0F6126CFC8600B3959E /* VRView.h in Headers */,
-				58C9B247126E1F5C00B3959E /* MPRHeaders.h in Headers */,
-				58C9B24E126E200100B3959E /* CLUTOpacityView.h in Headers */,
-				58C9B250126E201700B3959E /* WaitRendering.h in Headers */,
-				58C9B256126E20AB00B3959E /* ViewerController.h in Headers */,
 				5859052312B7CF3200AFD2A8 /* ResliceController.h in Headers */,
 				58CF976C12BAAA0200FCFBBF /* TraceController.h in Headers */,
 			);
@@ -346,6 +311,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				587EBC0F135546A900E441CC /* PBXTargetDependency */,
 			);
 			name = TenTwenty;
 			productInstallPath = "$(HOME)/Library/Bundles";
@@ -370,12 +336,84 @@
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* TenTwenty */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 587EBBEE1355468100E441CC /* Products */;
+					ProjectRef = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* TenTwenty */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		587EBBFD1355468100E441CC /* OsiriX.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = OsiriX.app;
+			remoteRef = 587EBBFC1355468100E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBBFF1355468100E441CC /* OsiriX Lite.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "OsiriX Lite.app";
+			remoteRef = 587EBBFE1355468100E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBC011355468100E441CC /* OsiriX Launcher.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "OsiriX Launcher.app";
+			remoteRef = 587EBC001355468100E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBC031355468100E441CC /* OsiriX.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OsiriX.framework;
+			remoteRef = 587EBC021355468100E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBC051355468100E441CC /* libDCM StaticLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libDCM StaticLibrary.a";
+			remoteRef = 587EBC041355468100E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBC071355468100E441CC /* Decompress */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = Decompress;
+			remoteRef = 587EBC061355468100E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBC091355468100E441CC /* DICOMPrint */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = DICOMPrint;
+			remoteRef = 587EBC081355468100E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBC0B1355468100E441CC /* 32-bit shell.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "32-bit shell.app";
+			remoteRef = 587EBC0A1355468100E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		587EBC0D1355468100E441CC /* OsiriXAPI.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OsiriXAPI.framework;
+			remoteRef = 587EBC0C1355468100E441CC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D5B49AF048680CD000E48DA /* Resources */ = {
@@ -433,6 +471,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		587EBC0F135546A900E441CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "OsiriX API";
+			targetProxy = 587EBC0E135546A900E441CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5807CE2612E0F555007B0D76 /* InfoPlist.strings */ = {

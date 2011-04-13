@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PluginFilter.h"
-#import "MPRHeaders.h"
+#import <OsiriXAPI/PluginFilter.h>
+#import <OsiriXAPI/MPRDCMView.h>
 
 @interface ResliceController : NSObject {
     MPRDCMView *view;

@@ -1,8 +1,15 @@
 INSTALL_PATH = @executable_path/../Plug-ins
+OTHER_LDFLAGS = -undefined dynamic_lookup
 INFOPLIST_FILE = Info.plist
 PRODUCT_NAME = TenTwenty
 WRAPPER_EXTENSION = osirixplugin
-LIBRARY_STYLE = Bundle
-
-GCC_PREFIX_HEADER = TenTwenty_Prefix.pch
+FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../osirix-stable/build/$(CONFIGURATION)"
+GCC_ENABLE_TRIGRAPHS = NO
 GCC_PRECOMPILE_PREFIX_HEADER = YES
+GCC_PREFIX_HEADER = TenTwenty_Prefix.pch
+GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO
+WARNING_CFLAGS = -Wmost -Wno-four-char-constants -Wno-unknown-pragmas
+GCC_WARN_UNKNOWN_PRAGMAS = NO
+LIBRARY_STYLE = Bundle
+ZERO_LINK = NO
+GCC_ENABLE_FIX_AND_CONTINUE = NO
