@@ -7,8 +7,8 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "PluginFilter.h"
-#import "MPRHeaders.h"
+#import <OsiriXAPI/PluginFilter.h>
+#import <OsiriXAPI/MPRDCMView.h>
 
 #define MAG(v1) sqrt(v1[0]*v1[0]+v1[1]*v1[1]+v1[2]*v1[2]);
 

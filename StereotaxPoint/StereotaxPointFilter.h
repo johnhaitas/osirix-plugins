@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PluginFilter.h"
+#import <OsiriXAPI/PluginFilter.h>
 #import "StereotaxPointController.h"
 
 @interface StereotaxPointFilter : PluginFilter {
