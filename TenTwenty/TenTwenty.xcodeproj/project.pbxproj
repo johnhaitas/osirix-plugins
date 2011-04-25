@@ -16,6 +16,7 @@
 		585B6AE4125F662300D42896 /* TenTwentyController.h in Headers */ = {isa = PBXBuildFile; fileRef = 585B6AE2125F662300D42896 /* TenTwentyController.h */; };
 		585B6AE5125F662300D42896 /* TenTwentyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585B6AE3125F662300D42896 /* TenTwentyController.m */; };
 		585B740E1264B64F00D42896 /* TenTwentyHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585B740D1264B64F00D42896 /* TenTwentyHUD.xib */; };
+		5868D3871362C0F200A0FEA6 /* tenTenInstructions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5868D3861362C0F200A0FEA6 /* tenTenInstructions.plist */; };
 		587EBC1B135546EF00E441CC /* OsiriXAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587EBC0D1355468100E441CC /* OsiriXAPI.framework */; };
 		58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */; };
 		58CF976C12BAAA0200FCFBBF /* TraceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58CF976A12BAAA0200FCFBBF /* TraceController.h */; };
@@ -31,70 +32,70 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = ABA71D3F06726B1800335A62 /* OsiriX.app */;
+			remoteGlobalIDString = ABA71D3F06726B1800335A62;
 			remoteInfo = OsiriX;
 		};
 		587EBBFE1355468100E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CEC70A1E10A5C845008935EA /* OsiriX Lite.app */;
+			remoteGlobalIDString = CEC70A1E10A5C845008935EA;
 			remoteInfo = "OsiriX Lite";
 		};
 		587EBC001355468100E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 59BDEC2D117C92B2007F1F2C /* OsiriX Launcher.app */;
+			remoteGlobalIDString = 59BDEC2D117C92B2007F1F2C;
 			remoteInfo = "OsiriX Launcher";
 		};
 		587EBC021355468100E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 844719AF0FD8EF50003BFDF8 /* OsiriX.framework */;
+			remoteGlobalIDString = 844719AF0FD8EF50003BFDF8;
 			remoteInfo = "DCM Framework";
 		};
 		587EBC041355468100E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CE9CED810C75BD8C00752D4B /* libDCM StaticLibrary.a */;
+			remoteGlobalIDString = CE9CED810C75BD8C00752D4B;
 			remoteInfo = "DCM StaticLibrary";
 		};
 		587EBC061355468100E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = AB724FF60ADE6ECB00A212A0 /* Decompress */;
+			remoteGlobalIDString = AB724FF60ADE6ECB00A212A0;
 			remoteInfo = Decompress;
 		};
 		587EBC081355468100E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CEDF6DD00B46FE99008B45B8 /* DICOMPrint */;
+			remoteGlobalIDString = CEDF6DD00B46FE99008B45B8;
 			remoteInfo = DICOMPrint;
 		};
 		587EBC0A1355468100E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CEDAAECA0C7B486A00809161 /* 32-bit shell.app */;
+			remoteGlobalIDString = CEDAAECA0C7B486A00809161;
 			remoteInfo = "32-bit shell";
 		};
 		587EBC0C1355468100E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = AB0F3A2C1046BD2B004129DD /* OsiriXAPI.framework */;
+			remoteGlobalIDString = AB0F3A2C1046BD2B004129DD;
 			remoteInfo = "OsiriX API";
 		};
 		587EBC0E135546A900E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBBED1355468100E441CC /* OsiriX.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = AB0F3A2B1046BD2B004129DD /* OsiriX API */;
+			remoteGlobalIDString = AB0F3A2B1046BD2B004129DD;
 			remoteInfo = "OsiriX API";
 		};
 /* End PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		585B6AE2125F662300D42896 /* TenTwentyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TenTwentyController.h; sourceTree = "<group>"; };
 		585B6AE3125F662300D42896 /* TenTwentyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TenTwentyController.m; sourceTree = "<group>"; };
 		585B740D1264B64F00D42896 /* TenTwentyHUD.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TenTwentyHUD.xib; sourceTree = "<group>"; };
+		5868D3861362C0F200A0FEA6 /* tenTenInstructions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tenTenInstructions.plist; sourceTree = "<group>"; };
 		587EBBED1355468100E441CC /* OsiriX.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OsiriX.xcodeproj; path = "../osirix-stable/OsiriX.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		588486EB132E73F900A97543 /* Development.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Development.xcconfig; path = xcconfigs/Development.xcconfig; sourceTree = "<group>"; };
 		58848851132E7E9700A97543 /* Shared.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Shared.xcconfig; path = xcconfigs/Shared.xcconfig; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				5837760C12D3D7D600704695 /* COPYING */,
+				5868D3861362C0F200A0FEA6 /* tenTenInstructions.plist */,
 				58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */,
 				585B740D1264B64F00D42896 /* TenTwentyHUD.xib */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
@@ -424,6 +427,7 @@
 				58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */,
 				5837760D12D3D7D600704695 /* COPYING in Resources */,
 				5807CE2812E0F555007B0D76 /* InfoPlist.strings in Resources */,
+				5868D3871362C0F200A0FEA6 /* tenTenInstructions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
