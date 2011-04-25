@@ -14,18 +14,18 @@ lastBuildTxtFile="${CONFIGURATION_TEMP_DIR}/lastBuild.txt"
 # find the plist file
 if [ -f "${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Info.plist" ]  
 then  
-	buildPlist="${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Info.plist"  
+    buildPlist="${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Info.plist"  
 else  
-	echo -e "Can't find the plist: ${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Info.plist"  
-	exit 1  
+    echo -e "Can't find the plist: ${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/Contents/Info.plist"  
+    exit 1  
 fi
 
 # try and get the build version from the plist  
 buildVersion=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "${buildPlist}" 2>/dev/null)  
 if [ "${buildVersion}" = "" ]  
 then  
-	echo -e "\"${buildPlist}\" does not contain key: \"CFBundleVersion\""  
-	exit 1  
+    echo -e "\"${buildPlist}\" does not contain key: \"CFBundleVersion\""  
+    exit 1  
 fi
    
 # get the subversion last change revision  
@@ -46,13 +46,13 @@ fi
 # load and parse last build information
 if [ -f ${lastBuildTxtFile} ]
 then
-	lastBuild=$(/bin/cat ${lastBuildTxtFile})
-	IFS='.' 
-	set ${lastBuild}
-	previousSvnVersion=${1}
-	previousBuildNumber=${2}
+    lastBuild=$(/bin/cat ${lastBuildTxtFile})
+    IFS='.' 
+    set ${lastBuild}
+    previousSvnVersion=${1}
+    previousBuildNumber=${2}
 else
-	previousSvnVersion=-1
+    previousSvnVersion=-1
 fi
 
 # construct a new build number  
@@ -63,9 +63,9 @@ MAJOR_VERSION="${1}.${2}.${3}"
    
 if [ ${previousSvnVersion} != ${svnLastChangeRev} ]  
 then
-	buildNumber=0  
+    buildNumber=0  
 else
-	buildNumber=$(($previousBuildNumber + 1))  
+    buildNumber=$(($previousBuildNumber + 1))  
 fi  
    
 buildNewVersion="${MAJOR_VERSION}.${svnLastChangeRev}.${buildNumber}"  
