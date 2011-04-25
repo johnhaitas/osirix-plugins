@@ -24,70 +24,70 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = ABA71D3F06726B1800335A62 /* OsiriX.app */;
+			remoteGlobalIDString = ABA71D3F06726B1800335A62;
 			remoteInfo = OsiriX;
 		};
 		587EBB9713553DD700E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CEC70A1E10A5C845008935EA /* OsiriX Lite.app */;
+			remoteGlobalIDString = CEC70A1E10A5C845008935EA;
 			remoteInfo = "OsiriX Lite";
 		};
 		587EBB9913553DD700E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 59BDEC2D117C92B2007F1F2C /* OsiriX Launcher.app */;
+			remoteGlobalIDString = 59BDEC2D117C92B2007F1F2C;
 			remoteInfo = "OsiriX Launcher";
 		};
 		587EBB9B13553DD700E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 844719AF0FD8EF50003BFDF8 /* OsiriX.framework */;
+			remoteGlobalIDString = 844719AF0FD8EF50003BFDF8;
 			remoteInfo = "DCM Framework";
 		};
 		587EBB9D13553DD700E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CE9CED810C75BD8C00752D4B /* libDCM StaticLibrary.a */;
+			remoteGlobalIDString = CE9CED810C75BD8C00752D4B;
 			remoteInfo = "DCM StaticLibrary";
 		};
 		587EBB9F13553DD700E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = AB724FF60ADE6ECB00A212A0 /* Decompress */;
+			remoteGlobalIDString = AB724FF60ADE6ECB00A212A0;
 			remoteInfo = Decompress;
 		};
 		587EBBA113553DD700E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CEDF6DD00B46FE99008B45B8 /* DICOMPrint */;
+			remoteGlobalIDString = CEDF6DD00B46FE99008B45B8;
 			remoteInfo = DICOMPrint;
 		};
 		587EBBA313553DD700E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = CEDAAECA0C7B486A00809161 /* 32-bit shell.app */;
+			remoteGlobalIDString = CEDAAECA0C7B486A00809161;
 			remoteInfo = "32-bit shell";
 		};
 		587EBBA513553DD700E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = AB0F3A2C1046BD2B004129DD /* OsiriXAPI.framework */;
+			remoteGlobalIDString = AB0F3A2C1046BD2B004129DD;
 			remoteInfo = "OsiriX API";
 		};
 		587EBBA713553E0300E441CC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 587EBB8613553DD700E441CC /* OsiriX.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = AB0F3A2B1046BD2B004129DD /* OsiriX API */;
+			remoteGlobalIDString = AB0F3A2B1046BD2B004129DD;
 			remoteInfo = "OsiriX API";
 		};
 /* End PBXContainerItemProxy section */
