@@ -22,7 +22,6 @@
     PluginFilter    *owner;
 
     ViewerController    *viewerController;
-
     
     NSFileManager       *fileManager;
     
@@ -30,6 +29,8 @@
 
     NSString            *studyName;
     NSString            *seriesName;
+    
+    NSDictionary        *availableInstructions;
 
     MPRController       *mprViewer;
     MPRDCMView          *sliceView;
@@ -47,17 +48,20 @@
 
     // HUD Outlets
     IBOutlet NSPanel        *tenTwentyHUDPanel;
+    IBOutlet NSComboBox     *instructionSet;
+    IBOutlet NSTextField    *searchPoints;
     IBOutlet NSTextField    *minScalp;
     IBOutlet NSTextField    *maxSkull;
-    IBOutlet NSTextField    *searchPoints;
-    IBOutlet NSButton       *performTenTwentyMeasurments;
+    IBOutlet NSColorWell    *landmarksColor;
+    IBOutlet NSColorWell    *electrodesColor;
+    IBOutlet NSButton       *performMeasurments;
 }
 
 - (id) init;
 - (void) prepareTenTwenty: (PluginFilter *) thePlugin;
 
 #pragma mark Interface Methods
-- (IBAction) performTenTwentyMeasurments: (id) sender;
+- (IBAction) performMeasurments: (id) sender;
 
 - (BOOL) identifyLandmarks;
 
@@ -66,6 +70,7 @@
 
 - (void) openMprViewer;
 
+- (void) collectInstructions;
 - (NSDictionary *) loadInstructions;
 
 - (void) runInstructions: (NSDictionary *) theInstructions;

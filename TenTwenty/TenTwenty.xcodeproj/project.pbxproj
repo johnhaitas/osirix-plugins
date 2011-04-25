@@ -16,9 +16,9 @@
 		585B6AE4125F662300D42896 /* TenTwentyController.h in Headers */ = {isa = PBXBuildFile; fileRef = 585B6AE2125F662300D42896 /* TenTwentyController.h */; };
 		585B6AE5125F662300D42896 /* TenTwentyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 585B6AE3125F662300D42896 /* TenTwentyController.m */; };
 		585B740E1264B64F00D42896 /* TenTwentyHUD.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585B740D1264B64F00D42896 /* TenTwentyHUD.xib */; };
-		5868D3871362C0F200A0FEA6 /* tenTenInstructions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5868D3861362C0F200A0FEA6 /* tenTenInstructions.plist */; };
+		5868D3871362C0F200A0FEA6 /* tenTenInstructions.plist in Copy Measurement Instructions */ = {isa = PBXBuildFile; fileRef = 5868D3861362C0F200A0FEA6 /* tenTenInstructions.plist */; };
 		587EBC1B135546EF00E441CC /* OsiriXAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587EBC0D1355468100E441CC /* OsiriXAPI.framework */; };
-		58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */; };
+		58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Copy Measurement Instructions */ = {isa = PBXBuildFile; fileRef = 58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */; };
 		58CF976C12BAAA0200FCFBBF /* TraceController.h in Headers */ = {isa = PBXBuildFile; fileRef = 58CF976A12BAAA0200FCFBBF /* TraceController.h */; };
 		58CF976D12BAAA0200FCFBBF /* TraceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58CF976B12BAAA0200FCFBBF /* TraceController.m */; };
 		8D5B49AE048680CD000E48DA /* TenTwenty_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* TenTwenty_Prefix.pch */; };
@@ -100,6 +100,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		586A5C26136605DD00AEB24B /* Copy Measurement Instructions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = MeasurementInstructions;
+			dstSubfolderSpec = 7;
+			files = (
+				58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Copy Measurement Instructions */,
+				5868D3871362C0F200A0FEA6 /* tenTenInstructions.plist in Copy Measurement Instructions */,
+			);
+			name = "Copy Measurement Instructions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -170,9 +185,8 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				586A5C25136605DD00AEB24B /* Measurement Instructions */,
 				5837760C12D3D7D600704695 /* COPYING */,
-				5868D3861362C0F200A0FEA6 /* tenTenInstructions.plist */,
-				58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */,
 				585B740D1264B64F00D42896 /* TenTwentyHUD.xib */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				5807CE2612E0F555007B0D76 /* InfoPlist.strings */,
@@ -219,6 +233,15 @@
 				32DBCF630370AF2F00C91783 /* TenTwenty_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		586A5C25136605DD00AEB24B /* Measurement Instructions */ = {
+			isa = PBXGroup;
+			children = (
+				5868D3861362C0F200A0FEA6 /* tenTenInstructions.plist */,
+				58915D0412B83394007A10A9 /* tenTwentyInstructions.plist */,
+			);
+			name = "Measurement Instructions";
 			sourceTree = "<group>";
 		};
 		587EBBEC1355467200E441CC /* Dependencies */ = {
@@ -306,6 +329,7 @@
 			buildPhases = (
 				8D5B49AD048680CD000E48DA /* Headers */,
 				8D5B49AF048680CD000E48DA /* Resources */,
+				586A5C26136605DD00AEB24B /* Copy Measurement Instructions */,
 				8D5B49B1048680CD000E48DA /* Sources */,
 				58CAE04E12E4FBD300B3411E /* Set Build Number */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
@@ -424,10 +448,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				585B740E1264B64F00D42896 /* TenTwentyHUD.xib in Resources */,
-				58915D0512B83394007A10A9 /* tenTwentyInstructions.plist in Resources */,
 				5837760D12D3D7D600704695 /* COPYING in Resources */,
 				5807CE2812E0F555007B0D76 /* InfoPlist.strings in Resources */,
-				5868D3871362C0F200A0FEA6 /* tenTenInstructions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

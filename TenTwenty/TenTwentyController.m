@@ -38,6 +38,7 @@
     
     // find instruction lists
     // TODO 
+    [self collectInstructions];
 
     // get name of study and series for saving and archiving data
     studyName = [[[[viewerController imageView] seriesObj] valueForKey:@"study"] valueForKey:@"name"];
@@ -53,10 +54,10 @@
 }
 
 #pragma mark Interface Methods
-- (IBAction) performTenTwentyMeasurments: (id) sender
+- (IBAction) performMeasurments: (id) sender
 {
-    NSDictionary    *tenTwentyInstructions;
-    NSArray         *instructionList;
+    NSDictionary    *measurementInstructions;
+    NSArray         *instructionSteps;
 
     // note time measurements were started
     startTime = [NSDate date];
@@ -73,12 +74,13 @@
     [self removeBrain];
 
     [self openMprViewer];
+    
+    
+    measurementInstructions = [self loadInstructions];
+    instructionSteps         = [measurementInstructions objectForKey:@"instructionSteps"]; 
 
-    tenTwentyInstructions   = [self loadInstructions];
-    instructionList         = [tenTwentyInstructions objectForKey:@"instructionSteps"]; 
-
-    for (NSDictionary *theseInstructions in instructionList) {
-        stepNumber = 1 + [instructionList indexOfObject:theseInstructions];
+    for (NSDictionary *theseInstructions in instructionSteps) {
+        stepNumber = 1 + [instructionSteps indexOfObject:theseInstructions];
         [self runInstructions:theseInstructions];
         
     }
@@ -110,13 +112,13 @@
     NSArray    *landmarkNames = [NSArray arrayWithObjects:@"brow",@"apex",@"inion",@"A1",@"A2",nil];
     [self add3DPointsNamed:landmarkNames
                 to3DViewer:vrViewer                                                     
-                 withColor:[NSColor greenColor]];
+                 withColor:[landmarksColor color]];
 
     // add electrodes to 3D viewer
-    NSArray *electrodesToPlace = [tenTwentyInstructions objectForKey:@"electrodesToPlace"];
+    NSArray *electrodesToPlace = [measurementInstructions objectForKey:@"electrodesToPlace"];
     [self add3DPointsNamed:electrodesToPlace
                 to3DViewer:vrViewer                                                     
-                 withColor:[NSColor redColor]];
+                 withColor:[electrodesColor color]];
 }
 
 - (BOOL) identifyLandmarks
@@ -242,14 +244,43 @@
     [mprViewer.verticalSplit    setPosition: [mprViewer.verticalSplit   minPossiblePositionOfDividerAtIndex: 0] ofDividerAtIndex: 0];
 }
 
+- (void) collectInstructions
+{
+    NSString            *bundlePath;
+    NSString            *measurementInstructionsPath;
+    NSMutableDictionary *tmpInstructionDict;
+    
+    // right now we are only looking inside the plugin bundle...
+    // ... in the future we may look in other places like "~/Library/Application Support/OsiriX/..."
+    bundlePath                  = [[NSBundle bundleWithIdentifier:@"edu.vanderbilt.tentwenty"] resourcePath];
+    measurementInstructionsPath = [NSString stringWithFormat:@"%@/MeasurementInstructions",bundlePath];
+    
+    tmpInstructionDict = [NSMutableDictionary dictionary];
+    
+    for (NSString *thisFile in [fileManager contentsOfDirectoryAtPath: measurementInstructionsPath error: nil]) {
+        NSString *fullInstructionFilePath = [NSString stringWithFormat:@"%@/%@",measurementInstructionsPath,thisFile];
+        NSDictionary *theseInstructions = [NSDictionary dictionaryWithContentsOfFile:fullInstructionFilePath];
+        [tmpInstructionDict setObject:theseInstructions forKey: [theseInstructions objectForKey:@"systemName"]];
+    }
+    
+    // put instructions in more permanent immutable dictionary accesible from anywhere in this class
+    availableInstructions = [tmpInstructionDict copy];
+    
+    // for now we will populate the NSComboBox explicitly ...
+    // ... we should be able to bind this dynamically though
+    for (NSString *thisKey in availableInstructions) {
+        [instructionSet addItemWithObjectValue:thisKey];
+    }
+    
+    // first loaded set will be default for now
+    if ([instructionSet numberOfItems] > 0) {
+        [instructionSet selectItemAtIndex:0];
+    }
+}
+
 - (NSDictionary *) loadInstructions
 {
-    NSString        *bundlePath,*instructionsFilename;
-
-    bundlePath              = [[NSBundle bundleWithIdentifier:@"edu.vanderbilt.tentwenty"] resourcePath];
-    instructionsFilename    = [NSString stringWithFormat:@"%@/tenTwentyInstructions.plist",bundlePath];
-
-    return [[[NSDictionary alloc] initWithContentsOfFile:instructionsFilename] autorelease];
+    return [availableInstructions objectForKey:[instructionSet stringValue]];
 }
 
 - (void) runInstructions: (NSDictionary *) theInstructions
@@ -650,11 +681,6 @@
     }
 
     return analysisFolder;
-}
-
-- (NSDictionary *) extraPointsToDict
-{
-    
 }
 
 - (void) allPointsToPList

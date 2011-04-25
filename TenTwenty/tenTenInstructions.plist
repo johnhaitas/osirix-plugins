@@ -293,38 +293,6 @@
 		<dict>
 			<key>divideInstructions</key>
 			<dict>
-				<key>T7</key>
-				<integer>0</integer>
-				<key>C5</key>
-				<real>0.125</real>
-				<key>C3</key>
-				<real>0.25</real>
-				<key>C1</key>
-				<real>0.375</real>
-				<key>Cz</key>
-				<real>0.5</real>
-				<key>C2</key>
-				<real>0.625</real>
-				<key>C4</key>
-				<real>0.75</real>
-				<key>C6</key>
-				<real>0.825</real>
-				<key>T8</key>
-				<integer>1</integer>
-			</dict>
-			<key>sliceInstructions</key>
-			<dict>
-				<key>point1</key>
-				<string>T7</string>
-				<key>point2</key>
-				<string>T8</string>
-				<key>vertex</key>
-				<string>Cz</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>divideInstructions</key>
-			<dict>
 				<key>TP7</key>
 				<integer>0</integer>
 				<key>CP5</key>
