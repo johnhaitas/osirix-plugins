@@ -11,11 +11,11 @@
 #import <OsiriXAPI/MPRDCMView.h>
 
 @interface TraceController : NSObject {
-    DCMPix          *pix;
-    float           minScalp,maxSkull;
-    int             numPoints;
-    ROI             *trace;
-    NSArray         *searchPaths;
+    DCMPix      *pix;
+    float       minScalp,maxSkull;
+    int         numPoints;
+    ROI         *trace;
+    NSArray     *searchPaths;
 }
 
 @property (readonly)    ROI     *trace;

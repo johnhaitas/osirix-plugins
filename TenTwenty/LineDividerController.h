@@ -10,13 +10,13 @@
 #import <OsiriXAPI/PluginFilter.h>
 
 @interface LineDividerController : NSObject {
-    DCMPix          *thePix;
+    DCMPix              *thePix;
 
-	float			scaleValue;
-    NSDictionary    *lineIntervalsDict;
-	
-	NSMutableArray      *currentSpline;
-	NSMutableDictionary *currentInterPoints;
+    float               scaleValue;
+    NSDictionary        *lineIntervalsDict;
+    
+    NSMutableArray      *currentSpline;
+    NSMutableDictionary *currentInterPoints;
 }
 
 - (id) init;
