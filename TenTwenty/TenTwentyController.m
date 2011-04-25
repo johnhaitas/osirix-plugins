@@ -12,13 +12,13 @@
 
 - (id) init
 {
-    if (self = [super init]) {        
+    if (self = [super init]) {
         [NSBundle loadNibNamed:@"TenTwentyHUD.nib" owner:self];
         
         // set default field values
-        [minScalp        setFloatValue:45.0];
-        [maxSkull        setFloatValue:45.0];
-        [searchPoints    setIntValue:15];
+        [searchPoints      setIntValue: 15];
+        [minScalp        setFloatValue: 45.0];
+        [maxSkull        setFloatValue: 45.0];
         
         // set ROIs to display name only
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ROITEXTNAMEONLY"];
@@ -35,6 +35,9 @@
     
     // initialize file manager
     fileManager     = [NSFileManager defaultManager];
+    
+    // find instruction lists
+    // TODO 
 
     // get name of study and series for saving and archiving data
     studyName = [[[[viewerController imageView] seriesObj] valueForKey:@"study"] valueForKey:@"name"];
@@ -102,18 +105,24 @@
     // display 3D Viewer
     VRController *vrViewer;
     vrViewer = [self openVrViewer];
+    
+    // display landmarks in 3D viewer
+    NSArray    *landmarkNames = [NSArray arrayWithObjects:@"brow",@"apex",@"inion",@"A1",@"A2",nil];
+    [self add3DPointsNamed:landmarkNames
+                to3DViewer:vrViewer                                                     
+                 withColor:[NSColor greenColor]];
 
     // add electrodes to 3D viewer
-    [self add3DPointsNamed:[tenTwentyInstructions objectForKey:@"electrodesToPlace"]
-                to3DViewer:vrViewer                                                     ];
+    NSArray *electrodesToPlace = [tenTwentyInstructions objectForKey:@"electrodesToPlace"];
+    [self add3DPointsNamed:electrodesToPlace
+                to3DViewer:vrViewer                                                     
+                 withColor:[NSColor redColor]];
 }
 
 - (BOOL) identifyLandmarks
 {
-    NSArray *landmarkNames;
     Point3D *dicomPoint;
-
-    landmarkNames = [NSArray arrayWithObjects:@"brow",@"apex",@"inion",@"A1",@"A2",nil];
+    NSArray    *landmarkNames = [NSArray arrayWithObjects:@"brow",@"apex",@"inion",@"A1",@"A2",nil];
 
     // step through each predefined landmark name
     for (NSString *name in landmarkNames) {
@@ -398,7 +407,7 @@
 
 
 - (void) pointNamed: (NSString *)   name
-      toDicomCoords: (float [3])      dicomCoords
+      toDicomCoords: (float [3])    dicomCoords
 {
     Point3D *point;
 
@@ -417,8 +426,8 @@
 - (BOOL) roiWithName: (NSString *)  name
        toDicomCoords: (float [3])   dicomCoords
 {
-    DCMPix              *pix;
-    ROI                 *roi;
+    DCMPix  *pix;
+    ROI     *roi;
 
     roi = [self findRoiWithName:name];
     pix = [self findPixWithROI:roi];
@@ -536,7 +545,7 @@
         // do we already have extra points ?
         if ([extraPoints objectForKey:name] != nil) {
             // we do have extra points - add to that array
-            NSMutableArray *pointsArray = [extraPoints objectForKey:name];
+            NSMutableArray *pointsArray = (NSMutableArray *) [extraPoints objectForKey:name];
             [pointsArray addObject:[allPoints objectForKey:name]];
             [extraPoints setObject:[NSArray arrayWithArray:pointsArray] forKey:name];
         } else {
@@ -552,43 +561,32 @@
 
 - (void) add3DPointsNamed: (NSArray *)      pointsToAdd
                to3DViewer: (VRController *) theViewer
+                withColor: (NSColor *)      color
 {
     // ****** place 3d electrodes
     double  dicomCoords[3];
     float   red,green,blue,radius;
+    
+    radius    = [[NSUserDefaults standardUserDefaults] floatForKey:@"points3Dradius"];
+    red        = [color redComponent];
+    green    = [color greenComponent];
+    blue    = [color blueComponent];
+    
     for (NSString *name in pointsToAdd) {
         Point3D *point = [allPoints objectForKey:name];
-        
+        DLog(@"%@ %@",name,point);
         dicomCoords[0] = point.x;
         dicomCoords[1] = point.y;
         dicomCoords[2] = point.z;
         
-        [theViewer.view add3DPoint:dicomCoords[0] :dicomCoords[1] :dicomCoords[2]];
+        [theViewer.view add3DPoint: dicomCoords[0]
+                                  : dicomCoords[1]
+                                  : dicomCoords[2]
+                                  : radius
+                                  : red
+                                  : green
+                                  : blue            ];
     }
-
-    // set display properties of point
-    red = 0.0;
-    green = 0.0;
-    blue = 1.0;
-    radius = [[NSUserDefaults standardUserDefaults] floatForKey:@"points3Dradius"];
-
-    // add extra points
-    for (NSString *name in pointsToAdd) {
-        NSArray *pointArray = [extraPoints objectForKey:name];
-        for (Point3D *point in pointArray) {            dicomCoords[0] = point.x;
-            dicomCoords[1] = point.y;
-            dicomCoords[2] = point.z;
-            
-            [theViewer.view add3DPoint: dicomCoords[0]
-                                      : dicomCoords[1]
-                                      : dicomCoords[2]
-                                      : radius
-                                      : red
-                                      : green
-                                      : blue            ];
-        }
-    }
-
     [theViewer.view display];
 }
 
@@ -652,6 +650,11 @@
     }
 
     return analysisFolder;
+}
+
+- (NSDictionary *) extraPointsToDict
+{
+    
 }
 
 - (void) allPointsToPList

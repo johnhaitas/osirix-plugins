@@ -99,7 +99,8 @@
          withName: (NSString *) name;
 
 - (void) add3DPointsNamed: (NSArray *)      pointsToAdd
-               to3DViewer: (VRController *) theViewer;
+               to3DViewer: (VRController *) theViewer
+                withColor: (NSColor *)        color;
 
 - (void) addPointToAllPoints: (Point3D *)   point
                     withName: (NSString *)  name;
