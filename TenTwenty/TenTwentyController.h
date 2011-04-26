@@ -115,6 +115,8 @@
 - (NSString *) pathForSeriesData;
 - (NSString *) pathForAnalysisData;
 
+- (void) createFolderIfItDoesNotExist: (NSString *) thisFolder;
+
 - (void) allPointsToPList;
 - (BOOL) electrodesToCSV;
 

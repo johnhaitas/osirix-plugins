@@ -598,9 +598,9 @@
     double  dicomCoords[3];
     float   red,green,blue,radius;
     
-    radius    = [[NSUserDefaults standardUserDefaults] floatForKey:@"points3Dradius"];
-    red        = [color redComponent];
-    green    = [color greenComponent];
+    radius  = [[NSUserDefaults standardUserDefaults] floatForKey:@"points3Dradius"];
+    red     = [color redComponent];
+    green   = [color greenComponent];
     blue    = [color blueComponent];
     
     for (NSString *name in pointsToAdd) {
@@ -623,16 +623,13 @@
 
 - (NSString *) pathForTenTwentyData
 {
-    NSString *folder = @"~/Library/Application Support/OsiriX/TenTwenty";
-    folder = [folder stringByExpandingTildeInPath];
+    NSString *pluginDataFolder = @"~/Library/Application Support/OsiriX/TenTwenty";
+    pluginDataFolder = [pluginDataFolder stringByExpandingTildeInPath];
 
-    // create the folder if it doesn't exist    
-    if ([fileManager fileExistsAtPath: folder] == NO) {
-        DLog(@"Creating TenTwenty data folder at: %@",folder);
-        [fileManager createDirectoryAtPath: folder attributes: nil];
-    }
+    // create the folder if it doesn't exist
+    [self createFolderIfItDoesNotExist: pluginDataFolder];
 
-    return folder;
+    return pluginDataFolder;
 }
 
 - (NSString *) pathForStudyData
@@ -641,11 +638,8 @@
     
     studyFolder     = [[self pathForTenTwentyData] stringByAppendingFormat:@"/%@",studyName];
 
-    // create the study folder if it doesn't exist    
-    if ([fileManager fileExistsAtPath: studyFolder] == NO) {
-        DLog(@"Creating study folder at: %@",studyFolder);
-        [fileManager createDirectoryAtPath: studyFolder attributes: nil];
-    }
+    // create the study folder if it doesn't exist
+    [self createFolderIfItDoesNotExist: studyFolder];
 
     return studyFolder;
 }
@@ -656,12 +650,9 @@
 
     seriesFolder    = [[self pathForStudyData] stringByAppendingFormat:@"/%@",seriesName];
 
-    // create the series folder if it doesn't exist    
-    if ([fileManager fileExistsAtPath: seriesFolder] == NO) {
-        DLog(@"Creating series folder at: %@",seriesFolder);
-        [fileManager createDirectoryAtPath: seriesFolder attributes: nil];
-    }
-
+    // create the series folder if it doesn't exist
+    [self createFolderIfItDoesNotExist: seriesFolder];
+    
     return seriesFolder;
 }
 
@@ -674,13 +665,19 @@
                                                         locale:[[NSUserDefaults standardUserDefaults] dictionaryRepresentation]];
     analysisFolder    = [[self pathForSeriesData] stringByAppendingFormat:@"/%@",dateString];
 
-    // create the analysis folder if it doesn't exist    
-    if ([fileManager fileExistsAtPath: analysisFolder] == NO) {
-        DLog(@"Creating analysis folder at: %@",analysisFolder);
-        [fileManager createDirectoryAtPath: analysisFolder attributes: nil];
-    }
-
+    // create the analysis folder if it doesn't exist
+    [self createFolderIfItDoesNotExist: analysisFolder];
+    
     return analysisFolder;
+}
+
+- (void) createFolderIfItDoesNotExist: (NSString *) thisFolder
+{
+    // create a folder at the given path if it doesn't already exist    
+    if ([fileManager fileExistsAtPath: thisFolder] == NO) {
+        DLog(@"Creating folder at: %@",thisFolder);
+        [fileManager createDirectoryAtPath: thisFolder attributes: nil];
+    }
 }
 
 - (void) allPointsToPList
@@ -718,7 +715,7 @@
 {
     NSString    *saveFileName;
     NSString    *csvContents;
-    NSArray        *electrodesList;
+    NSArray     *electrodesList;
     BOOL        success;
     
     // save electrodes to CSV file
