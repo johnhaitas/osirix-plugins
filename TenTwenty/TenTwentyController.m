@@ -242,6 +242,9 @@
     // make only sliceView visible rather than 3 views visible
     [mprViewer.horizontalSplit  setPosition: [mprViewer.horizontalSplit minPossiblePositionOfDividerAtIndex: 0] ofDividerAtIndex: 0];
     [mprViewer.verticalSplit    setPosition: [mprViewer.verticalSplit   minPossiblePositionOfDividerAtIndex: 0] ofDividerAtIndex: 0];
+    
+    // turn off cross lines
+    sliceView.displayCrossLines = NO;
 }
 
 - (void) collectInstructions
