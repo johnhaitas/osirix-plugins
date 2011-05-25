@@ -1,0 +1,53 @@
+Index: browserController.m
+===================================================================
+--- browserController.m	(revision 8550)
++++ browserController.m	(working copy)
+@@ -9343,29 +9343,25 @@
+ 				
+ 				@try
+ 				{
+-					for( int i = 0 ; i < [vFileList count]; i++)
+-					{
+-						NSString *path = [[vFileList objectAtIndex: i] valueForKey:@"completePath"];
+-						
+-						if( [path isEqualToString: pathToFind])
+-						{
+-							DCMPix *dcmPix = [[vPixList objectAtIndex: i] copy];
+-							if( dcmPix)
+-							{
+-								float *fImage = (float*) malloc( dcmPix.pheight*dcmPix.pwidth*sizeof( float));
+-								if( fImage)
+-								{
+-									memcpy( fImage, dcmPix.fImage, dcmPix.pheight*dcmPix.pwidth*sizeof( float));
+-									[dcmPix setfImage: fImage];
+-									[dcmPix freefImageWhenDone: YES];
+-								
+-									returnPix = [dcmPix autorelease];
+-								}
+-								else
+-									[dcmPix release];
+-							}
+-						}
+-					}
++                    NSUInteger objectIndex = [vFileList indexOfObjectIdenticalTo: pathToFind];
++                    if( objectIndex < [vFileList count])
++                    {
++                        DCMPix *dcmPix = [[vPixList objectAtIndex: objectIndex] copy];
++                        if( dcmPix)
++                        {
++                            float *fImage = (float*) malloc( dcmPix.pheight*dcmPix.pwidth*sizeof( float));
++                            if( fImage)
++                            {
++                                memcpy( fImage, dcmPix.fImage, dcmPix.pheight*dcmPix.pwidth*sizeof( float));
++                                [dcmPix setfImage: fImage];
++                                [dcmPix freefImageWhenDone: YES];
++                            
++                                returnPix = [dcmPix autorelease];
++                            }
++                            else
++                                [dcmPix release];
++                        }
++                    }
+ 				}
+ 				@catch (NSException * e) 
+ 				{

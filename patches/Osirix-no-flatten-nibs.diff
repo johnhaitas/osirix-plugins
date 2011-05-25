@@ -1,0 +1,28 @@
+Index: OsiriX.xcodeproj/project.pbxproj
+===================================================================
+--- OsiriX.xcodeproj/project.pbxproj	(revision 8549)
++++ OsiriX.xcodeproj/project.pbxproj	(working copy)
+@@ -26528,6 +26528,7 @@
+ 					/usr/include/libxml2,
+ 					AYDicomPrint,
+ 				);
++				IBC_FLATTEN_NIBS = NO;
+ 				OTHER_CFLAGS = "-fvisibility=default";
+ 				SDKROOT = macosx10.5;
+ 			};
+@@ -26700,6 +26701,7 @@
+ 					/usr/include/libxml2,
+ 					AYDicomPrint,
+ 				);
++				IBC_FLATTEN_NIBS = NO;
+ 				OTHER_CFLAGS = "-fvisibility=default";
+ 				SDKROOT = macosx10.5;
+ 			};
+@@ -26999,6 +27001,7 @@
+ 					/usr/include/libxml2,
+ 					AYDicomPrint,
+ 				);
++				IBC_FLATTEN_NIBS = NO;
+ 				OTHER_CFLAGS = "-fvisibility=default";
+ 				OTHER_CPLUSPLUSFLAGS = (
+ 					"$(OTHER_CFLAGS)",

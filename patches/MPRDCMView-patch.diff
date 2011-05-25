@@ -1,0 +1,14 @@
+Index: MPRDCMView.m
+===================================================================
+--- MPRDCMView.m	(revision 8547)
++++ MPRDCMView.m	(working copy)
+@@ -945,6 +945,9 @@
+ 						
+ 						[new2DPointROI setROIRect: NSMakeRect( sc[ 0], sc[ 1], 0, 0)];
+ 						
++                        // maintain parent ROI color
++                        [new2DPointROI setColor:r.rgbcolor];
++                        
+ 						[new2DPointROI setParentROI: r];
+ 						[self roiSet: new2DPointROI];
+ 						[curRoiList addObject: new2DPointROI];

@@ -1,0 +1,66 @@
+Index: browserController.m
+===================================================================
+--- browserController.m	(revision 8549)
++++ browserController.m	(working copy)
+@@ -9334,36 +9334,31 @@
+ 				
+ 				@try
+ 				{
+-					for( int i = 0 ; i < [vFileList count]; i++)
+-					{
+-						NSString *path = [[vFileList objectAtIndex: i] valueForKey:@"completePath"];
+-						
+-						if( [path isEqualToString: pathToFind])
+-						{
+-							DCMPix *dcmPix = [[vPixList objectAtIndex: i] copy];
+-							if( dcmPix)
+-							{
+-								float *fImage = (float*) malloc( dcmPix.pheight*dcmPix.pwidth*sizeof( float)*1.5);
+-								if( fImage)
+-								{
+-									free( fImage);
+-									fImage = (float*) malloc( dcmPix.pheight*dcmPix.pwidth*sizeof( float));
+-									if( fImage)
+-									{
+-										memcpy( fImage, dcmPix.fImage, dcmPix.pheight*dcmPix.pwidth*sizeof( float));
+-										[dcmPix setfImage: fImage];
+-										[dcmPix freefImageWhenDone: YES];
+-									
+-										returnPix = [dcmPix autorelease];
+-									}
+-									else
+-										[dcmPix release];
+-								}
+-								else
+-									[dcmPix release];
+-							}
+-						}
+-					}
++                    NSUInteger  objectIndex = [vFileList indexOfObjectIdenticalTo: pathToFind];
++                    DCMPix      *dcmPix     = nil;
++                    
++                    // validate the objectIndex ...
++                    // ... an invalid objectIndex would otherwise throw an exception
++                    if (objectIndex < [vFileList count])
++                        dcmPix = [[vPixList objectAtIndex: objectIndex] copy];
++                    else
++                        NSLog(@"browserController getDCMPixFromViewerIfAvailable: failed for image at path %@",pathToFind);
++
++                    if( dcmPix)
++                    {
++                        float fImageSize = sizeof(float) * (dcmPix.pheight * dcmPix.pwidth);
++                        float *fImage = (float *) malloc(fImageSize);
++                        if( fImage)
++                        {
++                            memcpy( fImage, dcmPix.fImage, fImageSize);
++                            [dcmPix setfImage: fImage];
++                            [dcmPix freefImageWhenDone: YES];
++                        
++                            returnPix = [dcmPix autorelease];
++                        }
++                        else
++                            [dcmPix release];
++                    }
+ 				}
+ 				@catch (NSException * e) 
+ 				{
