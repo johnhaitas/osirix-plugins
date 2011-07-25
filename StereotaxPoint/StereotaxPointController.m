@@ -280,8 +280,8 @@
 
     // get the AP,ML,DV distances from origin
     distAP = [[dict objectForKey:@"ap"] floatValue];
-    distML = [[dict objectForKey:@"dv"] floatValue];
-    distDV = [[dict objectForKey:@"ml"] floatValue];
+    distML = [[dict objectForKey:@"ml"] floatValue];
+    distDV = [[dict objectForKey:@"dv"] floatValue];
 
     // compute x,y,z components of AP plane
     xDiff[AP] = distAP * [apX floatValue];
