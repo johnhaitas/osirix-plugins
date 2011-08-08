@@ -16,21 +16,21 @@ XCCONFIG = -xcconfig Development.xcconfig
 all: Unzip-Binaries OsiriX ViewTemplate TenTwenty StereotaxPoint
 
 clean:
-	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -alltargets clean
-	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -alltargets clean
+	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -configuration "${BUILDCONFIGURATION}" -alltargets clean
+	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -configuration "${BUILDCONFIGURATION}" -alltargets clean
 	make -C ViewTemplate clean
 	make -C TenTwenty clean
 	make -C StereotaxPoint clean
 
 Unzip-Binaries: 
-	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build
-	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -configuration ${BUILDCONFIGURATION} -target "Unzip Binaries" build
+	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -configuration "${BUILDCONFIGURATION}" -target "Unzip Binaries" build
+	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -configuration "${BUILDCONFIGURATION}" -target "Unzip Binaries" build
 
 OsiriX-Stable:
-	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" ${XCCONFIG} build
+	xcodebuild -project ${OSIRIX_STABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration "${BUILDCONFIGURATION}" -target "OsiriX" ${XCCONFIG} build
 
 OsiriX-Unstable:
-	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration ${BUILDCONFIGURATION} -target "OsiriX" ${XCCONFIG} build
+	xcodebuild -project ${OSIRIX_UNSTABLE_DIR}/Osirix.xcodeproj -parallelizeTargets -configuration "${BUILDCONFIGURATION}" -target "OsiriX" ${XCCONFIG} build
 
 OsiriX:
 	make Unzip-Binaries
@@ -38,13 +38,13 @@ OsiriX:
 	make OsiriX-Unstable
 
 ViewTemplate:
-	make -C ViewTemplate BUILDCONFIGURATION=${BUILDCONFIGURATION}
+	make -C ViewTemplate BUILDCONFIGURATION="${BUILDCONFIGURATION}"
 
 TenTwenty:
-	make -C TenTwenty BUILDCONFIGURATION=${BUILDCONFIGURATION}
+	make -C TenTwenty BUILDCONFIGURATION="${BUILDCONFIGURATION}"
 
 StereotaxPoint:
-	make -C StereotaxPoint BUILDCONFIGURATION=${BUILDCONFIGURATION}
+	make -C StereotaxPoint BUILDCONFIGURATION="${BUILDCONFIGURATION}"
 
 Plugins: ViewTemplate TenTwenty StereotaxPoint
 
