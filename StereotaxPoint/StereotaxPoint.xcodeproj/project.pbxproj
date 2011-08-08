@@ -489,6 +489,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58848837132E779B00A97543 /* Development.xcconfig */;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Development;
 		};
@@ -496,6 +499,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 58848871132E822900A97543 /* Deployment.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					i386,
+					x86_64,
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Deployment;
 		};
@@ -503,6 +513,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5884886F132E821D00A97543 /* Shared.xcconfig */;
 			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.6.sdk";
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Default;
 		};
